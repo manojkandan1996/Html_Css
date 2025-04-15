@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 147</title>
+    <style>
+        nav ul {
+            padding-top: 30px;
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        ul {
+            font-weight: bold;
+            filter: blur(20px);
+            transition-property: filter;
+            transition-duration: 0.5s;
+
+        }
+
+        ul:hover {
+            filter: none;
+        }
+
+        nav {
+            background-color: black;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <nav>
+            <ul type="none">
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Blogs</a></li>
+                <li><a href="">Contact us</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>

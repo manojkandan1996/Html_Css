@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #container{
+            width: 80%;
+            gap: 30px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 33% 33% 34%;
+            grid-template-rows: 100px 100px ;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .item:hover{
+            transform: scale(1.05);
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="item"><img src="./images/1.jpg" alt=""></div>
+        <div class="item"><img src="./images/2.jpg"></div>
+        <div class="item"><img src="./images/3.jpg"></div>
+        <div class="item"><img src="./images/ajith.jpeg"></div>
+        <div class="item"><img src="./images/vijay.jpeg"></div>
+        <div class="item"><img src="./images/fridge.avif"></div>
+    </div>
+</body>
+</html>

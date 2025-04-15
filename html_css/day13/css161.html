@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 161</title>
+    <style>
+        * {
+            margin: 10px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 700px;
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+            grid-template-rows: auto;
+            gap: 10px;
+        }
+
+        .grid {
+            background-color: burlywood;
+            color: black;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (min-width:300px) {
+            .container {
+                display: grid;
+                grid-template-columns: 200px;
+                grid-template-rows: auto;
+                gap: 10px;
+            }
+        }
+
+
+        @media (min-width:601px){
+            .container {
+                display: grid;
+                grid-template-columns: 200px 200px;
+                grid-template-rows: auto;
+                gap: 10px;
+            }
+
+        }
+        @media (min-width:1020px) {
+            .container {
+                display: flex;
+                grid-template-columns: 200px;
+                grid-template-rows: auto;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid">box 1</div>
+        <div class="grid">box 2</div>
+        <div class="grid">box 3</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASHIK PORTFILIO</title>
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(196, 189, 189);
+        }
+
+        nav {
+            background-color: white;
+            padding: 5px 0;
+            position: sticky;
+            top: -20px;
+            width: 100%;
+
+        }
+
+
+        nav a {
+            color: black;
+            padding: 20px 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 50px;
+            font-weight: bold;
+        }
+
+        nav button {
+            margin-left: 90px;
+            border-radius: 30px;
+            padding: 25px;
+        }
+
+        nav button:hover {
+            background-color: #0ace0a;
+        }
+
+        #home {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        #s1 {
+
+            width: 70%;
+        }
+
+        #s2 {
+
+            width: 30%;
+        }
+
+        #s3 {
+
+            width: 50%;
+        }
+
+        #s4 {
+
+            width: 25%;
+        }
+
+        #s5 {
+
+            width: 25%;
+
+        }
+
+
+        #s2 img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #hh1 {
+            font-size: 120px;
+        }
+
+        #ph1 {
+            font-size: 25px;
+        }
+
+        #abt {
+            display: flex;
+            width: 100%;
+        }
+
+        #s3 h6 {
+            font-size: 30px;
+        }
+
+        #s3 h1 {
+            font-size: 70px;
+        }
+
+        #s3 p {
+            font-size: 20px;
+        }
+
+        #ss {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        #sl {
+            width: 50%;
+        }
+
+        #sl1 {
+            width: 50%;
+        }
+
+        ul {
+            font-size: 25px;
+        }
+
+        #abt {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(196, 189, 189);
+        }
+
+        #service {
+            background-color: rgb(196, 189, 189);
+            display: flex;
+            width: 100%;
+            height: 100%;
+            gap: 10px;
+
+        }
+
+        #service h6 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #service p {
+            text-align: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        #service h1 {
+            font-size: 50px;
+            text-align: center;
+        }
+
+        #service1 {
+
+            width: 25%;
+            background-color: white;
+        }
+
+        #service2 {
+            width: 25%;
+            background-color: white;
+        }
+
+        #service3 {
+            width: 25%;
+            background-color: white;
+        }
+
+        #service4 {
+            width: 25%;
+            background-color: white;
+        }
+
+        #service_home {
+            text-align: center;
+            width: 100%;
+            height: 50%;
+
+        }
+
+        #service_home h6 {
+            text-align: center;
+            font-size: 30px;
+
+        }
+
+        #service_home h1 {
+            text-align: center;
+            font-size: 100px;
+
+        }
+
+        #proj {
+            display: flex;
+            height: 100%;
+            width: 100%;
+        }
+
+        #proj1 {
+            width: 60%;
+
+        }
+
+        #proj1 h1 {
+            font-size: 60px;
+
+        }
+
+        #proj2 p {
+            font-size: 30px;
+
+        }
+
+        #proj2 {
+            width: 40%;
+        }
+
+        #project_home h3 {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        #project {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        #project1 {
+            width: 60%;
+
+        }
+
+        #project2 {
+            width: 40%;
+        }
+
+        #project1 img {
+            border-radius: 20px;
+
+        }
+
+        #blog {
+            display: flex;
+            height: 100%;
+            width: 100%;
+        }
+
+        #blog1 {
+            width: 50%;
+        }
+
+        #blog2 {
+            width: 50%;
+        }
+
+        #blog1 h1 {
+            font-size: 50px;
+        }
+
+        #blog2 p {
+            font-size: 30px;
+        }
+
+        #b {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background-color: #57ca57;
+            border-radius: 30px;
+        }
+
+        #b1 {
+            width: 25%;
+            font-size: 35px;
+            text-align: center;
+
+
+        }
+
+        #b2 {
+            width: 25%;
+            font-size: 35px;
+            text-align: center;
+        }
+
+        #b3 {
+            width: 25%;
+            font-size: 35px;
+            text-align: center;
+        }
+
+        #b4 {
+            width: 25%;
+            font-size: 35px;
+            text-align: center;
+        }
+
+        #contact {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            gap: 5px;
+        }
+
+        #c1 {
+            width: 50%;
+
+        }
+
+        #c1 h1 {
+            font-size: 50px;
+        }
+
+        #c1 p {
+            font-size: 25px;
+        }
+
+        #c2 {
+            width: 70px;
+            font-size: 20px;
+           
+        }
+        #contact input
+        {
+    margin-top: 30px;
+    margin-left: 70px;
+        font-size: 30px;
+        
+        }
+       
+    </style>
+</head>
+
+<body>
+    <nav>
+        <img src="./logo.png">
+        <a href="#">HOME</a>
+        <a href="#abt">ABOUT</a>
+        <a href="#service_home">SERVICES</a>
+        <a href="#project_home">PROJECTS</a>
+        <a href="#blog">BLOGS</a>
+        <a href="#contact">CONTACT</a>
+        <button>CONTACT US</button>
+    </nav>
+    <div id="home">
+        <section id="s1">
+            <h1 id="hh1">Hello im Jane Cooper</h1>
+            <p id="ph1"> A personal portfolio is a collection of your work, achievements, and skills that highlights
+                your
+                abilities and professional growth. It serves as</p>
+        </section>
+        <section id="s2">
+            <img src="./img1.png">
+        </section>
+    </div>
+
+    <div id="abt">
+        <section id="s3">
+            <h6>ABOUT ME</h6>
+            <h1>Story captivating visuals portfolio</h1>
+            <p>A personal portfolio is a collection of your work, achievements, and skills that highlights your
+                abilities
+                and professional growth. It serves as a showcase to a present your talents and attract potential
+                employers
+                or clients</p>
+            <div id="ss">
+                <section id="sl">
+                    <ul type="none">
+                        <li>
+                            ✔ Mistakes To Avoid
+                        </li>
+                        <li>
+                            ✔ Your Startup
+                        </li>
+                        <li>
+                            ✔ Knew About Fonts
+                        </li>
+                    </ul>
+                </section>
+                <section id="sl1">
+                    <ul type="none">
+                        <li>
+                            ✔ outside the box
+                        </li>
+                        <li>
+                            ✔ Create destiny
+                        </li>
+                        <li>
+                            ✔ Dare different
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+        <section id="s4">
+            <img src="./men1.png">
+        </section>
+
+        <section id="s5">
+            <img src="./men2.png">
+        </section>
+    </div>
+
+    <div id="service_home">
+        <h6>MY SERVICES</h6>
+        <h1>Elevate personal brand our stunning portfolio</h1>
+
+        <div id="service">
+            <section id="service1">
+                <h6>Content Writing</h6>
+                <p>A personal portfolio is a go isn collection ofio your work,in you achievements, and skills</p>
+                <h1>→</h1>
+            </section>
+            <section id="service2">
+                <h6> Graphic Design </h6>
+                <p>A personal portfolio is a go isn collection ofio your work,in you achievements, and skills</p>
+                <h1>→</h1>
+            </section>
+
+            <section id="service3">
+                <h6> Web Development</h6>
+                <p>A personal portfolio is a go isn collection ofio your work,in you achievements, and skills</p>
+                <h1>→</h1>
+            </section>
+            <section id="service4">
+                <h6> Logo Design </h6>
+                <p>A personal portfolio is a go isn collection ofio your work,in you achievements, and skills</p>
+                <h1>→</h1>
+            </section>
+        </div>
+    </div>
+    <div id="project_home">
+        <h3>Our Projects ~~</h3>
+        <div id="proj">
+            <section id="proj1">
+                <h1>Unleash your <br>creativity top-notch <br>designs</h1>
+            </section>
+            <section id="proj2">
+                <p>A personal portfolio is a collection of your work, achievements, and skills that highlights your
+                    abilities and professional growth. It serves as a showcase to a present your talents and attract
+                    potential employers or clients</p>
+            </section>
+
+        </div>
+        <div id="project">
+            <section id="project1">
+                <img src="./pro2.png">
+            </section>
+            <section id="project2">
+                <h2> SEO Optimization </h2>
+                <p>A personal portfolio is a collection of your work, achievements, and skills that highlights your
+                    abilities and</p>
+                <ul>
+                    <li> Mistakes To Avoid</li>
+
+                    <li>Your Startup</li>
+
+                    <li> Knew About Fonts</li>
+                </ul>
+            </section>
+
+        </div>
+
+
+
+        <div id="blog">
+            <section id="blog1">
+                <h1>Creating experiences <br> shaping perceptions</h1>
+            </section>
+            <section id="blog2">
+                <p>A personal portfolio is a collection of your work, achievements, and skills that highlights your
+                    abilities and professional growth. It serves as a showcase to a present your talents and attract
+                    potential employers or clients</p>
+            </section>
+
+
+        </div>
+
+        <div id="b">
+            <section id="b1">
+                <p>✌️
+                    200+<br>
+                    Team Member</p>
+            </section>
+            <section id="b2">
+                <p>🏆
+                    20+<br>
+                    Winning award</p>
+            </section>
+
+            <section id="b3">
+                <p>🏆
+                    10k+<br>
+                    Complete project</p>
+            </section>
+            <section id="b4">
+                <p>⭐
+                    900+<br>
+                    Client review</p>
+            </section>
+        </div>
+
+
+        <div id="contact">
+            <section id="c1">
+                <h1>Contact Us</h1>
+                <p>Corporate businesses typically offerings is who a services such as consulting, the ma strategic
+                    planning financial</p>
+                <p> 1179 KFC Road,Lisbon, Portugal</p>
+                <p>info@example.com</p>
+                <p>(629) 555-0129</p>
+            </section>
+
+            <section id="c2">
+                <form action="submit.html">
+                    <input type="text" id="fname" name="firstname" placeholder="Name"><br><br>
+              
+                    <input type="email" id="email" placeholder="E mail"><br><br>
+            
+                    <input type="text" id="sub" placeholder="Subject"><br><br>
+                    
+                    <input type="text" id="msg" placeholder="Message"><br><br>
+
+                </form>
+            </section>
+        </div>
+
+
+
+
+</body>
+
+</html>

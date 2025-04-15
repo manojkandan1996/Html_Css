@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Delicious Pasta Recipe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #fff8f0;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+
+        }
+
+        .container img {
+            width: 100%;
+            height: 50%;
+            display: block;
+        }
+
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(212, 11, 11, 0.6);
+            padding: 20px 40px;
+            border-radius: 10px;
+            font-size: 2rem;
+            color: white;
+            text-align: center;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            border-bottom: 5px solid #050505;
+            padding-bottom: 5px;
+            color: #333;
+        }
+
+        ul.ingredients {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        ol.instructions {
+            padding-left: 20px;
+        }
+
+        .top {
+            position: fixed;
+            bottom: 20px;
+            background-color: #585553;
+            color: white;
+            padding: 12px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .top:hover {
+            background-color: #43e91a;
+        }
+
+        footer {
+            width: 100%;
+            height: 100px;
+            background-color: rgb(228, 135, 14);
+            color: black;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="./pp.jfif" alt="No img">
+        <div class="text">Chicken Pizza</div>
+
+
+        <div class="content">
+            <section>
+                <h2>Ingredients</h2>
+                <ul class="ingredients">
+                    <li>dough base</li>
+                    <li>oil</li>
+                    <li>sauce/li>
+                    <li>cheese</li>
+                    <li>toppings</li>
+                    <li>Salt</li>
+                    <li>Chilli and tomato</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Instructions</h2>
+                <ol class="instructions">
+                    <li>Start with a crust. ...</li>
+                    <li>Add a sauce. ...</li>
+                    <li>Add some veggies, such as: ....</li>
+                    <li>Try some fruit on your pizza, such as: ....</li>
+                    <li>Add some protein, such as: ..</li>
+                    <li>Bake your creation in a hot oven (450 F or above)..</li>
+
+                </ol>
+            </section>
+        </div>
+        <button class="top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+        Top
+        </button>
+        <footer>
+            <p>@2025 Copy Rights</p>
+        </footer>
+    </div>
+</body>
+
+</html>

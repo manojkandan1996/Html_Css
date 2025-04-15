@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Showcase</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas:
+                "project1 project1 project2 project3"
+                "project4 project5 project5 project3"
+                "project6 project6 project7 project8";
+            gap: 15px;
+            max-width: 1800px;
+            margin: auto;
+        }
+
+        .project {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            overflow: hidden;
+            min-height: 200px;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        .project::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s ease;
+        }
+
+        .project:hover::after {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .project-details {
+            position: relative;
+            color: #fff;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .project:hover .project-details {
+            opacity: 1;
+        }
+
+
+        .project1 {
+            grid-area: project1;
+            background-image: url('./css.jfif');
+        }
+
+        .project2 {
+            grid-area: project2;
+            background-image: url('./html.jfif');
+        }
+
+
+        .project4 {
+            grid-area: project4;
+            background-image: url('./java.jfif');
+        }
+
+        .project5 {
+            grid-area: project5;
+            background-image: url('./sql.png');
+        }
+
+        .project6 {
+            grid-area: project6;
+            background-image: url('./python.png');
+        }
+
+        .project7 {
+            grid-area: project7;
+            background-image: url('./angular.png');
+        }
+
+
+
+
+        @media (max-width: 1020px) {
+            .grid-container {
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas:
+                    "project1 project1"
+                    "project2 project3"
+                    "project4 project5"
+                    "project6 project7"
+                    "project8 project8";
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "project1"
+                    "project2"
+                    "project3"
+                    "project4"
+                    "project5"
+                    "project6"
+                    "project7"
+                    "project8";
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Projects</h2>
+
+    <div class="grid-container">
+        <div class="project project1">
+
+            <div class="project-details">
+                <h3>The full form of CSS is Cascading Style Sheets. </h3>
+                <p>It is enabled by browsers and is specifically
+                    designed to distinguish the document's content from the report's appearance.</p>
+            </div>
+        </div>
+        <div class="project project2">
+
+            <div class="project-details">
+                <h3>HTML stands for Hyper Text Markup Language. </h3>
+                <p>HTML is the standard markup language for creating Web
+                    pages. HTML describes the structure of a Web page.</p>
+            </div>
+        </div>
+        <div class="project project4">
+
+            <div class="project-details">
+                <h3>The full form of Java is "Just Another Virtual Accelerator". </h3>
+                <p>Java is not an abbreviation but some programmers made a full form.</p>
+            </div>
+        </div>
+        <div class="project project5">
+
+            <div class="project-details">
+                <h3>The full form of SQL is Structured Query Language</h3>
+                <p>. SQL is a program created and formulated in the Relational Database Management System to handle structured data.</p>
+            </div>
+        </div>
+        <div class="project project6">
+            <div class="project-details">
+                <p>The programming language "Python" does not have a traditional full form or acronym.</p>
+            </div>
+        </div>
+        <div class="project project7">
+            ]
+            <div class="project-details">
+                <p>The term "Angular" refers to Angular, a web framework developed by Google.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

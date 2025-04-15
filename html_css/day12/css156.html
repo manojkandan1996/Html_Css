@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Effect</title>
+    <style>
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .container {
+            
+            gap: 20px;
+        }
+
+        .card {
+            width: 350px;
+            height: 550px;
+            background-color: rgb(189, 184, 184);
+            border-radius: 20px;
+            transition-property: box-shadow;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+            cursor: pointer;
+        }
+
+
+        .card:hover {
+
+            box-shadow: 0 15px 30px black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card"></div>
+
+    </div>
+
+</body>
+
+</html>

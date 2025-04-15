@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css63</title>
+    <style>
+        header {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        .article,
+        .sidebar {
+            background-color: rgb(250, 250, 20);
+            color: black;
+            padding: 10px;
+
+        }
+
+        body {
+            background-color: rosybrown;
+            display: grid;
+            height: 100%;
+            gap: 20px;
+            grid-template-columns: 100px auto;
+            grid-template-rows: 100px 300px 100px;
+            grid-template-areas:
+                "head head "
+                "side main "
+                "foot foot "
+            ;
+        }
+
+        header {
+            grid-area: head;
+
+        }
+
+        .article {
+            grid-area: main;
+        }
+
+        .sidebar {
+            grid-area: side;
+
+        }
+
+        footer {
+            grid-area: foot;
+            background-color: black;
+            color: aliceblue;
+        }
+
+        @media (max-width:700px) {
+            .sidebar {
+                display: none;
+            }
+
+            body {
+                background-color: wheat;
+                display: grid;
+                height: 100vh;
+                gap: 10px;
+                grid-template-columns: 100px auto;
+                grid-template-rows: 100px 300px 100px;
+                grid-template-areas:
+                    "head head "
+                    "main main "
+                    "foot foot "
+                ;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>This is an Header</h1>
+    </header>
+    <div class="sidebar">
+
+        <p>This is my side bar</p>
+    </div>
+
+    <div class="article">
+        <p>This is my main</p>
+    </div>
+    </div>
+    <footer>
+        <p>This is my footer</p>
+    </footer>
+
+</body>

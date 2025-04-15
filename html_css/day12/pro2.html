@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Hover Effects</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(31, 146, 192);
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .btn1,
+        .btn2,
+        .btn3,
+        .btn4 {
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .btn1,
+        .btn2,
+        .btn3,
+        .btn4 :hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <button class="btn1" style="background-color: #2980b9;">Primary Button </button>
+        <button class="btn2" style="background-color: rgb(6, 152, 104);">secondary Button </button>
+        <button class="btn3" style="background-color: rgb(178, 20, 20);">Danger Button </button>
+        <button class="btn4" style="background-color: orange;">Warning Button </button>
+    </div>
+
+</body>
+
+</html>

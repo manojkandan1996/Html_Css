@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 153</title>
+  <style>
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    .container {
+      width: 200px;
+      height: 100px;
+      position: relative;
+      border: 1px solid black;
+      border-radius: 20px;
+      background-color: #ffffff;
+    }
+
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform:translateX(-50%);
+      opacity: 0;
+      font-size: 24px;
+      font-weight: bold;
+      color: black;
+      transition-property: all;
+      transition-duration: 0.5s;
+      transition-timing-function: ease;
+    }
+
+    .container:hover .text {
+      transform:translateX(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="text">Slide In</div>
+  </div>
+
+</body>
+</html>

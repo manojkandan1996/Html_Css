@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+
+        .hero {
+            background: linear-gradient(to right, #0f0f0f, #15191f);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h4 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: auto;
+        }
+
+
+        .courses {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            
+        }
+
+        .card {
+            background: linear-gradient(to right, #f123b3, #15191f);
+            color: #f9f9f9;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(252, 7, 7, 0.05);
+            padding: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #2575fc;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+        }
+
+
+        .faq {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .details {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 15px;
+            padding: 15px 20px;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-size: medium;
+            color: #2575fc;
+            list-style: none;
+            position: relative;
+            padding-right: 25px;
+        }
+
+        h1::after {
+            content: '+';
+            position: absolute;
+            right: 0;
+            font-size: 1.2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .details h1::after {
+            transform: rotate(45deg);
+        }
+
+        .details p {
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 600px) {
+            .hero h4 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <section class="hero">
+        <h4>SHAMS Acadamey</h4>
+        <p>Join our Courses and internship</p>
+    </section> 
+
+
+    <section class="courses">
+        <div class="card">
+            <h3>The full form of CSS is Cascading Style Sheets. </h3>
+            <p>It is enabled by browsers and is specifically
+                designed to distinguish the document's content from the report's appearance.</p>
+        </div>
+        <div class="card">
+            <h3>HTML stands for Hyper Text Markup Language. </h3>
+            <p>HTML is the standard markup language for creating Web
+                pages. HTML describes the structure of a Web page.</p>
+        </div>
+        <div class="card">
+            <h3>The full form of Java is "Just Another Virtual Accelerator". </h3>
+            <p>Java is not an abbreviation but some programmers made a full form.</p>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="details">
+            <h1>Do I need to pay full amount?</h1>
+            <p>No you can pay installments!</p>
+        </div>
+
+        <div class="details">
+            <h1>How long will the course take?</h1>
+            <p>It take 3 months to complete</p>
+        </div>]
+    </section>
+
+</body>
+
+</html>

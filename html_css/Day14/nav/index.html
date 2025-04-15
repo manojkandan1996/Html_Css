@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            background-color: #1f1f1f;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+            position: relative;
+            padding: 0.5rem;
+        }
+
+
+        .nav-links a:hover {
+            font-size: 1.2rem;
+            color: #00bcd4;
+        }
+
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgb(8, 8, 8);
+            min-width: 150px;
+            border-radius: 5px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 20px;
+            color: #f52c2c;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color:aqua;
+            color:black;
+        }
+
+        .nav-links li:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+
+        }
+
+        @media (max-width:600px) {
+            nav {
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: lightcoral;">
+    <nav>
+        <div class="logo">
+            <img src="./logo.png">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a>
+                <div class="dropdown-content">
+                    <a href="#">Home 1</a>
+                    <a href="#">Home 2</a>
+                    <a href="#">Home 3</a>
+                </div>
+            </li>
+            <li><a href="#">About</a></li>
+            <li>
+                <a href="#">Services</a>
+              
+            </li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>

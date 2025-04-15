@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>167</title>
+    <style>
+        .form {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            background-color: rgb(218, 204, 9);
+            color: black;
+            padding: 10px;
+            gap: 20px;
+        }
+        @media (max-width:700px){
+            .form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            background-color: rgb(208, 31, 214);
+            color: black;
+            padding: 10px;
+            gap: 20px;
+        }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Sign in</h1>
+    <div class="form">
+        <label>Name</label>
+        <input type="name" placeholder="enter your name">
+        <label>Email</label>
+        <input type="email" placeholder="enter your mail-id" required>
+        <label>Password</label>
+        <input type="pass" placeholder="enter your password" required>
+        <button type="signup">Sign in</button>
+    </div>
+</body>

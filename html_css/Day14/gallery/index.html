@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photographer Gallery</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #000;
+            color: white;
+            padding: 20px;
+            z-index: 1000;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        nav .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ee1e9e;
+        }
+
+
+        .gallery-container {
+            padding-top: 100px;
+            padding-left: 5px;
+            display: grid;
+            grid-template-columns: 33% 33% 32%;
+            grid-template-rows: 40% 40%;
+            background-color: aliceblue;
+            gap:10px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .item img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease, filter 0.4s ease;
+            display: block;
+        }
+
+        .item:hover img {
+            transform: scale(1.1);
+            filter: grayscale(80%) blur(2px);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Images</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="gallery-container">
+        <a href="#img1" class="item"><img src="./images/product_1.jpg" alt="Photo 1" /></a>
+        <a href="#img2" class="item"><img src="./images/product_2.jpg" alt="Photo 2" /></a>
+        <a href="#img3" class="item"><img src="./images/product_3.jpg" alt="Photo 3" /></a>
+        <a href="#img4" class="item"><img src="./images/product_4.jpg" alt="Photo 4" /></a>
+        <a href="#img5" class="item"><img src="./images/product_5.jpg" alt="Photo 5" /></a>
+        <a href="#img6" class="item"><img src="./images/real.png" alt="Photo 3" /></a>
+        <a href="#img7" class="item"><img src="./images/real2.jpg" alt="Photo 4" /></a>
+        <a href="#img8" class="item"><img src="./images/real3.avif" alt="Photo 5" /></a>
+    </div>
+</body>
+
+</html>

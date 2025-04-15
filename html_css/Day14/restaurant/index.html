@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #fafafa;
+            color: #333;
+            padding: 40px 20px;
+        }
+
+        header {
+            width: 100%;
+            height: 80px;
+            background-color: #030303;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #f7e4d8;
+        }
+
+        .menu-container {
+            max-width: 1000px;
+            margin: auto;
+            padding-top: 20px;
+        }
+
+        .menu-section {
+            margin-bottom: 50px;
+        }
+
+        .menu-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+            color: #3629f1;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background-color: #fff3e0;
+        }
+
+        .item-name {
+            font-size: 1.1rem;
+        }
+
+        .item-price {
+            font-weight: bold;
+            color: #f7e4d8;
+            transition: color 0.3s ease;
+        }
+
+        .menu-item:hover .item-price {
+            color: #030303;
+        }
+
+        footer {
+            width: 100%;
+top: 20px;
+            height: 50px;
+            background-color: #333;
+            color: #ccc;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .menu-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .item-price {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Food Restaurant</h1>
+    </header>
+    <main>
+        <div class="menu-container">
+
+
+            <div class="menu-section">
+                <h2>Main Courses</h2>
+                <div class="menu-item">
+                    <span class="item-name">Chicken Fried Rice</span>
+                    <span class="item-price">$ 100</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Veg. Fried Rice</span>
+                    <span class="item-price">$ 80</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Chicken Briyani</span>
+                    <span class="item-price">$ 250</span>
+                </div>
+            </div>
+
+
+            <div class="menu-section">
+                <h2>Desserts</h2>
+                <div class="menu-item">
+                    <span class="item-name">Vannila Ice cream</span>
+                    <span class="item-price">$60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Brownie</span>
+                    <span class="item-price">$70</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Lava Cake</span>
+                    <span class="item-price">$80</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>@2025 CopyRights Reserved</p>
+    </footer>
+</body>
+
+</html>

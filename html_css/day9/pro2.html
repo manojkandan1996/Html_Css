@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            background-color: black;
+            color: white;
+            width: 100%;
+            margin-bottom: 10px;
+            height: 80px;
+            
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 100px auto;
+           height: 100vh;
+            
+        }
+        #col1{
+            display: grid;
+            background-color: black;
+            color: white;
+            
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        section{
+            display: grid;
+            grid-template-columns: 400px 400px 400px;
+            grid-template-rows: auto;
+            gap: 10px;
+           
+        }
+        #p1
+        {
+            box-shadow: 0 5px 2px gray ;
+            text-align: center;
+        }
+        #p2
+        {
+            box-shadow: 0 5px 2px gray ;
+            text-align: center;
+        }
+        #p3
+        {
+            box-shadow: 0 5px 2px gray ;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>Dashboard</header>
+    
+    <div class="container">
+        <nav id="col1">
+            <a href="">Home</a>
+            <a href="">Analytics</a>
+            <a href="">settings</a>
+            <a href="">logout</a>
+        </nav>
+        <div id="col2">
+            <h3>Welcome to the Dashboard</h3>
+            <p>This is a responsive layout using CSS grid</p>
+            <section>
+                <p id="p1"> Sales Report</p>
+                <p id="p2">User Statistics</p>
+                <p id="p3">Revenue</p>
+            </section>
+        </div>
+        
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          header {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        .article,.sidebar{
+            background-color: aqua;
+            color: black;
+            padding: 10px;
+        }
+
+        body {
+       
+            color: white;
+            display: grid;
+            height: 100vh;
+            gap: 20px;
+            grid-template-columns: 100px auto;
+            grid-template-rows: 100px 300px 100px;
+            grid-template-areas:
+                 "head head "
+                " side main"
+                "foot foot";
+
+        }
+        header{
+            grid-area: head;
+        }
+        .article{
+            grid-area: main;
+        }
+        .sidebar{
+            grid-area: side;
+        }
+        footer{
+            grid-area: foot;
+            background-color: black;
+            color: azure;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>M.S DHONI</h1>
+    </header>
+    <div class="sidebar">
+        <p>Former captain</p>
+    </div>
+    <div class="article">
+        <p>Former CSK captain</p>
+    </div>
+    <footer><p>Indian Best Wicket Keeper</p></footer>
+</body>
+</html>

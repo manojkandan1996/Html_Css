@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container { 
+          display: flex;
+          flex-direction: row;
+          }
+        .red {
+          background: orangered;
+          display: flex;
+          flex-direction: column;
+        }
+        .green {
+          background: yellowgreen;
+        }
+        .blue {
+          background: steelblue;
+        }
+        .container div {
+          padding: 30px;
+          color: white;
+          flex: 1;
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="red">RED
+          <div class="green">1a</div>
+          <div class="blue">1b</div>
+        </div>
+        <div class="green">GREEN</div>
+        <div class="blue">BLUE</div>
+      </div>
+</body>
+</html>

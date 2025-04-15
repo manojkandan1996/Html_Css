@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-Sizing Example</title>
+ <style>
+    /* Apply box-sizing globally to fix layout issues */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: lightgray;
+    border: 2px solid black;
+    display: flex;
+    gap: 10px; /* Space between nested elements */
+}
+
+.box {
+    flex: 1; /* Makes both boxes equal width */
+    padding: 20px;
+    background-color: white;
+    border: 2px solid blue;
+    text-align: center;
+}
+
+ </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+    </div>
+</body>
+</html>

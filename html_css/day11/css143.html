@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css 143</title>
+    <style>
+        
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #f0f0f0;
+            color: white;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #007bff;
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            top: 100px;
+            left: 100px;
+            width: 400px;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid #000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 2; 
+            color: wheat;
+        }
+       .overlap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 50%;
+            background: brown;
+            z-index: 3; 
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="overlap"></div>
+    <div class="content">
+        <h2>Content</h2>
+        <p>This is a simple content on top of the background.</p>
+    </div>
+</body>
+</html>

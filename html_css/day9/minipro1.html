@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>CSS Grid Photo Gallery</title> 
+    <style> 
+        * { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f0f0f0; 
+        } 
+ 
+        .grid-container { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); /* Three columns */ 
+            grid-template-rows: auto; /* Rows adjust automatically */ 
+            gap: 20px; 
+            padding: 20px; 
+        } 
+ 
+        .grid-item { 
+            padding: 30px;
+            background-color: white; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+            overflow: hidden; 
+        } 
+ 
+        .grid-item img { 
+            width: 100%; 
+            display: block; 
+        } 
+ 
+        .grid-item h3 { 
+            padding: 10px; 
+            margin: 0; 
+            text-align: center; 
+            background-color: #333; 
+            color: white; 
+        } 
+ button{
+    background-color: lawngreen;
+padding: 10px;
+ }
+        
+    </style> 
+</head> 
+<body> 
+    <div class="grid-container"> 
+        <div class="grid-item"> 
+            <h1>Basic</h1>
+            <strong>999/month</strong>
+            <ul>
+                <li>10 GB Storage</li>
+                <li>Email support</li>
+                <li>Custom Domain</li>
+            </ul><br>
+            <button>Choose plan</button>
+        </div> 
+        <div class="grid-item"> 
+            <h1>Standard</h1>
+            <strong>1999/month</strong>
+            <ul>
+                <li>50 GB storage</li>
+                <li>Priority support</li>
+                <li>Custom Domain </li>
+            </ul><br>
+            <button>Choose plan</button>
+        </div> 
+        <div class="grid-item"> 
+            <h1>Premium</h1>
+            <strong>2899/month</strong>
+            <ul>
+                <li>Unlimited storage</li>
+                <li>24/7 support</li>
+                <li>Custom Domain & Analytics</li>
+            </ul>
+            <button>Choose plan</button>
+        </div> 
+    </div> 
+</body> 
+</html>

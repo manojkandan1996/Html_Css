@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+            background-color: aqua;
+            text-align: center;
+        }
+        header{
+            background-color: black;
+            color: aliceblue;
+            padding: 10px;
+            font-size: large;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 200px 200px;
+            grid-template-rows: 200px 200px;
+          
+        }
+        .col2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .col4{
+            display: grid;
+            grid-template-columns: 100px 100px;
+            grid-template-rows: 100px 100px;
+        }
+        .col1,.col2,.col3,.col4,.grid1,.grid2,.grid3,.grid4
+        {
+            border: 1px solid  black;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header>MS DHONI</header>
+    <div class="container">
+        <div class="col1">
+            <p>CSK Captain</p>
+        </div>
+        <div class="col2">
+            <p>Indian wicket-keeper</p>
+        </div>
+   
+    <div class="col3">
+        <p>Indian captain</p>
+        </div>
+        <div class="col4">
+            <div class="grid1">1</div>
+            <div class="grid2">2</div>
+            <div class="grid3">3</div>
+            <div class="grid4">4</div>
+            </div>
+    </div> 
+</div>
+</body>
+</html>

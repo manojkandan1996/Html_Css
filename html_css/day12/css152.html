@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 152</title>
+    <style>
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .container {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            border: 1px solid #111111;
+            border-radius: 20px;
+            background-color:palevioletred;
+            text-align: center;
+        }
+
+        .text {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-80%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #050505;
+            opacity: 0;
+            animation-name: fadeText;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes fadeText {
+
+        100%{
+            opacity: 0;
+        }
+
+        0%{
+            opacity: 3;
+
+        }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="text">MANOJ</div>
+
+    </div>
+
+</body>
+
+</html>

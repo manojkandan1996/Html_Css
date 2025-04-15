@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pure CSS Art Page</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
+
+    .x {
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    .l1{
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      transform: translateZ(-1px) scale(2);
+      background: linear-gradient(to bottom, #87ceeb, #f0f8ff);
+      z-index: -1;
+    }
+
+   
+    .l2 {display: flex;
+        flex-direction: row;
+      background: linear-gradient(to bottom, #1fbb44, #468804);
+    }
+
+    
+    .sun {
+      position: absolute;
+      top: 100px;
+      right: 50%;
+      width: 100px;
+      height: 100px;
+      background-color:yellow ;
+      border-radius: 50%;
+    }
+
+    
+    .tree {
+      position: absolute;
+      bottom: 0;
+      width: 60px;
+      height: 120px;
+    }
+
+    .tree .trunk {
+      background: #8B4513;
+      height: 40px;
+      width: 20px;
+      margin: 0 auto;
+
+    }
+
+    .tree .leaves {
+      width: 0;
+      height: 0;
+      border-top: -200px solid transparent;
+      border-left: 2cap solid transparent;
+      border-right: 40px solid transparent;
+      border-bottom: 10px solid green;
+      margin: -50px auto 0;
+      border-radius: 50px;
+      margin-right:80px;
+     
+    }
+    .tree:nth-child(2) {
+      left: 90%;
+    }
+    .tree:nth-child(3) {
+      left: 50%;
+    }
+    .tree:nth-child(4) {
+      left: 60%;
+    }
+
+        .ball {
+            position: absolute;
+            bottom: 150px;
+            left: 40%;
+            width: 50px;
+            height: 50px;
+            background: lightgreen;
+            border-radius: 50%;
+            animation: bounce 8s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-150px);
+            }
+        }
+
+
+        .cube-container {
+            perspective: 800px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .cube {
+            width: 60px;
+            height: 60px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateCube 5s infinite linear;
+        }
+
+        .face {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(226, 12, 144, 0.7);
+            border: 2px solid #0a0a0a;
+        }
+
+        .front {
+            transform: translateZ(30px);
+        }
+
+        .back {
+            transform: rotateY(180deg) translateZ(30px);
+        }
+
+        .right {
+            transform: rotateY(90deg) translateZ(30px);
+        }
+
+        .left {
+            transform: rotateY(-90deg) translateZ(30px);
+        }
+
+        .top {
+            transform: rotateX(90deg) translateZ(30px);
+        }
+
+        .bottom {
+            transform: rotateX(-90deg) translateZ(30px);
+        }
+
+        @keyframes rotateCube {
+            0% {
+                transform: rotateX(0) rotateY(0);
+            }
+
+            100% {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 200vh;
+            padding: 100vh 20px 0;
+            background: transparent;
+            text-align: center;
+        }
+
+        .content h1 {
+            font-size: 4rem;
+            color: #333;
+            text-shadow: 1px 1px 3px white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="x">
+        
+            <div class="1">
+              <div class="sun"></div>
+            </div>
+                    <div class="2">
+              <div class="tree">
+                <div class="trunk"></div>
+                <div class="leaves"></div>
+              </div>
+              <div class="tree">
+                <div class="trunk"></div>
+                <div class="leaves"></div>
+              </div>
+              <div class="tree">
+                <div class="trunk"></div>
+                <div class="leaves"></div>
+              </div>
+            <div class="ball"></div>
+            <div class="cube-container">
+                <div class="cube">
+                    <div class="face front"></div>
+                    <div class="face back"></div>
+                    <div class="face right"></div>
+                    <div class="face left"></div>
+                    <div class="face top"></div>
+                    <div class="face bottom"></div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</body>
+
+</html>

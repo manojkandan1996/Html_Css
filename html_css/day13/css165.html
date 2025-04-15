@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 165</title>
+    <style>
+        header {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        .article,
+        .sidebar {
+            background-color: red;
+            color: black;
+            padding: 30px;
+
+        }
+
+        body {
+            background-color: wheat;
+            display: grid;
+            height: 100vh;
+            gap: 10px;
+            grid-template-columns: 100px auto;
+            grid-template-rows: 100px 300px 100px;
+            grid-template-areas:
+                "head head "
+                "side main "
+                "foot foot "
+            ;
+        }
+
+        header {
+            grid-area: head;
+
+        }
+
+        .article {
+            grid-area: main;
+        }
+
+        .sidebar {
+            grid-area: side;
+
+        }
+
+        footer {
+            grid-area: foot;
+            background-color: black;
+            color: rgb(221, 80, 15);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            
+        }
+
+        @media (max-width:700px) {
+            footer {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                line-height: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Header</h1>
+    </header>
+    <div class="sidebar">
+
+        <p>This is my side bar</p>
+    </div>
+
+    <div class="article">
+        <p>This is my main</p>
+    </div>
+    </div>
+    <footer>
+        <p>Footer</p>
+        <p>@2025</p>
+        <p>Copyrights Reserved</p>
+    </footer>
+
+</body>

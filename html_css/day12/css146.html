@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 146</title>
+    <style>
+        img {
+            filter: grayscale(100%)brightness(100%);
+            transition-property: filter;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+        }
+
+        img:hover {
+            filter: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="filter">
+        <img src="./images/ajith.jpeg">
+    </div>
+</body>

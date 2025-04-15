@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: grid;
+            grid-template-columns:repeat(3,1fr);
+            grid-template-rows:auto ;
+            gap: 15px;
+        
+
+        }
+
+        section{
+            text-align: center;
+            border: 1px solid black;
+        }
+        #s1{
+            grid-column: 1/4;
+            grid-row:1/5;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section id="s1">1</section>
+        <section id="s2">2</section>
+        <section id="s3">3</section>
+        <section id="s4">4</section>
+        <section id="s5">5</section>
+        <section id="s6">6</section>
+        <section id="s4">7</section>
+        <section id="s5">8</section>
+        <section id="s6">9</section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>CSS Grid Photo Gallery</title> 
+    <style> 
+        * { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f0f0f0; 
+        } 
+ 
+        .grid-container { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); /* Three columns */ 
+            grid-template-rows: auto; /* Rows adjust automatically */ 
+            gap: 20px; 
+            padding: 20px; 
+        } 
+ 
+        .grid-item { 
+            background-color: white; 
+            border: 1px solid #ddd;
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+            overflow: hidden; 
+        } 
+ 
+        .grid-item img { 
+            height: 100%;
+            width: 100%; 
+            display: block; 
+        } 
+ 
+        .grid-item h3 { 
+            padding: 10px; 
+            margin: 0; 
+            text-align: center; 
+            background-color: #333; 
+            color: white; 
+        } 
+ 
+        
+    </style> 
+</head> 
+<body> 
+    <div class="grid-container"> 
+        <div class="grid-item"> 
+            <img src="./images/1.jpg" alt="Placeholder Image"> 
+            
+        </div> 
+        <div class="grid-item"> 
+            <img src="./images/2.jpg" alt="Placeholder Image"> 
+            
+        </div> 
+        <div class="grid-item"> 
+            <img src="./images/3.jpg" alt="Placeholder Image"> 
+        </div> 
+        <div class="grid-item"> 
+            <img src="./images/vijay.jpeg" alt="Placeholder Image"> 
+            
+        </div> 
+        <div class="grid-item"> 
+            <img src="./images/real.png" alt="Placeholder Image"> 
+            
+        </div> 
+        <div class="grid-item"> 
+            <img src="./images/ajith.jpeg" alt="Placeholder Image"> 
+            
+        </div> 
+    </div> 
+</body> 
+</html>

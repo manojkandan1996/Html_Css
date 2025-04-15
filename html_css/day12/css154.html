@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sepia</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        button {
+            background-color: palevioletred;
+            color: black;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 20px;
+            filter:none;
+            transition-property:filter;
+            transition-duration:0.5;
+            transition-timing-function:ease;
+        }
+
+        button:hover {
+            filter: sepia(60%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="button">
+        <button type="bt">MANOJ</button>
+    </div>
+</body>
