@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <script>
+function calculateGrade() {
+    let marks = [];
+    let numberOfSubjects = parseInt(prompt("Enter the number of subjects:"));
+    for (let i = 0; i < numberOfSubjects; i++) {
+        let mark = parseFloat(prompt(`Enter marks for subject ${i + 1}:`));
+        marks.push(mark);
+    }
+    let total = marks.reduce((sum, mark) => sum + mark, 0);
+    let average = total / numberOfSubjects;
+    let grade;
+    if (average >= 90) {
+        grade = 'A';
+    } else if (average >= 75&&average<=89) {
+        grade = 'B';
+    } else if (average >= 50&& average<=74) {
+        grade = 'C';
+    } else if (average >= 50) {
+        grade = 'D';
+    } else {
+        grade = 'F';
+    }
+    console.log(`Total Marks: ${total}\nAverage Marks: ${average.toFixed(2)}\nGrade: ${grade}`);
+}
+calculateGrade();
+    </script>
+</body>
+</html>
