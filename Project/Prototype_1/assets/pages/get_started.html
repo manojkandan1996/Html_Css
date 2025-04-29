@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCQ Example</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  
+
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.option {
+  display: block;
+  padding: 10px;
+  background: #EFBCBC;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.option:hover {
+  background: #d0d6db;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="mcq-container">
+    <h2>1. What's your previous experience in the restaurant industry?</h2>
+    <form>
+      <label class="option">
+        <input type="radio" name="q1" value="a" />
+        A) I already work in the restaurant industry
+
+      </label><br />
+
+      <label class="option">
+        <input type="radio" name="q1" value="b" />
+        B) New to the restaurant industry
+      </label><br />
+
+      <label class="option">
+        <input type="radio" name="q1" value="c" />
+        C) Looking for a job
+      </label><br />
+
+      <label class="submit">
+        <input type="submit" name="sub" value="D"/>
+    
+      </label>
+    </form>
+  </div>
+</body>
+</html>

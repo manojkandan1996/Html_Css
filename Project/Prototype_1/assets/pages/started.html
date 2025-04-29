@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Started</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            background-color: #0F5D4B;
+            padding: 20px;
+            display: flex;
+            color: white;
+            height: 100px;
+            font-size: 40px;
+
+        }
+
+
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+            justify-content: space-between;
+            margin-left: 300px;
+
+        }
+
+        .nav-links li {
+            position: relative;
+            text-align: center;
+            margin-top: 15px;
+
+
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            position: relative;
+            padding: 0.5rem;
+            font-size: 30px;
+
+        }
+
+        section {
+            display: flex;
+            gap: 60px;
+            margin-top: 20px;
+
+        }
+
+        .icons {
+            width: 100%;
+            height: 100%;
+        }
+
+        .l2 p {
+            font-size: 42px;
+            text-decoration: underline;
+        }
+
+        .l1 p {
+            color: #0F5D4B;
+            margin-top: -10px;
+            font-size: 50px;
+            border-radius: 50%;
+            background-color: #35C6A1;
+        }
+
+        .form-box {
+            height: 1000px;
+            width: 1200px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 40px 40px 40px 80px;
+        }
+
+        .text {
+            margin-left: 100px;
+            color: rgb(3, 3, 3);
+        }
+
+        .l2 p {
+            color: white;
+        }
+
+        .text p,
+        a {
+            padding-top: 60px;
+        }
+
+        #head {
+            color: black;
+            font-weight: bold;
+            font-size: 40px;
+        }
+
+        #details {
+            padding-top: 5px;
+            color: black;
+            font-size: 25px;
+            padding-bottom: 60px;
+        }
+
+        #u {
+            color: black;
+            font-size: 30px;
+            text-decoration: none;
+            line-height: 2;
+        }
+
+        #p {
+            color: black;
+            font-size: 30px;
+            text-decoration: none;
+            line-height: 2;
+
+        }
+
+        .container {
+            font-size: 30px;
+            background: image();
+        }
+
+        hr {
+            width: 40%;
+            border-color: black;
+        }
+
+        #home_img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #d1 {
+            color: black;
+        }
+
+        #d1 h1 {
+            margin: 25px 25px 0px 125px;
+            font-weight: bold;
+            color: #0f5d4b;
+            font-size: 60px;
+        }
+
+        #d1 p {
+            margin: 0px 85px 55px 125px;
+            color: black;
+            font-size: 33px;
+        }
+
+        #d1 button {
+            margin: 0px 25px 85px 490px;
+            background-color: #0F5D4B;
+            color: white;
+            border-radius: 25px;
+            font-size: 20px;
+            border: none;
+            padding: 10px;
+        }
+
+        #d1 h2 {
+            margin: 80px 25px 85px 125px;
+            color: #0F5D4B;
+            font-weight: bold;
+            font-size: 40px;
+        }
+
+        #row1 {
+            display: flex;
+            height: 400px;
+        }
+
+        #col1 {
+            font-size: 30px;
+            width: 50%;
+            padding: 40px;
+        }
+
+        #col1 p {
+            margin-top: 90px;
+            margin-bottom: 80;
+        }
+
+        #col2 {
+            font-size: 30px;
+            width: 50%;
+            padding: 60px;
+        }
+
+        #col2 h2 {
+            font-size: 38px;
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        #col2 p {
+            font-size: 35px;
+        }
+
+        #row2 {
+            display: flex;
+            height: 400px;
+        }
+
+        #col3 {
+            font-size: 30px;
+            width: 50%;
+            padding: 40px;
+        }
+
+        #col3 h2 {
+            color: red;
+        }
+
+        #col3 p {
+            margin-top: 90px;
+            margin-bottom: 80;
+        }
+
+        #col4 {
+            font-size: 30px;
+            width: 50%;
+            padding: 60px;
+        }
+
+        #col4 h2 {
+            font-size: 34px;
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        #col4 p {
+            font-size: 35px;
+        }
+        #row3{
+            display: flex;
+            height: 300px;
+            background-color: #0F5D4B;
+            color: white;
+        }
+        #col5{
+            width: 25%;
+        }
+        #col5 h4
+        {
+            font-size: 30px;
+            margin-left: 40px;
+            margin-top: 10px;
+        }
+        #col6{
+            width: 25%;
+         
+        }
+        #col7{
+            width: 25%;
+           
+        }
+        #col8{
+            width: 25%;
+           
+        }
+        #sub{
+            margin-left: 40px;
+            font-size: 25px;
+        }
+        #get
+        {
+            margin-left: 40px;
+        }
+        #copy{
+            font-size: 25px;
+        }
+        #col6 h4{
+            font-size: 30px;
+            font-weight: lighter;
+            margin-top: 10px;
+        }
+        #col6{
+            text-align: center;
+        }
+        #col7 h4{
+            font-size: 30px;
+            margin-bottom: 25px;
+            margin-top: 10px;
+        }
+        #col7 ul
+        {
+           
+            line-height: 3;
+            
+        }
+        #col7
+        {
+            text-align: center;
+        
+        }
+        #col8 h4{
+            font-size: 30px;
+            margin-bottom: 25px;
+            margin-top: 10px;
+        }
+        #col8 ul
+        {
+           
+            line-height: 3;
+            
+        }
+
+ 
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.mcq-container
+{
+    margin-left: 150px;
+    margin-right: 150px;
+    font-size: 30px;
+    color: #D40B0B;
+    font-weight: bold;
+}
+.mcq-container h2{
+    margin-top: 80px;
+    margin-bottom: 60px;
+    font-size: 35px;
+    color: black;
+    font-weight: bold;
+    height: 20px;
+}
+.option {
+  display: block;
+  padding: 10px;
+  background: #EFBCBC;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid red;
+}
+
+.option:hover {
+  background: #d0d6db;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+#in{
+    font-size: 35px;
+    padding: 30px;
+    background-color: #D40B0B;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 20px;
+
+}
+    </style>
+</head>
+
+<body>
+    <nav>
+        <section>
+            <div class="l1">
+                <p>OK</p>
+            </div>
+            <div class="l2">
+                <p>Oasis Kitchen</p>
+            </div>
+        </section>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Blog</a></li>
+            <li> <a href="#">Pricing</a> </li>
+            <li><a href="#">Order</a></li>
+            <li><img src="../Icons/heart icon.png"></li>
+            <li> <img src="../Icons/shopping-cart icon.png"></li>
+            <li><a href="./index1.html"><img src="../Icons/user icon.png"></a></li>
+        </ul>
+    </nav>
+    
+    <div class="mcq-container">
+        <h2>1. What's your previous experience in the restaurant industry?</h2>
+        <form>
+          <label class="option">
+            <input type="radio" name="q1" value="a" />
+            A) I already work in the restaurant industry
+    
+          </label><br />
+    
+          <label class="option">
+            <input type="radio" name="q1" value="b" />
+            B) New to the restaurant industry
+          </label><br />
+    
+          <label class="option">
+            <input type="radio" name="q1" value="c" />
+            C) Looking for a job
+          </label><br />
+    
+          <label class="submit">
+            <input id="in" type="submit" name="sub" value="OK"/>
+        
+          </label>
+        </form>
+
+        
+    </div>
+  
+        </div>
+       
+    <div id="row3">
+        <div id="col5">
+            <h4>Oasis Kitchen</h4>
+            <br>
+            <p id="sub">Subscribe</p>
+           <br><br>
+           <p id="get">Get 10% off your first <br>product</p>
+           <br>
+           <br>
+           <p id="copy">copyright@oasiskitchen.com</p>
+        </div>
+        <div id="col6">
+            <h4>Support</h4><br><br>
+            <p>11, Gandhi Nagar,Chennai.</p>
+           <br>
+           <p>exclusive@gmail .com</p>
+           <br>
+           <p>+123456789</p>
+        </div>
+        <div id="col7">
+           <h4>Blog</h4>
+           <ul type="none">
+            <li> Korean kitchen</li>
+            <li>Successfull Pizza</li>
+            <li>Festive celebration</li>
+            <li>Memorable Dining</li>
+           </ul>
+        </div>
+        <div id="col8">
+            <h4>Quick Link</h4>
+            <ul type="none">
+             <li> Terms of use</li>
+             <li>FAQ</li>
+             <li>Contact</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

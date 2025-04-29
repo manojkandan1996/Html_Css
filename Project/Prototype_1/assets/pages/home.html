@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            background-color: #0F5D4B;
+            padding: 20px;
+            display: flex;
+            color: white;
+            height: 100px;
+            font-size: 40px;
+
+        }
+
+
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+            justify-content: space-between;
+            margin-left: 300px;
+
+        }
+
+        .nav-links li {
+            position: relative;
+            text-align: center;
+            margin-top: 15px;
+
+
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            position: relative;
+            padding: 0.5rem;
+            font-size: 30px;
+
+        }
+
+        section {
+            display: flex;
+            gap: 60px;
+            margin-top: 20px;
+
+        }
+
+        .icons {
+            width: 100%;
+            height: 100%;
+        }
+
+        .l2 p {
+            font-size: 40px;
+            text-decoration: underline;
+        }
+
+        .l1 p {
+            color: #0F5D4B;
+            margin-top: -10px;
+            font-size: 50px;
+            border-radius: 50%;
+            background-color: #35C6A1;
+        }
+
+        .form-box {
+            height: 1000px;
+            width: 1200px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 40px 40px 40px 80px;
+        }
+
+        .text {
+            margin-left: 100px;
+            color: rgb(3, 3, 3);
+        }
+
+        .l2 p {
+            color: white;
+        }
+
+        .text p,
+        a {
+            padding-top: 60px;
+        }
+
+        #head {
+            color: black;
+            font-weight: bold;
+            font-size: 40px;
+        }
+
+        #details {
+            padding-top: 5px;
+            color: black;
+            font-size: 25px;
+            padding-bottom: 60px;
+        }
+
+        #u {
+            color: black;
+            font-size: 30px;
+            text-decoration: none;
+            line-height: 2;
+        }
+
+        #p {
+            color: black;
+            font-size: 30px;
+            text-decoration: none;
+            line-height: 2;
+
+        }
+
+        .container {
+            font-size: 30px;
+            background: image();
+        }
+
+        hr {
+            width: 40%;
+            border-color: black;
+        }
+
+        #home_img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #d1 {
+            color: black;
+        }
+
+        #d1 h1 {
+            margin: 25px 25px 0px 125px;
+            font-weight: bold;
+            color: #0f5d4b;
+            font-size: 60px;
+        }
+
+        #d1 p {
+            margin: 0px 85px 55px 125px;
+            color: black;
+            font-size: 33px;
+        }
+
+        #d1 button {
+            margin: 0px 25px 85px 490px;
+            background-color: #0F5D4B;
+            color: white;
+            border-radius: 25px;
+            font-size: 20px;
+            border: none;
+            padding: 10px;
+        }
+
+        #d1 h2 {
+            margin: 80px 25px 85px 125px;
+            color: #0F5D4B;
+            font-weight: bold;
+            font-size: 40px;
+        }
+
+        #row1 {
+            display: flex;
+            height: 400px;
+        }
+
+        #col1 {
+            font-size: 30px;
+            width: 50%;
+            padding: 40px;
+        }
+
+        #col1 p {
+            margin-top: 90px;
+            margin-bottom: 80;
+        }
+
+        #col2 {
+            font-size: 30px;
+            width: 50%;
+            padding: 60px;
+        }
+
+        #col2 h2 {
+            font-size: 38px;
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        #col2 p {
+            font-size: 35px;
+        }
+
+        #row2 {
+            display: flex;
+            height: 400px;
+        }
+
+        #col3 {
+            font-size: 30px;
+            width: 50%;
+            padding: 40px;
+        }
+
+        #col3 h2 {
+            color: red;
+        }
+
+        #col3 p {
+            margin-top: 90px;
+            margin-bottom: 80;
+        }
+
+        #col4 {
+            font-size: 30px;
+            width: 50%;
+            padding: 60px;
+        }
+
+        #col4 h2 {
+            font-size: 34px;
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        #col4 p {
+            font-size: 35px;
+        }
+        #row3{
+            display: flex;
+            height: 300px;
+            background-color: #0F5D4B;
+            color: white;
+        }
+        #col5{
+            width: 25%;
+        }
+        #col5 h4
+        {
+            font-size: 30px;
+            margin-left: 40px;
+            margin-top: 10px;
+        }
+        #col6{
+            width: 25%;
+         
+        }
+        #col7{
+            width: 25%;
+           
+        }
+        #col8{
+            width: 25%;
+           
+        }
+        #sub{
+            margin-left: 40px;
+            font-size: 25px;
+        }
+        #get
+        {
+            margin-left: 40px;
+        }
+        #copy{
+            font-size: 25px;
+        }
+        #col6 h4{
+            font-size: 30px;
+            font-weight: lighter;
+            margin-top: 10px;
+        }
+        #col6{
+            text-align: center;
+        }
+        #col6{
+            text-decoration: none;
+        }
+        #col6{
+            text-decoration:none;
+        }
+        #col7 h4{
+            font-size: 30px;
+            margin-bottom: 25px;
+            margin-top: 10px;
+        }
+        #col7 ul
+        {
+           
+            line-height: 3;
+            
+        }
+        #col7
+        {
+            text-align: center;
+        
+        }
+        #col8 h4{
+            font-size: 30px;
+            margin-bottom: 25px;
+            margin-top: 10px;
+        }
+        #col8 ul
+        {
+           
+            line-height: 3;
+            
+        }
+        #row3 a{
+
+            text-decoration: none;
+            color: white;
+        }
+        .nav-links a:link{
+            color: red;
+
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <nav>
+        <section>
+            <div class="l1">
+                <p>OK</p>
+            </div>
+            <div class="l2">
+                <p>Oasis Kitchen</p>
+            </div>
+        </section>
+        <ul class="nav-links">
+            <li><a id="h" href="#">Home</a></li>
+            <li><a href="../pages/blog.html">Blog</a></li>
+            <li> <a href="#">Pricing</a> </li>
+            <li><a href="#">Order</a></li>
+            <li><img src="../Icons/heart icon.png"></li>
+            <li> <img src="../Icons/shopping-cart icon.png"></li>
+            <li><a href="./index1.html"><img src="../Icons/user icon.png"></a></li>
+        </ul>
+    </nav>
+    <section>
+        <img id="home_img" src="../images/home page image.png">
+    </section>
+    <div id="d1">
+        <h1>Restaurants reimagined</h1>
+        <p>Oasis kitchen is taking restaurants to a whole new place . Where seamless delivery is priortized,costs are
+            minimized,and profits are maximized.
+        </p>
+        <button onclick="location.href='started.html'">GET STARTED</button>
+
+        <h2>The secret ingredient <br> for growing your business</h2>
+    </div>
+    <div id="row1">
+        <div id="col1">
+            <p>Moving into our kitchens is simple and cost-effective. You'll avoid spending upfront to build out a brick
+                and mortar restaurant. With CloudKitchens, you eliminate front-of-house labor and overhead, taking home
+                a bigger slice of the pie in profits.</p>
+        </div>
+        <div id="col2">
+            <h2>Open a ghost kitchen in weeks</h2>
+            <p>We make it easy to get your own kitchen up and running, whether you're launching one from scratch, or
+                expanding an established brand to a new market.</p>
+        </div>
+    </div>
+
+    <div id="row2">
+        <div id="col3">
+            <h2>Get your cooking to a larger audience</h2>
+            <p>
+                Manage your entire restaurant business through a single tablet. Access all your orders in a single app
+                integrate all your delivery platforms, and geinsights and tools to help run your business.
+            </p>
+        </div>
+        <div id="col4">
+            <h2>
+                Leverage technology to streamline your business
+            </h2>
+            <p>
+                Get instant access to an entirely new pool of customers. We place our kitchens in delivery hotspots with
+                large numbers of hungry eaters who frequently order food online.
+            </p>
+        </div>
+    </div>
+    <div id="row3">
+        <div id="col5">
+            <h4>Oasis Kitchen</h4>
+            <br>
+            <p id="sub">Subscribe</p>
+           <br><br>
+           <p id="get">Get 10% off your first <br>product</p>
+           <br>
+           <br>
+           <p id="copy">copyright@oasiskitchen.com</p>
+        </div>
+        <div id="col6">
+            <h4>Support</h4><br><br>
+            <p>11, Gandhi Nagar,Chennai.</p>
+           <br>
+           <p>exclusive@gmail .com</p>
+           <br>
+           <a href="./index1.html"><p>+123456789</p></a>
+        </div>
+        <div id="col7">
+           <h4>Blog</h4>
+           <ul type="none">
+            <li>Korean kitchen</li>
+            <li>Successfull Pizza</li>
+            <li>Festive celebration</li>
+            <li>Memorable Dining</li>
+           </ul>
+        </div>
+        <div id="col8">
+            <h4>Quick Link</h4>
+            <ul type="none">
+             <li> Terms of use</li>
+             <li>FAQ</li>
+             <li>Contact</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

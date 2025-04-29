@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            background-color: #0F5D4B;
+            padding: 20px;
+            display: flex;
+            color: white;
+            height: 100px;
+            font-size: 40px;
+
+        }
+
+
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+            justify-content: space-between;
+            margin-left: 300px;
+
+        }
+
+        .nav-links li {
+            position: relative;
+            text-align: center;
+            margin-top: 15px;
+
+
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            position: relative;
+            padding: 0.5rem;
+            font-size: 30px;
+
+        }
+
+        section {
+            display: flex;
+            gap: 60px;
+            margin-top: 20px;
+
+        }
+
+        .icons {
+            width: 100%;
+            height: 100%;
+        }
+
+        .l2 p {
+            font-size: 40px;
+            text-decoration: underline;
+        }
+
+        .l1 p {
+            color: #0F5D4B;
+            margin-top: -10px;
+            font-size: 50px;
+            border-radius: 50%;
+            background-color: #35C6A1;
+        }
+
+        .form-box {
+            height: 1000px;
+            width: 1200px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 40px 40px 40px 80px;
+        }
+
+        .text {
+            margin-left: 100px;
+            color: rgb(3, 3, 3);
+        }
+
+        .l2 p {
+            color: white;
+        }
+
+        .text p,
+        a {
+            padding-top: 60px;
+        }
+
+        #head {
+            color: black;
+            font-weight: bold;
+            font-size: 40px;
+        }
+
+        #details {
+            padding-top: 5px;
+            color: black;
+            font-size: 25px;
+            padding-bottom: 60px;
+        }
+
+        #u {
+            color: black;
+            font-size: 30px;
+            text-decoration: none;
+            line-height: 2;
+        }
+
+        #p {
+            color: black;
+            font-size: 30px;
+            text-decoration: none;
+            line-height: 2;
+
+        }
+
+        .container {
+            font-size: 30px;
+            background: image();
+        }
+
+        hr {
+            width: 40%;
+            border-color: black;
+        }
+
+        #home_img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #d1 {
+            color: black;
+        }
+
+        #d1 h1 {
+            margin: 25px 25px 0px 125px;
+            font-weight: bold;
+            color: #0f5d4b;
+            font-size: 60px;
+        }
+
+        #d1 p {
+            margin: 0px 85px 55px 125px;
+            color: black;
+            font-size: 33px;
+        }
+
+        #d1 button {
+            margin: 0px 25px 85px 490px;
+            background-color: #0F5D4B;
+            color: white;
+            border-radius: 25px;
+            font-size: 20px;
+            border: none;
+            padding: 10px;
+        }
+
+        #d1 h2 {
+            margin: 80px 25px 85px 125px;
+            color: #0F5D4B;
+            font-weight: bold;
+            font-size: 40px;
+        }
+
+        #row1 {
+            display: flex;
+            height: 400px;
+        }
+
+        #col1 {
+            font-size: 30px;
+            width: 50%;
+            padding: 40px;
+        }
+
+        #col1 p {
+            margin-top: 90px;
+            margin-bottom: 80;
+        }
+
+        #col2 {
+            font-size: 30px;
+            width: 50%;
+            padding: 60px;
+        }
+
+        #col2 h2 {
+            font-size: 38px;
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        #col2 p {
+            font-size: 35px;
+        }
+
+        #row2 {
+            display: flex;
+            height: 400px;
+        }
+
+        #col3 {
+            font-size: 30px;
+            width: 50%;
+            padding: 40px;
+        }
+
+        #col3 h2 {
+            color: red;
+        }
+
+
+        #row3 {
+            display: flex;
+            height: 300px;
+            background-color: #0F5D4B;
+            color: white;
+        }
+
+        #col5 {
+            width: 25%;
+        }
+
+        #col5 h4 {
+            font-size: 30px;
+            margin-left: 40px;
+            margin-top: 10px;
+        }
+
+        #col6 {
+            width: 25%;
+
+        }
+
+        #col7 {
+            width: 25%;
+
+        }
+
+        #col8 {
+            width: 25%;
+
+        }
+
+        #sub {
+            margin-left: 40px;
+            font-size: 25px;
+        }
+
+        #get {
+            margin-left: 40px;
+        }
+
+        #copy {
+            font-size: 25px;
+        }
+
+        #col6 h4 {
+            font-size: 30px;
+            font-weight: lighter;
+            margin-top: 10px;
+        }
+
+        #col6 {
+            text-align: center;
+        }
+
+        #col6 {
+            text-decoration: none;
+        }
+
+        #col6 {
+            text-decoration: none;
+        }
+
+        #col7 h4 {
+            font-size: 30px;
+            margin-bottom: 25px;
+            margin-top: 10px;
+        }
+
+        #col7 ul {
+
+            line-height: 3;
+
+        }
+
+        #col7 {
+            text-align: center;
+
+        }
+
+        #col8 h4 {
+            font-size: 30px;
+            margin-bottom: 25px;
+            margin-top: 10px;
+        }
+
+        #col8 ul {
+
+            line-height: 3;
+
+        }
+
+        #row3 a {
+
+            text-decoration: none;
+            color: white;
+        }
+
+        #sec1 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #sec2 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #sec3 {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #sec4 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #blk {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: bold;
+            color: #0F5D4B;
+        }
+
+        #sec1 img {
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+
+        #sec2 img {
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+
+        #sec3 img {
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        #sec4 img {
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+
+        #sec1 h1 {
+            margin-left: 100px;
+            margin-right: 100px;
+            color: blue;
+            font-size: 45px;
+            font-weight: bold;
+        }
+
+        #sec2 h1 {
+            margin-left: 100px;
+            margin-right: 100px;
+            color: blue;
+            font-size: 45px;
+            font-weight: bold;
+        }
+
+        #sec3 h1 {
+            margin-left: 100px;
+            margin-right: 100px;
+            color: blue;
+            font-size: 45px;
+            font-weight: bold;
+        }
+        #sec4 h1 {
+            margin-left: 100px;
+            margin-right: 100px;
+            color: blue;
+            font-size: 45px;
+            font-weight: bold;
+        }
+
+        #sec1 p {
+            margin-left: 100px;
+            margin-right: 100px;
+            font-size: 25px;
+        }
+
+        #sec2 p {
+            margin-left: 100px;
+            margin-right: 100px;
+            font-size: 25px;
+        }
+
+        #sec3 p {
+            margin-left: 100px;
+            margin-right: 100px;
+            font-size: 25px;
+        }
+        #sec4 p {
+            margin-left: 100px;
+            margin-right: 100px;
+            font-size: 25px;
+        }
+
+
+        #read {
+            text-align: center;
+            color: blue;
+        }
+
+        #read1 {
+            text-align: center;
+            color: blue;
+        }
+
+        #read2 {
+            text-align: center;
+            color: blue;
+        }
+        #read3 {
+            text-align: center;
+            color: blue;
+        }
+/* ----------- Mobile Devices ----------- */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        font-size: 25px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-left: 0;
+        gap: 1rem;
+        font-size: 20px;
+    }
+
+    section {
+        flex-direction: column;
+        gap: 20px;
+    }
+#li p{
+    padding: 0px;
+    font-size: 0px;
+}
+    .form-box {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    #row1, #row2, #row3 {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #col1, #col2, #col3, #col5, #col6, #col7, #col8 {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    #d1 h1 {
+        font-size: 35px;
+        margin: 20px;
+    }
+
+    #d1 p, #d1 button {
+        margin: 20px;
+        font-size: 20px;
+    }
+
+    #d1 button {
+        margin-left: 0;
+    }
+
+    img {
+        max-width: 90%;
+        height: auto;
+    }
+
+    #sec1 img, #sec2 img, #sec3 img, #sec4 img {
+        margin: 0 auto;
+    }
+
+    #sec1 h1, #sec2 h1, #sec3 h1, #sec4 h1 {
+        font-size: 28px;
+        margin: 10px;
+    }
+
+    #sec1 p, #sec2 p, #sec3 p, #sec4 p {
+        font-size: 18px;
+        margin: 10px;
+    }
+
+    #blk {
+        font-size: 30px;
+    }
+}
+
+/* ----------- Tablet Devices ----------- */
+@media (min-width: 601px) and (max-width: 1024px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        font-size: 30px;
+    }
+
+    .nav-links {
+        margin-left: 0;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    section {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .form-box {
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    #row1, #row2, #row3 {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #col1, #col2, #col3, #col5, #col6, #col7, #col8 {
+        width: 100%;
+        padding: 30px;
+    }
+
+    img {
+        max-width: 80%;
+        height: auto;
+    }
+
+    #d1 h1 {
+        font-size: 45px;
+    }
+
+    #d1 p {
+        font-size: 25px;
+    }
+
+    #d1 button {
+        font-size: 18px;
+        padding: 8px;
+        margin-left: 0;
+    }
+
+    #sec1 img, #sec2 img, #sec3 img, #sec4 img {
+        margin: 0 auto;
+    }
+}
+
+/* ----------- Desktop Devices ----------- */
+@media (min-width: 1025px) {
+    /* No big changes for desktop - keep original styles */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <section>
+            <div class="l1">
+                <p>OK</p>
+            </div>
+            <div class="l2">
+                <p>Oasis Kitchen</p>
+            </div>
+        </section>
+        <ul class="nav-links">
+            <li><a href="../pages/home.html">Home</a></li>
+            <li><a href="#">Blog</a></li>
+            <li> <a href="../pages/pricing.html">Pricing</a> </li>
+            <li><a href="./order.html">Order</a></li>
+            <li><img src="../Icons/heart icon.png"></li>
+            <li> <img src="../Icons/shopping-cart icon.png"></li>
+            <li><a href="./index1.html"><img src="../Icons/user icon.png"></a></li>
+        </ul>
+    </nav>
+
+    <h1 id="blk">BLOG</h1>
+    <section id="sec1">
+        <img src="../Cloud kitchen website images/Blog 1.png">
+        <h1>Start your Korean kitchen with Oasis Kitchens</h1>
+        <p>The rise of Korean cuisine presents an incredible opportunity for entrepreneurs looking to enter the food
+            delivery business. By leveraging a ghost kitchen, sourcing authentic ingredients, and executing a strong
+            marketing strategy, you can build a profitable and sustainable Korean food brand.
+        </p>
+        <a style="text-decoration: none;" href="./korean_kitchen.html">
+        <p id="read">read more</p>
+    </a>
+    </section>
+
+    <section id="sec2">
+        <img src="../Cloud kitchen website images/Blog 2.png">
+        <h1>The ultimate guide to launching a successful pizza delivery business</h1>
+        <p>Pizza is one of the most popular and popular food businesses worldwide. With the increasing demand for fast
+            and convenient meals, a pizza delivery business presents a lucrative opportunity for entrepreneurs. Whether
+            you're an experienced restaurateur or a newcomer to the food industry, starting a pizza delivery service can
+            be a smart investment with high returns.
+        </p>
+        <a style="text-decoration: none;" href="./pizza.html">
+            <p id="read">read more</p>
+        </a>
+    </section>
+    <section id="sec3">
+        <img src="../Cloud kitchen website images/Blog 3.png">
+        <h1>Turn festive celebrations into profits with holiday catering</h1>
+        <p>The holiday season is a time of joy, celebration, and togetherness. For restaurants, it's also a prime
+            opportunity to capitalize on the growing demand for holiday catering services. With countless gatherings,
+            office parties, and family celebrations taking place, people are seeking convenient catering options to ease
+            the stress of hosting.
+        </p>
+        <p id="read2">read more</p>
+    </section>
+    <section id="sec4">
+        <img src="../Cloud kitchen website images/Blog 3.png">
+        <h1>Crafting memorable dining experiences in catering: strategies for success</h1>
+        <p>In the catering industry, delivering a memorable dining experience goes beyond serving great food. It's about
+            creating moments that resonate with your customers, whether through personalized service, innovative
+            presentation, or seamless technology.</p>
+            <p id="read3">read more</p>
+    </section>
+    </div>
+</body>
+
+</html>

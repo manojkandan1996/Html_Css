@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Price</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    h1
+      {
+        background-color: grey;
+        width: 100%;
+        color: rgb(12, 12, 12);
+        height: 40px;
+        text-align: center;
+      }
+    body {
+      margin: 0;
+      padding: 30px 10px;
+      background: #f4f4f4;
+    }
+
+    .pricing-section {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 15%;
+    }
+
+    .plan {
+      flex: 1 1 30%;
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .plan:hover {
+      transform: translateY(-10px);
+    }
+
+    .plan.best {
+      border: 3px solid #ff00c8;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0,123,255, 0.5); }
+      70% { box-shadow: 0 0 0 10px rgba(0,123,255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0,123,255, 0); }
+    }
+
+    .plan h2 {
+      box-shadow: 2px 2px rgb(240, 6, 76);
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 2rem;
+      margin: 20px 0;
+      color: #007bff;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    ul li {
+      margin: 10px 0;
+      transition: color 0.3s ease;
+    }
+
+    ul li:hover {
+      color: #007bff;
+    }
+
+    .btn {
+      
+      padding: 10px 25px;
+      background-color: #0b0c0c;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 700px) {
+      .pricing-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .plan {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+  </style>
+</head>
+<body>
+    <h1> HOTSTAR </h1>
+
+  <div class="pricing-section">
+  
+    <div class="plan">
+      <h2>3 Months</h2>
+      <p class="price">$149/month</p>
+      <ul>
+        <li>1 Login</li>
+        <li>With Ads</li>
+        <li>Mobile only</li>
+      </ul>
+      <a href="#" class="btn">Choose Plan</a>
+    </div>
+
+    <div class="plan best">
+      <h2>6 Months</h2>
+      <p class="price">$499/month</p>
+      <ul>
+        <li>3 Login</li>
+        <li>Without Ads</li>
+        <li>Mobile and pc only</li>
+      </ul>
+      <a href="#" class="btn">Choose Plan</a>
+    </div>
+
+   
+    <div class="plan">
+      <h2>1 Year</h2>
+      <p class="price">$1599/mo</p>
+      <ul>
+        <li>5 Login</li>
+        <li>Without Ads with 1080p full Hd</li>
+        <li>TV , Mobile and pc only</li>
+      </ul>
+      <a href="#" class="btn">Choose Plan</a>
+    </div>
+  </div>
+
+</body>
+</html>
