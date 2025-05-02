@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ticket book</title>
+</head>
+<body>
+<script>
+  let movies = ["ayan", "samy", "arul", "dragon", "alagi"];
+let userInput = prompt("Enter the name of the movie:");
+let isAvail = false;
+for (let i = 0; i < movies.length; i++) {
+    if (movies[i].toLowerCase() === userInput.toLowerCase()) {
+        isAvail= true;
+        break;
+    }
+}
+if (isAvail) {
+    console.log("Ticket booked");
+} else {
+    console.log("Movie not available");
+}
+    </script>
+
+</body>
+</html>
