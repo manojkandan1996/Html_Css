@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+function Car(brand, model, year) {
+  this.brand = brand;
+  this.model = model;
+  this.year = year;
+
+  this.getDetails = function() {
+    return `Car: ${this.brand} ${this.model}, Year: ${this.year}`;
+  };
+}
+
+const car1 = new Car("Tata", "Hyundai", 2022);
+const car2 = new Car("Swift", "Dezire", 2020);
+
+
+console.log(car1.getDetails());
+console.log(car2.getDetails()); 
+
+    </script>
+</body>
+</html>

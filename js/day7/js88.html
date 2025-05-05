@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+function Book(title, author, price) {
+  this.title = title;
+  this.author = author;
+  this.price = price;
+}
+
+const books = [
+  new Book("The Alchemist", "Paulo Coelho", 15),
+  new Book("1984", "George Orwell", 10),
+  new Book("Clean Code", "Robert C. Martin", 35),
+  new Book("The Hobbit", "J.R.R. Tolkien", 20)
+];
+
+const affordableBooks = books.filter(book => book.price <= 20);
+
+
+console.log("Affordable Books:");
+affordableBooks.forEach(book => {
+  console.log(`${book.title} by ${book.author} - $${book.price}`);
+});
+
+    </script>
+</body>
+</html>

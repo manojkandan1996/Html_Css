@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order </title>
+</head>
+<body>
+
+<script>
+
+function Student(name, grades) {
+  this.name = name || "Unnamed Student";
+  this.grades = grades || [];
+
+
+  this.calculateAverage = function() {
+    if (this.grades.length === 0) {
+      return 0;
+    }
+    const total = this.grades.reduce((sum, grade) => sum + grade, 0);
+    return total / this.grades.length;
+  };
+
+  this.displayInfo = function() {
+    console.log(`🎓 ${this.name}'s average grade: ${this.calculateAverage().toFixed(2)}`);
+  };
+}
+
+
+const student1 = new Student("mano", [85, 90, 78, 92]);
+const student2 = new Student("balaji", [70, 68, 75]);
+const student3 = new Student(); 
+
+student1.displayInfo();  
+student2.displayInfo();  
+student3.displayInfo(); 
+
+
+
+</script>
+</body>
+</html>

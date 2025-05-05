@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Car(brand, model, year) {
+  this.brand = brand;
+  this.model = model;
+  this.year = year;
+}
+
+Car.prototype.getDetails = function() {
+  return `Car: ${this.brand} ${this.model}, Year: ${this.year}`;
+};
+
+Car.prototype.getAge = function() {
+  const currentYear = new Date().getFullYear();
+  return currentYear - this.year;
+};
+
+
+const car2 = new Car("Swift", "Dezire", 2018);
+
+console.log(car2.getDetails()); 
+console.log(`Car age: ${car2.getAge()} years`); 
+
+    </script>
+</body>
+</html>

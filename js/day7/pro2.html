@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Management Console App</title>
+</head>
+<body>
+
+<script>
+function Book(title, author, year) {
+  this.title = title;
+  this.author = author;
+  this.year = year;
+}
+const library = [];
+function addBook(title, author, year) {
+  const book = new Book(title, author, year);
+  library.push(book);
+  console.log(` Book added: "${title}" by ${author} (${year})`);
+}
+function displayBooks() {
+  console.log("\n Library Catalog:");
+  if (library.length === 0) {
+    console.log("The catalog is empty.");
+    return;
+  }
+
+  library.forEach((book, index) => {
+    console.log(`${index + 1}. "${book.title}" by ${book.author} (${book.year})`);
+  });
+}
+
+function searchBooks(keyword) {
+  const results = library.filter(book =>
+    book.title.toLowerCase().includes(keyword.toLowerCase())
+  );
+
+  console.log(`\n Search results for "${keyword}":`);
+  if (results.length === 0) {
+    console.log(" No matching books found.");
+  } else {
+    results.forEach((book, index) => {
+      console.log(`${index + 1}. "${book.title}" by ${book.author} (${book.year})`);
+    });
+  }
+}
+
+addBook("To Kill a Mockingbird", "Harper Lee", 1960);
+addBook("1984", "George Orwell", 1949);
+addBook("The Great Gatsby", "F. Scott Fitzgerald", 1925);
+addBook("The Catcher in the Rye", "J.D. Salinger", 1951);
+addBook("Pride and Prejudice", "Jane Austen", 1813);
+
+
+displayBooks();
+
+searchBooks("great");       
+searchBooks("Pride");       
+searchBooks("Hobbit");      
+
+
+
+    </script>
+</body>
+</html>
+
+
+</script>
+</body>
+</html>
