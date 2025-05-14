@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alert Message on Button Click</title>
+  <style>
+    
+    
+    button {
+      padding: 20px 20px;
+      font-size: 26px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Click the button</h1>
+  <button id="alertButton">Click Me</button>
+  <script>
+    const button = document.getElementById('alertButton');
+    button.addEventListener('click', () => {
+      alert('clicked!'); 
+    });
+  </script>
+
+</body>
+</html>

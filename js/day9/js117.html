@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Remove All Elements Inside a Div</title>
+  <style>
+   
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      background-color: aqua;
+      color: black;
+    }
+
+    .content {
+      margin-top: 30px;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="content" id="contentDiv">
+
+    <h2>inside the div.</h2>
+    <ul>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+    </ul>
+  </div>
+
+  <button id="removeButton">Remove All Elements</button>
+
+  <script>
+    const contentDiv = document.getElementById('contentDiv');
+    const removeButton = document.getElementById('removeButton');
+    removeButton.addEventListener('click', () => {
+      contentDiv.innerHTML = '';
+    });
+  </script>
+
+</body>
+</html>

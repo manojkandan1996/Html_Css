@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Change Text Input Value</title>
+  <style>
+  
+    input {
+      padding: 5px;
+      font-size: 20px;
+      width: 100px;
+    }
+
+    button {
+      padding: 30px;
+      font-size: 26px;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  
+
+  <input type="text" id="textInput" value="Old">
+  <button id="changeButton">Change Value</button>
+
+  <script>
+    const textInput = document.getElementById('textInput');
+    const changeButton = document.getElementById('changeButton');
+    changeButton.addEventListener('click', () => {
+      textInput.value = 'New';
+    });
+  </script>
+
+</body>
+</html>

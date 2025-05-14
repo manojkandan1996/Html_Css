@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Click to Add Border</title>
+  <style>
+    
+
+    img {
+      width: 300px;
+      height: auto;
+      transition: border 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Add a border!</h1>
+  <img id="image" src="../11 (199)/11 (101).png" alt="Sample Image">
+
+  <script>
+    const image = document.getElementById('image');
+    image.addEventListener('click', () => {
+      if (image.style.border === '5px solid #007BFF') {
+        image.style.border = ''; 
+      } else {
+        image.style.border = '13px solid green'; 
+      }
+    });
+  </script>
+
+</body>
+</html>

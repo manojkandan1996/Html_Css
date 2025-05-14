@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Change Text Color of All Paragraphs</title>
+    <style>
+       
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        p {
+            color: green;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+    <p>Born and raised in a Muslim family in Rameswaram, Tamil Nadu, Kalam studied physics and aerospace engineering. He
+        spent the next four decades as a scientist and science administrator, mainly at the Defence Research and
+        Development Organisation (DRDO) and Indian Space Research Organisation (ISRO) and was intimately involved in
+        India's civilian space programme and military missile development efforts</p>
+    <p>Born and raised in a Muslim family in Rameswaram, Tamil Nadu, Kalam studied physics and aerospace engineering. He
+        spent the next four decades as a scientist and science administrator, mainly at the Defence Research and
+        Development Organisation (DRDO) and Indian Space Research Organisation (ISRO) and was intimately involved in
+        India's civilian space programme and military missile development efforts.</p>
+    <p>Born and raised in a Muslim family in Rameswaram, Tamil Nadu, Kalam studied physics and aerospace engineering. He
+        spent the next four decades as a scientist and science administrator, mainly at the Defence Research and
+        Development Organisation (DRDO) and Indian Space Research Organisation (ISRO) and was intimately involved in
+        India's civilian space programme and military missile development efforts</p>
+    <button onclick="changeTextColor()">Change Text Color</button>
+
+    <script>
+        function changeTextColor() {
+            const paragraphs = document.querySelectorAll("p");
+            paragraphs.forEach(paragraph => {
+                paragraph.style.color = "orange";
+            });
+        }
+    </script>
+
+</body>
+
+</html>

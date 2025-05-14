@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic List Item</title>
+  <style>
+   
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    ul {
+      list-style-type: none;
+
+    }
+    li {
+      font-size: 18px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <ul id="myList">
+    <li>First Item</li>
+    <li>Second Item</li>
+  </ul>
+  <button onclick="addListItem()">Add List Item</button>
+
+  <script>
+    function addListItem() {
+      const newItem = document.createElement("li");
+      newItem.textContent = "New Item";
+      const list = document.getElementById("myList");
+      list.appendChild(newItem);
+    }
+  </script>
+
+</body>
+</html>

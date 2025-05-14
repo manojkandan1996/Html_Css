@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Toggle Visibility</title>
+  <style>
+   
+    #toggleText {
+      font-size: 15px;
+      margin-top: 20px;
+      display: block;
+    }
+    button {
+      font-size: 16px;
+      padding:20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="toggleButton">Hide Text</button>
+  <p id="toggleText">This is a paragraph.</p>
+
+  <script>
+    const button = document.getElementById("toggleButton");
+    const textElement = document.getElementById("toggleText");
+    let isVisible = true;
+    button.addEventListener("click", () => {
+      if (isVisible) {
+        textElement.style.display = "none"; 
+        button.textContent = "Show Text";   
+      } else {
+        textElement.style.display = "block"; 
+        button.textContent = "Hide Text";    
+      }
+      isVisible = !isVisible; 
+    });
+  </script>
+
+</body>
+</html>

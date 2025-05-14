@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Change Font Size</title>
+  <style>
+   
+    button {
+      font-size: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    p {
+      font-size: 10px;
+      transition: font-size 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <p id="textParagraph">Manoj</p>
+  <button onclick="changeFontSize()">Increase Font Size</button>
+
+  <script>
+ function changeFontSize() {
+      const paragraph = document.getElementById("textParagraph");
+      paragraph.style.fontSize = (40) + 'px';
+    }
+  </script>
+
+</body>
+</html>

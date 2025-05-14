@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Background Color Changer</title>
+  <style>
+    body {
+  
+      padding: 10px;
+      transition: background-color 0.5s;
+    }
+
+    button {
+      font-size: 15px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CBackground Color</h1>
+  <button onclick="changeBackground()">Change Color</button>
+
+  <script>
+    function changeBackground() {
+      const randomColor = 'red';
+      document.body.style.backgroundColor = randomColor;
+    }
+  </script>
+
+</body>
+</html>
