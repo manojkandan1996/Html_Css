@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prevent </title>
+</head>
+<body>
+
+  <form id="myForm">
+    <input type="text" name="username" placeholder="Enter your name" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="message"></p>
+
+  <script>
+    const form = document.getElementById('myForm');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      message.textContent = 'Default submission prevented!';
+    });
+  </script>
+
+</body>
+</html>

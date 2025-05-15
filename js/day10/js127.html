@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Button Disappear</title>
+  <style>
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="disappearBtn">Click to Disappear</button>
+
+  <script>
+    const button = document.getElementById('disappearBtn');
+
+    button.addEventListener('click', function() {
+      button.style.display = 'none'; 
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Play Sound on Button Click</title>
+</head>
+<body>
+  <button id="playSoundButton">Click to Play Sound</button>
+  <audio id="sound" src="./AUD-20190721-WA0019.opus"></audio>
+  <script>
+    const button = document.getElementById('playSoundButton');
+    const sound = document.getElementById('sound');
+
+    button.addEventListener('click', function() {
+      sound.play(); 
+    });
+  </script>
+
+</body>
+</html>

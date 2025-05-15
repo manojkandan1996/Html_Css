@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Image on Button Click</title>
+  <style>
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <img id="image" src="https://via.placeholder.com/300" alt="Image" />
+  <button id="changeImageButton">Change Image</button>
+
+  <script>
+    const image = document.getElementById('image');
+    const button = document.getElementById('changeImageButton');
+
+    button.addEventListener('click', function() {
+      
+      image.src = 'https://via.placeholder.com/300/ff0000/ffffff?text=New+Image';
+    });
+  </script>
+
+</body>
+</html>

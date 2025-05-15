@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Enter Alert</title>
+  <style>
+    #alertArea {
+      width: 300px;
+      height: 150px;
+      background-color: #f0f0f0;
+      border: 2px dashed #888;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin: 50px auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="alertArea">Hover over this area</div>
+  <script>
+    const alertArea = document.getElementById('alertArea');
+    alertArea.addEventListener('mouseenter', function() {
+      alert('Mouse entered the area!');
+    });
+  </script>
+</body>
+</html>
