@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Survey Form</h2>
+<form id="survey">
+    <label for="name">Name:</label><br>
+    <input type="text" id="full" name="name"><br><br>
+    <label for="age">Age:</label><br>
+    <input type="number" id="aging" name="age"><br><br>
+    <button type="submit">Submit</button>
+</form><br><br>
+    <script>
+        const survey=document.getElementById('survey')
+survey.addEventListener('submit',(e)=>{
+    event.preventDefault();
+    const formData=new FormData(survey)
+    const response={}
+    formData.forEach((value,key) => {
+        response[key]=value
+    })
+    sessionStorage.setItem('sureveyresponse',JSON.stringify(response))
+    alert('Response saved')
+    form.reset()
+})
+window.addEventListener('load',()=>{
+    const savedresponse=sessionStorage.getItem('surveyresponse')
+    if(savedresponse){
+        const response=JSON.parse(savedresponse)
+        document.getElementById('full').value=response.name ||"";
+        document.getElementById('aging').value=response.name ||"";
+    }
+})
+
+    </script>
+</body>
+</html>

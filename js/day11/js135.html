@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        sessionStorage.setItem('isLoggedIn',JSON.stringify(true));
+sessionStorage.setItem('username',JSON.stringify(username))
+const isLoggedIn=JSON.parse(sessionStorage.getItem('isLoggedIn'))
+const user=JSON.parse(sessionStorage.getItem('username'))
+if(isLoggedIn){
+    console.log(`Username Retrieved, ${user}`);
+}else{
+    console.log("please Login");
+}
+    </script>
+</body>
+</html>

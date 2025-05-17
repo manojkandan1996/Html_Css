@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            .dark{
+        background-color: yellowgreen;
+        color:black;border-radius: 5px;
+        height: 40px;
+    }
+    .darkmode{
+        background-color:red;
+        color: 
+        white;
+    }
+
+    </style>
+</head>
+<body>
+       <button id="themeToggle" class="dark">Change to Dark Mode</button><br><br>
+    <script>
+        const themeToggle=document.getElementById('themeToggle')
+const body=document.body;
+const darkmodeclass='darkmode'
+const themekey='theme'
+function setTheme(theme){
+    if(theme==='dark'){
+        body.classList.add(darkmodeclass);
+    }else{
+        body.classList.remove(darkmodeclass)
+    }
+}
+function saveTheme(theme){
+    localStorage.setItem(themekey,theme)
+}
+function loadtheme(){
+    const savedtheme=localStorage.getItem(themekey)
+    if(savedTheme){
+        setTheme(savedtheme);
+    }
+}
+themeToggle.addEventListener('click',()=>{
+    if(body.classList.contains(darkmodeclass)){
+        setTheme('light')
+        saveTheme('light')
+    }else{
+        setTheme('dark')
+        saveTheme('dark')
+    }
+})
+
+    </script>
+</body>
+</html>

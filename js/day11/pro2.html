@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea id="note-input" placeholder="Enter your note"></textarea>
+<button id="save-button">Save Note</button>
+<ul id="notes-list"></ul>
+
+    <script>
+        const noteInput = document.getElementById('note-input');
+    const saveButton = document.getElementById('save-button');
+    const notesList = document.getElementById('notes-list');
+// Function to save note to local storage//
+    function saveNote() {
+        const noteText = noteInput.value;
+        if (noteText.trim() !== '') {
+            let notes = JSON.parse(localStorage.getItem('notes') || '[]');
+            notes.push(noteText);
+            localStorage.setItem('notes', JSON.stringify(notes));
+            noteInput.value = '';
+            displayNotes();
+        }
+    }
+ // Function to display notes from local storage//
+    function displayNotes() {
+        notesList.innerHTML = '';
+        const notes = JSON.parse(localStorage.getItem('notes') || '[]');
+        notes.forEach((note, index) => {
+            const li = document.createElement('li');
+            li.textContent = note;
+           
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+             deleteButton.addEventListener('click', () => {
+                deleteNote(index);
+            });
+            li.appendChild(deleteButton);
+            notesList.appendChild(li);
+        });
+    }
+
+     
+    function deleteNote(index) {
+        let notes = JSON.parse(localStorage.getItem('notes') || '[]');
+        notes.splice(index, 1);
+        localStorage.setItem('notes', JSON.stringify(notes));
+        displayNotes();
+    }
+
+        saveButton.addEventListener('click', saveNote);
+ displayNotes();
+    </script>
+</body>
+</html>

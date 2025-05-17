@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Track Last Visited Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    #last-visited {
+      background-color: #e0f7fa;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    a {
+      display: inline-block;
+      margin: 5px 0;
+      color: #00796b;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="last-visited"></div>
+
+  <h2>Welcome to Our Website</h2>
+  <p>Explore the following pages:</p>
+  <ul>
+    <li><a href="page1.html">Page 1</a></li>
+    <li><a href="page2.html">Page 2</a></li>
+    <li><a href="page3.html">Page 3</a></li>
+  </ul>
+
+  <script>
+  window.addEventListener('beforeunload',()=>{
+    localStorage.setItem('lastVisitedPage',window.location.href)
+})
+window.addEventListener('load',()=>{
+    const lastVisitedPage=localStorage.getItem('lastVisitedPage')
+    if(lastVisitedPage){
+        console.log(`Last Visited Page:, ${lastVisitedPage}`)
+    }
+})
+  </script>
+
+</body>
+</html>

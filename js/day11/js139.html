@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function saveToDoList(todolist){
+    localStorage.setItem('todolist',JSON.stringify(todolist))
+}
+function gettodolist(){
+    const storedlist=localStorage.getItem('todolist')
+    return storedlist ? JSON.parse(storedlist):[];
+}
+let todo=gettodolist();
+todo.push({text:'buy groceries',completed:false})
+saveToDoList(todo)
+todo=gettodolist()
+console.log(todo);
+    </script>
+</body>
+</html>
