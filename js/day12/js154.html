@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Group Objects by Property</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    button { padding: 8px 12px; margin-top: 10px; }
+    .result { margin-top: 15px; font-size: 16px; }
+    .group { margin-top: 15px; }
+    .group h3 { margin: 10px 0; }
+    ul { list-style-type: none; padding-left: 0; }
+    li { margin: 5px 0; }
+  </style>
+</head>
+<body>
+  <h2>👥 Group Employees by Position</h2>
+  <button onclick="groupByPosition()">Group Employees</button>
+  <div class="result" id="resultBox">
+    <h3>Grouped Employees:</h3>
+    <div id="groupedList"></div>
+  </div>
+  <script>
+    const employees = [
+      { name: 'manoj', position: 'Developer' },
+      { name: 'arun', position: 'Designer' },
+      { name: 'ram', position: 'Manager' },
+      { name: 'balaji', position: 'Developer' },
+      { name: 'mani', position: 'Manager' },
+      { name: 'kumar', position: 'Designer' }
+    ];
+    function groupByPosition() {
+      const grouped = employees.reduce((acc, employee) => {
+        if (!acc[employee.position]) {
+          acc[employee.position] = [];
+        }
+        acc[employee.position].push(employee.name);
+        return acc;
+      }, {});
+
+      displayGroupedData(grouped);
+    }
+    function displayGroupedData(groupedData) {
+      const groupedList = document.getElementById('groupedList');
+      groupedList.innerHTML = '';
+      for (const position in groupedData) {
+        const group = document.createElement('div');
+        group.classList.add('group');
+        const header = document.createElement('h3');
+        header.textContent = `${position} (${groupedData[position].length})`;
+        group.appendChild(header);
+        const list = document.createElement('ul');
+        groupedData[position].forEach(name => {
+          const listItem = document.createElement('li');
+          listItem.textContent = name;
+          list.appendChild(listItem);
+        });
+        group.appendChild(list);
+        groupedList.appendChild(group);
+      }
+    }
+  </script>
+
+</body>
+</html>

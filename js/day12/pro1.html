@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inventory Management System</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input, button { padding: 8px 12px; margin-top: 10px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f2f2f2; }
+    .result { margin-top: 15px; font-size: 16px; }
+    .inventory-actions { margin-top: 15px; }
+  </style>
+</head>
+<body>
+  <h2> Inventory Management System</h2>
+  <h3>Check Stock Availability</h3>
+  <label for="searchInput">Search by Product ID or Name: </label>
+  <input type="text" id="searchInput" placeholder="Enter product ID or name">
+  <button onclick="checkStock()">Check Stock</button>
+  <div class="result" id="stockResult"></div>
+  <h3>Update Inventory</h3>
+  <label for="updateId">Product ID: </label>
+  <input type="text" id="updateId" placeholder="Enter product ID">
+  <label for="quantityChange">Quantity Change (positive to add, negative to remove): </label>
+  <input type="number" id="quantityChange" placeholder="Enter quantity">
+  <button onclick="updateInventory()">Update Inventory</button>
+  <div class="inventory-actions" id="inventoryActionResult"></div>
+  <h3>Total Inventory Value</h3>
+  <button onclick="calculateTotalInventoryValue()">Calculate Total Value</button>
+  <div class="result" id="totalValueResult"></div>
+  <h3>Product List</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody id="productList"></tbody>
+  </table>
+  <script>
+    let products = [
+      { id: 'P001', name: 'Laptop', category: 'Electronics', quantity: 50, price: 1000 },
+      { id: 'P002', name: 'Smartphone', category: 'Electronics', quantity: 150, price: 700 },
+      { id: 'P003', name: 'Headphones', category: 'Accessories', quantity: 200, price: 50 },
+      { id: 'P004', name: 'Desk Chair', category: 'Furniture', quantity: 30, price: 150 }
+    ];
+    function displayProductList() {
+      const productList = document.getElementById('productList');
+      productList.innerHTML = '';
+      products.forEach(product => {
+        const row = `<tr>
+                      <td>${product.id}</td>
+                      <td>${product.name}</td>
+                      <td>${product.category}</td>
+                      <td>${product.quantity}</td>
+                      <td>$${product.price}</td>
+                    </tr>`;
+        productList.innerHTML += row;
+      });
+    }
+    function checkStock() {
+      const searchInput = document.getElementById('searchInput').value.trim().toLowerCase();
+      const resultBox = document.getElementById('stockResult');
+      const product = products.find(p => p.id.toLowerCase() === searchInput || p.name.toLowerCase() === searchInput);
+      if (product) {
+        resultBox.innerHTML = `
+          <p>Product: ${product.name}</p>
+          <p>Category: ${product.category}</p>
+          <p>Stock: ${product.quantity} units</p>
+          <p>Price: $${product.price}</p>
+        `;
+      } else {
+        resultBox.innerHTML = `<p>No product found with the given ID or name.</p>`;
+      }
+    }
+    function updateInventory() {
+      const productId = document.getElementById('updateId').value.trim();
+      const quantityChange = parseInt(document.getElementById('quantityChange').value);
+      const resultBox = document.getElementById('inventoryActionResult');
+      const product = products.find(p => p.id.toLowerCase() === productId.toLowerCase());
+      if (product) {
+        if (quantityChange === 0) {
+          resultBox.innerHTML = `<p>Please enter a quantity change value (positive or negative).</p>`;
+        } else {
+          product.quantity += quantityChange;
+          if (product.quantity < 0) {
+            resultBox.innerHTML = `<p>Stock can't be negative. Current stock: ${product.quantity + quantityChange}</p>`;
+            product.quantity = 0; 
+          } else {
+            resultBox.innerHTML = `<p>Updated stock for ${product.name}. New stock: ${product.quantity} units.</p>`;
+          }
+          displayProductList();
+        }
+      } else {
+        resultBox.innerHTML = `<p>No product found with the given ID.</p>`;
+      }
+    }
+    function calculateTotalInventoryValue() {
+      const totalValue = products.reduce((total, product) => total + (product.quantity * product.price), 0);
+      const resultBox = document.getElementById('totalValueResult');
+      resultBox.innerHTML = `<p>Total Inventory Value: $${totalValue}</p>`;
+    }
+    displayProductList();
+  </script>
+
+</body>
+</html>

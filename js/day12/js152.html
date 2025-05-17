@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Count Objects by Condition</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    button { padding: 8px 12px; margin-top: 10px; }
+    .result { margin-top: 15px; font-size: 16px; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h2> Count Students with Grade A</h2>
+
+  <button onclick="countGradeA()">Count Grade A Students</button>
+
+  <div class="result" id="resultBox">Click the button to count students with grade A.</div>
+
+  <script>
+    // Array of student objects with grades
+    const students = [
+      { name: 'Alice', grade: 'A' },
+      { name: 'Bob', grade: 'B' },
+      { name: 'Charlie', grade: 'A' },
+      { name: 'Diana', grade: 'C' },
+      { name: 'Ethan', grade: 'A' }
+    ];
+
+    // Function to count how many students have grade 'A'
+    function countGradeA() {
+      const gradeACount = students.filter(student => student.grade === 'A').length;
+      document.getElementById('resultBox').textContent = ` There are ${gradeACount} students with grade A.`;
+    }
+  </script>
+
+</body>
+</html>

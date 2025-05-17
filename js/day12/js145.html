@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee List</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input, button { margin: 5px; padding: 5px; }
+    table, th, td { border: 1px solid #ccc; border-collapse: collapse; padding: 8px; }
+    table { margin-top: 20px; width: 100%; }
+  </style>
+</head>
+<body>
+
+  <h2>Employee Management</h2>
+  <div>
+    <input type="text" id="name" placeholder="Name">
+    <input type="number" id="age" placeholder="Age">
+    <input type="text" id="position" placeholder="Position">
+    <button onclick="addEmployee()">Add Employee</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Position</th>
+      </tr>
+    </thead>
+    <tbody id="employeeTableBody"></tbody>
+  </table>
+  <script>
+    const employees = [
+      { name: 'manoj', age: 30, position: 'Software Engineer' }
+    ];
+    window.onload = function() {
+      displayEmployees();
+    };
+    function addEmployee() {
+      const name = document.getElementById('name').value.trim();
+      const age = parseInt(document.getElementById('age').value);
+      const position = document.getElementById('position').value.trim();
+      if (!name || isNaN(age) || !position) {
+        alert("Please fill all fields correctly.");
+        return;
+      }
+      employees.push({ name, age, position });
+      displayEmployees();
+      clearInputs();
+    }
+    function displayEmployees() {
+      const tbody = document.getElementById('employeeTableBody');
+      tbody.innerHTML = ''; 
+      employees.forEach(emp => {
+        const row = `<tr>
+          <td>${emp.name}</td>
+          <td>${emp.age}</td>
+          <td>${emp.position}</td>
+        </tr>`;
+        tbody.innerHTML += row;
+      });
+    }
+    function clearInputs() {
+      document.getElementById('name').value = '';
+      document.getElementById('age').value = '';
+      document.getElementById('position').value = '';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Remove Object by Property</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input, button { padding: 8px 12px; margin-top: 10px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f2f2f2; }
+    .result { margin-top: 15px; }
+  </style>
+</head>
+<body>
+  <h2> Remove Employee by Name</h2>
+  <label for="nameInput">Enter employee name to remove: </label>
+  <input type="text" id="nameInput" placeholder="Enter name">
+  <button onclick="removeEmployee()">Remove Employee</button>
+  <div class="result" id="resultBox">
+    <h3>Updated Employee List:</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Position</th>
+        </tr>
+      </thead>
+      <tbody id="employeeList"></tbody>
+    </table>
+  </div>
+  <script>
+    const employees = [
+      { name: 'Alice', age: 30, position: 'Developer' },
+      { name: 'Bob', age: 25, position: 'Designer' },
+      { name: 'Charlie', age: 35, position: 'Manager' },
+      { name: 'Dana', age: 28, position: 'Intern' },
+      { name: 'Eve', age: 40, position: 'Product Manager' }
+    ];
+    function removeEmployee() {
+      const nameToRemove = document.getElementById('nameInput').value.trim().toLowerCase();
+      const updatedEmployees = employees.filter(employee => 
+        employee.name.toLowerCase() !== nameToRemove
+      );
+      if (updatedEmployees.length !== employees.length) {
+        document.getElementById('employeeList').innerHTML = '';
+        updatedEmployees.forEach(employee => {
+          const row = `<tr>
+                        <td>${employee.name}</td>
+                        <td>${employee.age}</td>
+                        <td>${employee.position}</td>
+                      </tr>`;
+          document.getElementById('employeeList').innerHTML += row;
+      });
+      } else {
+        alert(`No employee found with name "${nameToRemove}".`);
+      }
+    }
+    function displayEmployees() {
+      const employeeList = document.getElementById('employeeList');
+      employeeList.innerHTML = '';
+      employees.forEach(employee => {
+        const row = `<tr>
+                      <td>${employee.name}</td>
+                      <td>${employee.age}</td>
+                      <td>${employee.position}</td>
+                    </tr>`;
+        employeeList.innerHTML += row;
+      });
+    }
+    displayEmployees();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add New Object to Array Dynamically</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input, button { padding: 8px 12px; margin-top: 10px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f2f2f2; }
+    .result { margin-top: 15px; }
+  </style>
+</head>
+<body>
+  <h2> Add a New Employee</h2>
+  <label for="nameInput">Name: </label>
+  <input type="text" id="nameInput" placeholder="Enter name">
+  <br><br>
+  <label for="ageInput">Age: </label>
+  <input type="number" id="ageInput" placeholder="Enter age">
+  <br><br>
+  <label for="positionInput">Position: </label>
+  <input type="text" id="positionInput" placeholder="Enter position">
+  <br><br>
+  <button onclick="addEmployee()">Add Employee</button>
+  <div class="result" id="resultBox">
+    <h3>Employee List:</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Position</th>
+        </tr>
+      </thead>
+      <tbody id="employeeList"></tbody>
+    </table>
+  </div>
+  <script>
+    const employees = [
+      { name: 'Alice', age: 30, position: 'Developer' },
+      { name: 'Bob', age: 25, position: 'Designer' },
+      { name: 'Charlie', age: 35, position: 'Manager' },
+      { name: 'Dana', age: 28, position: 'Intern' },
+      { name: 'Eve', age: 40, position: 'Product Manager' }
+    ];
+    function addEmployee() {
+      const name = document.getElementById('nameInput').value.trim();
+      const age = parseInt(document.getElementById('ageInput').value);
+      const position = document.getElementById('positionInput').value.trim();
+      if (!name || !age || !position) {
+        alert('Please enter valid data for all fields.');
+        return;
+      }
+      const newEmployee = { name, age, position };
+      employees.push(newEmployee);
+      document.getElementById('nameInput').value = '';
+      document.getElementById('ageInput').value = '';
+      document.getElementById('positionInput').value = '';
+      displayEmployees();
+    }
+    function displayEmployees() {
+      const employeeList = document.getElementById('employeeList');
+      employeeList.innerHTML = '';
+      employees.forEach(employee => {
+        const row = `<tr>
+                      <td>${employee.name}</td>
+                      <td>${employee.age}</td>
+                      <td>${employee.position}</td>
+                    </tr>`;
+        employeeList.innerHTML += row;
+      });
+    }
+    displayEmployees();
+  </script>
+
+</body>
+</html>

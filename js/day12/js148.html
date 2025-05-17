@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Filter Students with Grade A</title>
+</head>
+<body>
+  <h2>Students with Grade A</h2>
+  <ul id="studentList"></ul>
+
+  <script>
+    // Sample array of student objects
+    const students = [
+      { name: 'Alice', grade: 'A' },
+      { name: 'Bob', grade: 'B' },
+      { name: 'Charlie', grade: 'A' },
+      { name: 'David', grade: 'C' },
+      { name: 'Eve', grade: 'A' }
+    ];
+
+    // Filter students with grade 'A'
+    const gradeAStudents = students.filter(student => student.grade === 'A');
+
+    // Reference to the HTML element where the list will be displayed
+    const listElement = document.getElementById('studentList');
+
+    // Iterate over the filtered array and add each student's name to the list
+    gradeAStudents.forEach(student => {
+      const listItem = document.createElement('li');
+      listItem.textContent = student.name;
+      listElement.appendChild(listItem);
+    });
+  </script>
+</body>
+</html>

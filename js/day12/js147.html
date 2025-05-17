@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sort by Age</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    li {
+      background-color: #fff;
+      margin: 8px 0;
+      padding: 12px;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Sorted People by Age</h2>
+  <ul id="people-list"></ul>
+
+  <script>
+    // Define an array of people with name and age properties
+    const people = [
+      { name: "Alice", age: 28 },
+      { name: "Bob", age: 22 },
+      { name: "Charlie", age: 35 },
+      { name: "Diana", age: 30 }
+    ];
+
+    // Sort the array by age in ascending order
+    people.sort((a, b) => a.age - b.age);
+
+    // Get the UL element to display the sorted list
+    const list = document.getElementById("people-list");
+
+    // Iterate over the sorted array and create list items
+    people.forEach(person => {
+      const listItem = document.createElement("li");
+      listItem.textContent = `${person.name} - Age: ${person.age}`;
+      list.appendChild(listItem);
+    });
+  </script>
+
+</body>
+</html>

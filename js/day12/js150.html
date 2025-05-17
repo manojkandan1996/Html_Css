@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Extract Names from Array of Objects</title>
+</head>
+<body>
+  <h2>Names List</h2>
+  <ul id="nameList"></ul>
+
+  <script>
+    // Sample array of objects
+    const people = [
+      { name: 'Alice', age: 25 },
+      { name: 'Bob', age: 30 },
+      { name: 'Charlie', age: 22 }
+    ];
+
+    // Extract names using map()
+    const names = people.map(person => person.name);
+
+    // Reference to the HTML element where the list will be displayed
+    const listElement = document.getElementById('nameList');
+
+    // Iterate over the names array and add each name to the list
+    names.forEach(name => {
+      const listItem = document.createElement('li');
+      listItem.textContent = name;
+      listElement.appendChild(listItem);
+    });
+  </script>
+</body>
+</html>

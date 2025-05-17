@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find Product by Name</title>
+</head>
+<body>
+  <h2>Search for a Product</h2>
+  <input type="text" id="productName" placeholder="Enter product name">
+  <button onclick="findProduct()">Search</button>
+  <p id="result"></p>
+
+  <script>
+    // Sample array of product objects
+    const products = [
+      { name: 'Laptop', price: 1000 },
+      { name: 'Smartphone', price: 500 },
+      { name: 'Tablet', price: 300 },
+      { name: 'Headphones', price: 100 }
+    ];
+
+    function findProduct() {
+      const nameInput = document.getElementById('productName').value.trim();
+      const resultElement = document.getElementById('result');
+
+      // Use the find() method to locate the product by name
+      const product = products.find(p => p.name.toLowerCase() === nameInput.toLowerCase());
+
+      if (product) {
+        resultElement.textContent = `Product: ${product.name}, Price: $${product.price}`;
+      } else {
+        resultElement.textContent = 'Product not found.';
+      }
+    }
+  </script>
+</body>
+</html>

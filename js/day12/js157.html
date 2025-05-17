@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Highest Priced Product</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .result { margin-top: 15px; font-size: 16px; }
+    .product { font-weight: bold; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h2> Display Highest Priced Product</h2>
+  <button onclick="findHighestPricedProduct()">Find Highest Priced Product</button>
+  <div class="result" id="resultBox"></div>
+  <script>
+    const products = [
+      { name: 'Laptop', price: 1500 },
+      { name: 'Smartphone', price: 799 },
+      { name: 'Tablet', price: 450 },
+      { name: 'Headphones', price: 199 },
+      { name: 'Smartwatch', price: 250 }
+    ];
+    function findHighestPricedProduct() {
+      const highestPricedProduct = products.reduce((max, product) => 
+        product.price > max.price ? product : max
+      );
+      const resultBox = document.getElementById('resultBox');
+      resultBox.innerHTML = `
+        <div class="product">
+          <p>The highest priced product is:</p>
+          <p><strong>Name:</strong> ${highestPricedProduct.name}</p>
+          <p><strong>Price:</strong> $${highestPricedProduct.price}</p>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>

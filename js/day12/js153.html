@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Search Function</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input, button { padding: 8px 12px; margin-top: 10px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f2f2f2; }
+    .result { margin-top: 15px; }
+  </style>
+</head>
+<body>
+
+  <h2>🔍 Search for an Object by Name</h2>
+
+  <label for="searchInput">Enter name to search: </label>
+  <input type="text" id="searchInput" placeholder="Enter name" oninput="searchObjects()">
+  <button onclick="searchObjects()">Search</button>
+
+  <div class="result" id="searchResult">
+    <h3>Results:</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Position</th>
+        </tr>
+      </thead>
+      <tbody id="resultTable"></tbody>
+    </table>
+  </div>
+
+  <script>
+    // Array of objects (example: employees)
+    const employees = [
+      { name: 'Alice', age: 30, position: 'Developer' },
+      { name: 'Bob', age: 25, position: 'Designer' },
+      { name: 'Charlie', age: 35, position: 'Manager' },
+      { name: 'Dana', age: 28, position: 'Intern' },
+      { name: 'Eve', age: 40, position: 'Product Manager' }
+    ];
+
+    // Function to search objects dynamically based on input
+    function searchObjects() {
+      const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+      const filteredResults = employees.filter(employee => 
+        employee.name.toLowerCase().includes(searchQuery)
+      );
+
+      displayResults(filteredResults);
+    }
+
+    // Function to display search results
+    function displayResults(results) {
+      const resultTable = document.getElementById('resultTable');
+      resultTable.innerHTML = '';
+
+      if (results.length > 0) {
+        results.forEach(result => {
+          const row = `<tr>
+            <td>${result.name}</td>
+            <td>${result.age}</td>
+            <td>${result.position}</td>
+          </tr>`;
+          resultTable.innerHTML += row;
+        });
+      } else {
+        resultTable.innerHTML = `<tr><td colspan="3">No results found</td></tr>`;
+      }
+    }
+
+    // Initial display of all employees
+    displayResults(employees);
+  </script>
+
+</body>
+</html>
