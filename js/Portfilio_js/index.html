@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&display=swap"
+        rel="stylesheet">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="./index.css" />
+</head>
+
+<body>
+    <header>
+        <img  src="./image_page-0001.jpg" style="height: 150px;width: 150px;border-radius: 190px;">
+        <h1>MANOJ KANDAN</h1>
+        <p>Web Developer </p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#interest">Interest</a>
+            <button id="contactBtn" class="contact-button">Contact</button>
+        </nav>
+    </header>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm a web developer with a passion.I am interested in data science, I took a course in Python
+            programming, machine learning, etc. You may have seen my certificates on my resume. However, I haven’t used
+            this knowledge in production yet. Data science is like magic to me. For example, when you read ordinary
+            source code, you can understand its logic, you can debug it, and it is predictable. In the case of machine
+            learning, it produces incredible and even unpredictable results. I think this is the next level of
+            development.
+        </p>
+        <section id="education">
+            <h2>Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Master of computer Applications</h3>
+                        <span>2017 – 2020 | JAMAL MOHAMMED COLLEGE</span>
+                        <p>Graduated with First Class. Specialized in IT.</p>
+                    </div>
+                </div>
+                  <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Bachelor of computer Applications</h3>
+                        <span>2014 – 2017 | JOSEPH'S COLLEGE</span>
+                        <p>Graduated with Second Class. Specialized in IT.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>High School</h3>
+                        <span>2012 – 2014 | YWCA School</span>
+                        <p>Majored in Science.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Software Engineer</h3>
+                        <span>June 2021 – Sep 2023 | JAVA </span>
+                        <p>Hands on Experience in Genesys java developer . IVR Based Cloud Genesys Developer</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Freelance Web Designer</h3>
+                        <span>2022 – Present</span>
+                        <p>Designed custom landing pages and small business websites using HTML/CSS/JS.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="interest">
+
+        <h1>Area of interest</h1>
+        <ol>
+            <li>
+                C# and JAVA Programming.
+            </li>
+            <li>
+                HTML,CSS
+            </li>
+            <li>
+                ASP.NET
+            </li>
+            <li>
+                Data Structures and Algorithms
+            </li>
+        </ol>
+    </section>
+    </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Git</li>
+        </ul>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <img src="./p1.jfif" alt="Project 1">
+            <h3>Portfolio Website</h3>
+            <p>Airline Reservation System with .NET</p>
+
+        </div>
+        <div class="project-card">
+            <img src="./p2.png" alt="Project 2">
+            <h3>Weather App</h3>
+            <p>Bank Management System Using JAVA</p>
+
+        </div>
+    </section>
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Your Name" required />
+                <input type="email" id="email" placeholder="Your Email" required />
+                <textarea id="message" placeholder="Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <p id="form-response"></p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Manoj Software Developer</p>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>
