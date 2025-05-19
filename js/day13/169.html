@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dropdown from Inbuilt JSON</title>
+</head>
+<body>
+  <h2>Select a Fruit</h2>
+  <select id="dropdown">
+    <option value="">Loading...</option>
+  </select>
+
+  <script>
+    
+    const jsonData = [
+      { "id": 1, "name": "Apple" },
+      { "id": 2, "name": "Banana" },
+      { "id": 3, "name": "Cherry" }
+    ];
+    const dropdown = document.getElementById('dropdown');
+    dropdown.innerHTML = '<option value="">Select an option</option>';
+
+    jsonData.forEach(item => {
+      const option = document.createElement('option');
+      option.value = item.id;
+      option.textContent = item.name;
+      dropdown.appendChild(option);
+    });
+  </script>
+</body>
+</html>

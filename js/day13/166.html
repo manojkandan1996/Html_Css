@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Find Object in JSON Array</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input, button { padding: 8px; margin: 5px 0; }
+    #result { margin-top: 15px; background: #f9f9f9; padding: 10px; border: 1px solid #ddd; }
+  </style>
+</head>
+<body>
+  <h2>Find Product by Name</h2>
+  <input type="text" id="searchInput" placeholder="Enter product name (e.g., Mouse)">
+  <button onclick="findProduct()">Search</button>
+  <div id="result"></div>
+  <script>
+    const products = [
+      { id: 1, name: "Mouse", price: 15 },
+      { id: 2, name: "Keyboard", price: 25 },
+      { id: 3, name: "Monitor", price: 150 },
+      { id: 4, name: "Webcam", price: 50 }
+    ];
+    function findProduct() {
+      const input = document.getElementById("searchInput").value.trim().toLowerCase();
+      const resultDiv = document.getElementById("result");
+
+      const product = products.find(p => p.name.toLowerCase() === input);
+
+      if (product) {
+        resultDiv.innerHTML = `
+          <strong>Product Found:</strong><br>
+          ID: ${product.id}<br>
+          Name: ${product.name}<br>
+          Price: $${product.price}
+        `;
+      } else {
+        resultDiv.innerHTML = "Product not found.";
+      }
+    }
+  </script>
+
+</body>
+</html>

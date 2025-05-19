@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Object to JSON Array</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input, button { padding: 8px; margin: 5px 0; }
+    pre { background: #f0f0f0; padding: 10px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+
+  <h2>Add Employee to JSON Array</h2>
+
+  <input type="text" id="name" placeholder="Name"><br>
+  <input type="number" id="age" placeholder="Age"><br>
+  <input type="text" id="position" placeholder="Position"><br>
+  <button onclick="addEmployee()">Add Employee</button>
+
+  <h3>Employee List:</h3>
+  <pre id="employeeList"></pre>
+  <script>
+    let employees = JSON.parse(localStorage.getItem('employees')) || [];
+    function displayEmployees() {
+      document.getElementById('employeeList').textContent = JSON.stringify(employees, null, 2);
+    }
+    function addEmployee() {
+      const name = document.getElementById('name').value.trim();
+      const age = parseInt(document.getElementById('age').value);
+      const position = document.getElementById('position').value.trim();
+
+      if (name && age && position) {
+        const newEmployee = { name, age, position };
+        employees.push(newEmployee);
+        localStorage.setItem('employees', JSON.stringify(employees));
+        displayEmployees();
+      } else {
+        alert("Please fill in all fields.");
+      }
+    }
+    displayEmployees();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Remove Object from JSON Array</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input, button { padding: 8px; margin-top: 10px; display: block; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h2>Remove User by ID</h2>
+  <input type="number" id="userId" placeholder="Enter User ID to Remove">
+  <button onclick="removeUser()">Remove</button>
+  <h3>Current Users:</h3>
+  <pre id="output"></pre>
+  <script>
+    let users = [
+      { id: 1, name: "Alice" },
+      { id: 2, name: "Bob" },
+      { id: 3, name: "Charlie" }
+    ];
+    function displayUsers() {
+      document.getElementById("output").textContent = JSON.stringify(users, null, 2);
+    }
+    function removeUser() {
+      const id = parseInt(document.getElementById("userId").value);
+      const originalLength = users.length;
+      users = users.filter(user => user.id !== id);
+      if (users.length < originalLength) {
+        alert("User removed.");
+      } else {
+        alert("User not found.");
+      }
+
+      displayUsers();
+    }
+    displayUsers();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convert JavaScript Object to JSON String</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    button { padding: 8px 12px; margin-top: 10px; }
+    pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h2>Convert JavaScript Object to JSON String</h2>
+  <button onclick="convertToJSON()">Convert to JSON</button>
+  <h3>JSON Output:</h3>
+  <pre id="jsonResult"></pre>
+  <script>
+    const person = {
+      name: "manoj",
+      age: 30,
+      position: "Software Engineer",
+      skills: ["JavaScript", "React",]
+    };
+    function convertToJSON() {
+      const jsonString = JSON.stringify(person, null, 2);  
+      document.getElementById('jsonResult').textContent = jsonString; 
+    }
+  </script>
+
+</body>
+</html>

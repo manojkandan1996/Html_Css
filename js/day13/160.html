@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convert JSON String to JavaScript Object</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    button { padding: 8px 12px; margin-top: 10px; }
+    pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+
+  <h2>Convert JSON String to JavaScript Object</h2>
+  <button onclick="convertToObject()">Convert JSON to Object</button>
+
+  <h3>JavaScript Object Output:</h3>
+  <pre id="objectResult"></pre>
+
+  <script>
+   
+    const jsonString = '{"name": "manoj", "age": 30, "position": "Software Engineer", "skills": ["JavaScript", "React", "Node.js"]}';
+
+    function convertToObject() {
+      try {
+        const obj = JSON.parse(jsonString);  
+        document.getElementById('objectResult').textContent = JSON.stringify(obj, null, 2);  
+      } catch (error) {
+        document.getElementById('objectResult').textContent = 'Error parsing JSON string: ' + error.message;
+      }
+    }
+  </script>
+
+</body>
+</html>

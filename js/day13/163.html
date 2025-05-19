@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modify JSON Object in Array</title>
+</head>
+<body>
+  <h2>Updated User List</h2>
+  <ul id="userList"></ul>
+
+  <script>
+    // Sample JSON array
+    const users = [
+      { "Id": "1", "Username": "Ray", "FatherName": "Thompson" },
+      { "Id": "2", "Username": "Steve", "FatherName": "Johnson" },
+      { "Id": "3", "Username": "Albert", "FatherName": "Einstein" }
+    ];
+
+    // Function to update a user's Username based on Id
+    function updateUsernameById(id, newUsername) {
+      users.forEach(user => {
+        if (user.Id === id) {
+          user.Username = newUsername;
+        }
+      });
+    }
+
+    // Update the Username where Id is '3'
+    updateUsernameById("3", "Thomas");
+
+    // Display the updated users in the HTML
+    const userList = document.getElementById("userList");
+    users.forEach(user => {
+      const listItem = document.createElement("li");
+      listItem.textContent = `ID: ${user.Id}, Username: ${user.Username}, Father: ${user.FatherName}`;
+      userList.appendChild(listItem);
+    });
+  </script>
+</body>
+</html>

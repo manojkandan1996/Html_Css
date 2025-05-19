@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store and Retrieve Array in LocalStorage</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    button { padding: 10px 20px; margin-top: 10px; }
+    pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h2>Store and Retrieve Array of Objects in LocalStorage</h2>
+  <button onclick="storeData()">Store Data in LocalStorage</button>
+  <button onclick="retrieveData()">Retrieve Data from LocalStorage</button>
+  <h3>Stored Data:</h3>
+  <pre id="dataResult"></pre>
+  <script>
+    const employees = [
+      { id: "E001", name: "manoj", position: "Software Engineer", department: "Engineering" },
+      { id: "E002", name: "Arun", position: "Product Manager", department: "Product" },
+      { id: "E003", name: "balaji", position: "UX Designer", department: "Design" }
+    ];
+    function storeData() {
+      localStorage.setItem('employees', JSON.stringify(employees));
+      alert('Data has been stored in LocalStorage');
+    }
+    function retrieveData() {
+      const storedData = localStorage.getItem('employees');
+      if (storedData) {
+        const parsedData = JSON.parse(storedData);
+        document.getElementById('dataResult').textContent = JSON.stringify(parsedData, null, 2);
+      } else {
+        alert('No data found in LocalStorage');
+      }
+    }
+  </script>
+
+</body>
+</html>

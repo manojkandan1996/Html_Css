@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Filter JSON Data by Condition</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input, button { padding: 8px; margin: 5px 0; }
+    pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+
+  <h2>Filter Employees by Position</h2>
+
+  <label for="positionInput">Enter Position:</label>
+  <input type="text" id="positionInput" placeholder="e.g., Developer">
+  <button onclick="filterEmployees()">Filter</button>
+
+  <h3>Filtered Results:</h3>
+  <pre id="output"></pre>
+
+  <script>
+    const employees = [
+      { id: "E001", name: "John Doe", position: "Developer" },
+      { id: "E002", name: "Jane Smith", position: "Designer" },
+      { id: "E003", name: "Mike Brown", position: "Developer" },
+      { id: "E004", name: "Emily Davis", position: "Manager" }
+    ];
+
+    document.getElementById("output").textContent = JSON.stringify(employees, null, 2);
+
+    function filterEmployees() {
+      const position = document.getElementById("positionInput").value.trim();
+      const filtered = employees.filter(emp => emp.position.toLowerCase() === position.toLowerCase());
+
+      const output = document.getElementById("output");
+      if (filtered.length > 0) {
+        output.textContent = JSON.stringify(filtered, null, 2);
+      } else {
+        output.textContent = "No employees found with that position.";
+      }
+    }
+  </script>
+
+</body>
+</html>
