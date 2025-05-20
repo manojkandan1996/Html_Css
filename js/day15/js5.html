@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Syntax Error Handling</title>
+</head>
+<body>
+    <script>
+function checkIfNumber(input) {
+    try {
+        if (typeof input !== 'number' || isNaN(input)) {
+            throw new TypeError("Input must be a valid number.");
+        }
+        console.log("Valid number:", input);
+    } catch (error) {
+        if (error instanceof TypeError) {
+            console.log("Caught a TypeError:", error.message);
+        } else {
+            console.log("Caught an error:", error.message);
+        }
+    }
+}
+checkIfNumber(42);        
+checkIfNumber("hello");   
+checkIfNumber(NaN);       
+checkIfNumber(true);      
+
+    </script>
+</body>
+</html>

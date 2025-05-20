@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Syntax Error Handling</title>
+</head>
+<body>
+    <script>
+  function processInput(input) {
+    try {
+        console.log("Starting processing...");
+        try {
+            if (typeof input !== 'number') {
+                throw new TypeError("Input must be a number.");
+            }
+            if (input === 0) {
+                throw new Error("Division by zero is not allowed.");
+            }
+
+            let result = 100 / input;
+            console.log("Result:", result);
+
+        } catch (innerError) {
+            console.log("Inner catch - Error:", innerError.message);
+        }
+
+        console.log("Continuing after inner try...");
+
+    } catch (outerError) {
+        console.log("Outer catch - Unexpected error:", outerError.message);
+    }
+}
+processInput(25);      
+processInput(0);        
+processInput("test");   
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Syntax Error Handling</title>
+</head>
+<body>
+    <script>
+function processNumbers(numbers) {
+    for (let i = 0; i < numbers.length; i++) {
+        debugger;
+        console.log("Processing number:", numbers[i]);
+        if (numbers[i] === 5) {
+            console.log("Found number 5!");
+        }
+    }
+}
+processNumbers([1, 2, 3, 5, 7, 10]);
+
+
+
+    </script>
+</body>
+</html>

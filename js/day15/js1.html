@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Syntax Error Handling</title>
+</head>
+<body>
+ 
+
+    <script>
+       const Code = "let x === 10"; 
+
+try {
+    eval(Code);
+} catch (error) {
+    if (error instanceof SyntaxError) {
+        console.log("Caught a SyntaxError: " + error.message);
+    } else {
+        console.log("Caught an error: " + error.message);
+    }
+}
+    </script>
+</body>
+</html>

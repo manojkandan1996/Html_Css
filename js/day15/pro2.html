@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Response Logger</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>API Response Logger</h2>
+
+    <button onclick="fetchData()">Fetch Data</button>
+
+    <div id="responseContainer">
+        <h3>API Responses:</h3>
+        <div id="responseLog"></div>
+    </div>
+
+    <script>
+       
+        function logToLocalStorage(data, isError = false) {
+            let log = JSON.parse(localStorage.getItem('apiLog')) || [];
+
+            const logEntry = {
+                timestamp: new Date().toISOString(),
+                data: data,
+                isError: isError
+            };
+
+            log.push(logEntry);
+
+            localStorage.setItem('apiLog', JSON.stringify(log));
+        }
+
+        async function fetchData() {
+            try {
+              
+                const url = 'https://jsonplaceholder.typicode.com/posts'; 
+
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+
+                logToLocalStorage({ message: 'API request successful', data: data }, false);
+
+                document.getElementById("responseLog").textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                logToLocalStorage({ message: error.message }, true);
+
+                document.getElementById("responseLog").textContent = 'Error: ' + error.message;
+                console.error('API Error:', error);
+            }
+        }
+        function displayLogs() {
+            const logs = JSON.parse(localStorage.getItem('apiLog')) || [];
+            console.table(logs);
+        }
+
+    </script>
+
+</body>
+</html>

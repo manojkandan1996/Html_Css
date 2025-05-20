@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Syntax Error Handling</title>
+</head>
+<body>
+    <script>
+function processUserInput(user) {
+    if (!user) {
+        console.error("Critical Error: No user data provided.");
+        return;
+    }
+
+    if (!user.name) {
+        console.warn("Warning: User name is missing.");
+        user.name = "Unknown";
+    }
+
+    if (typeof user.age !== 'number' || isNaN(user.age)) {
+        console.warn("Warning: Invalid age provided. Defaulting to 0.");
+        user.age = 0;
+    }
+
+    if (user.age < 0) {
+        console.error("Critical Error: Age cannot be negative.");
+        return;
+    }
+
+    console.log("User processed successfully:", user);
+}
+processUserInput(null); 
+processUserInput({});    
+processUserInput({ name: "vani", age: -5 });
+processUserInput({ name: "sree", age: "not a number" }); 
+processUserInput({ name: "subha", age: 30 }); 
+
+
+
+    </script>
+</body>
+</html>

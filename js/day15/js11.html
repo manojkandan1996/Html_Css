@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Syntax Error Handling</title>
+</head>
+<body>
+    <script>
+function fetchData(url) {
+    let data;
+    
+    try {
+        console.log("Starting API request...");
+        if (url === "https://invalid-url.com") {
+            throw new Error("API request failed");
+        }
+        data = { id: 1, name: "John Doe" };
+        console.log("Data received:", data);
+        
+    } catch (error) {
+        console.error("Error occurred:", error.message);
+    } finally {
+        console.log("Cleanup code: Closing resources, resetting states...");
+    }
+}
+
+fetchData("https://valid-url.com");  
+fetchData("https://invalid-url.com");  
+
+
+
+    </script>
+</body>
+</html>
