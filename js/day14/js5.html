@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #user-info {
+            margin-top: 20px;
+        }
+        #user-info img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .repo-list {
+            margin-top: 20px;
+        }
+        .repo-item {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>GitHub User Profile</h1>
+    
+    <label for="username">Enter GitHub Username:</label>
+    <input type="text" id="username" placeholder="e.g., octocat">
+    <button onclick="fetchUserProfile()">Fetch Profile</button>
+
+    <div id="user-info"></div>
+    <div id="repo-info"></div>
+
+    <script>
+      
+        async function fetchUserProfile() {
+            const username = document.getElementById('username').value;
+            if (!username) {
+                alert('Please enter a GitHub username.');
+                return;
+            }
+
+            const url = `https://api.github.com/users/${username}`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error('User not found');
+                }
+
+                const userData = await response.json();
+
+                
+                document.getElementById('user-info').innerHTML = `
+                    <h2>${userData.name}</h2>
+                    <img src="${userData.avatar_url}" alt="Avatar">
+                    <p><strong>Bio:</strong> ${userData.bio || 'No bio available'}</p>
+                    <p><strong>Location:</strong> ${userData.location || 'Not specified'}</p>
+                    <p><strong>Public Repos:</strong> ${userData.public_repos}</p>
+                `;
+
+                
+                fetchUserRepos(userData.repos_url);
+
+            } catch (error) {
+        
+                document.getElementById('user-info').innerHTML = `<p>Error: ${error.message}</p>`;
+                document.getElementById('repo-info').innerHTML = '';
+            }
+        }
+
+        async function fetchUserRepos(reposUrl) {
+            try {
+                const response = await fetch(reposUrl);
+                const reposData = await response.json();
+
+                let repoListHtml = '<h3>Repositories:</h3><ul class="repo-list">';
+                reposData.forEach(repo => {
+                    repoListHtml += `
+                        <li class="repo-item">
+                            <a href="${repo.html_url}" target="_blank">${repo.name}</a> - ${repo.language || 'N/A'}
+                        </li>
+                    `;
+                });
+                repoListHtml += '</ul>';
+
+                document.getElementById('repo-info').innerHTML = repoListHtml;
+
+            } catch (error) {
+                document.getElementById('repo-info').innerHTML = `<p>Error fetching repositories: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

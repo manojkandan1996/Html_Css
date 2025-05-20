@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange Rates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .exchange-rate {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .currency {
+            font-weight: bold;
+        }
+        .loading {
+            font-size: 20px;
+            font-weight: bold;
+            color: #007BFF;
+        }
+        #error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Currency Exchange Rates</h1>
+
+    <p id="error"></p>
+    
+    <div id="loading" class="loading">Loading exchange rates...</div>
+    
+    <div id="exchange-rates" class="exchange-rate"></div>
+
+    <script>
+        
+        const apiKey = 'YOUR_API_KEY';  
+        const baseCurrency = 'USD';  
+        const targetCurrency = 'EUR';  
+        const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${baseCurrency}`;
+
+        async function fetchExchangeRates() {
+            try {
+                
+                const response = await fetch(url);
+                const data = await response.json();
+
+               
+                if (data.result !== 'success') {
+                    throw new Error(data['error-type']);
+                }
+
+                document.getElementById('loading').style.display = 'none';
+
+                const exchangeRate = data.conversion_rates[targetCurrency];
+
+                const exchangeRatesDiv = document.getElementById('exchange-rates');
+                exchangeRatesDiv.innerHTML = `
+                    <p>The exchange rate from <span class="currency">${baseCurrency}</span> to <span class="currency">${targetCurrency}</span> is:</p>
+                    <p><strong>${baseCurrency} 1 = ${targetCurrency} ${exchangeRate}</strong></p>
+                `;
+            } catch (error) {
+                
+                console.error('Error fetching exchange rates:', error);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').innerText = 'Error loading exchange rates. Please try again later.';
+            }
+        }
+
+        fetchExchangeRates();
+    </script>
+</body>
+</html>

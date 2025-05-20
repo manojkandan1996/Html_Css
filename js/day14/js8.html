@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Comments Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #comments-container {
+            margin-top: 20px;
+        }
+        .comment {
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .comment h4 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .comment p {
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Post Comments</h1>
+    <button onclick="fetchComments()">Load Comments</button>
+
+    <div id="comments-container"></div>
+
+    <script>
+        
+        function fetchComments() {
+           
+            const xhr = new XMLHttpRequest();
+
+            
+            const url = 'https://jsonplaceholder.typicode.com/comments?postId=1';
+
+            xhr.open('GET', url, true);
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                 
+                    const comments = JSON.parse(xhr.responseText);
+
+                   
+                    const container = document.getElementById('comments-container');
+
+
+                    container.innerHTML = '';
+
+                    
+                    comments.forEach(function (comment) {
+                       
+                        const commentDiv = document.createElement('div');
+                        commentDiv.classList.add('comment');
+
+                        commentDiv.innerHTML = `
+                            <h4>${comment.name}</h4>
+                            <p><strong>Email:</strong> ${comment.email}</p>
+                            <p>${comment.body}</p>
+                        `;
+
+                        container.appendChild(commentDiv);
+                    });
+                } else {
+                    console.error('Error fetching comments:', xhr.statusText);
+                }
+            };
+
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

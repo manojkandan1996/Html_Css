@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real-Time Air Quality Checker</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+    select, button { padding: 10px; font-size: 16px; margin-top: 20px; }
+    #results { margin-top: 20px; }
+    .pollutant { margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Real-Time Air Quality Checker</h1>
+  
+  <label for="city">Select a City:</label>
+  <select id="city">
+    <option value="London">London</option>
+    <option value="New York">New York</option>
+    <option value="Los Angeles">Los Angeles</option>
+    <option value="Tokyo">Tokyo</option>
+    <option value="Paris">Paris</option>
+  </select>
+  
+  <button onclick="getAirQuality()">Check Air Quality</button>
+  
+  <div id="results">
+    <h2 id="aqi"></h2>
+    <p id="health-advice"></p>
+    <div id="pollutants"></div>
+  </div>
+
+  <script>
+    const apiKey = 'your_api_key_here'; 
+    const baseUrl = 'https://api.openweathermap.org/data/2.5/air_pollution';
+
+    
+    async function getAirQuality() {
+      const city = document.getElementById('city').value;
+      const geocodeUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+      
+      try {
+        
+        const response = await fetch(geocodeUrl);
+        const data = await response.json();
+        
+        if (data.cod !== 200) {
+          document.getElementById('results').innerHTML = 'City not found.';
+          return;
+        }
+
+        const { lat, lon } = data.coord; 
+
+        const airQualityUrl = `${baseUrl}?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+        const airQualityResponse = await fetch(airQualityUrl);
+        const airQualityData = await airQualityResponse.json();
+
+        displayAirQuality(airQualityData);
+        
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        document.getElementById('results').innerHTML = 'Error fetching air quality data.';
+      }
+    }
+
+    function displayAirQuality(data) {
+      const aqi = data.list[0].main.aqi;
+      const pollutants = data.list[0].components;
+    
+      document.getElementById('aqi').textContent = `AQI: ${aqi}`;
+      document.getElementById('health-advice').textContent = getHealthAdvice(aqi);
+      let pollutantsHTML = '<h3>Pollutants Levels:</h3>';
+      for (let [key, value] of Object.entries(pollutants)) {
+        pollutantsHTML += `<div class="pollutant">${key.toUpperCase()}: ${value} µg/m³</div>`;
+      }
+      document.getElementById('pollutants').innerHTML = pollutantsHTML;
+    }
+    function getHealthAdvice(aqi) {
+      if (aqi === 1) {
+        return 'Good air quality. No health impacts.';
+      } else if (aqi === 2) {
+        return 'Fair air quality. Some pollutants may be a concern for very sensitive people.';
+      } else if (aqi === 3) {
+        return 'Moderate air quality. People with respiratory issues may experience symptoms.';
+      } else if (aqi === 4) {
+        return 'Poor air quality. People with respiratory issues should avoid outdoor activities.';
+      } else if (aqi === 5) {
+        return 'Very poor air quality. Health effects are more likely to occur for everyone.';
+      } else {
+        return 'Unknown AQI level. Please check again later.';
+      }
+    }
+  </script>
+</body>
+</html>
