@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #first{
+            position: absolute;
+            top: 30%;
+            left: 10%;
+            font-size: 37px;
+            font-weight: bold;
+        }
+        #next
+        {
+            position: absolute;
+            top: 40%;
+            left: 10%;
+            font-size: 40px;
+        }
+        #u
+        {
+            color: black;
+            font-size: 30px;
+            text-decoration: underline;
+            text-decoration-color: #1EAAD5;
+            line-height:2;
+        }
+        #p
+        {
+            color: black;
+            font-size: 30px;
+            text-decoration: underline;
+            text-decoration-color:#1EAAD5;
+            line-height:2;
+           
+        }
+        #helo{
+            position: absolute;
+            top: 20%;
+            right: 33%;
+            font-size: 25px;
+            color: white;
+        }
+        #gm{
+            position: absolute;
+            top: 24%;
+            right: 27%;
+            font-size: 25px;
+            color:#1EAAD5;
+        }
+
+        #log
+        {
+            position: absolute;
+            top: 42%;
+            right: 24%;
+            font-size: 25px;
+            color:#1EAAD5;
+            font-weight: 300;
+        }
+        
+        #acc
+        {
+            
+                position: absolute;
+                top: 42%;
+                right:13%;
+                font-size: 25px;
+            
+                font-weight: 300;
+            
+        }
+
+        #signup{
+            position: absolute;
+            top: 58%;
+            right:13%;
+        }
+        #for{
+            color: white;
+            padding-left: 140px;
+            font-size: 20px;
+           position: absolute;
+           bottom: 0px;
+        }
+        #sub{
+            position: absolute;
+            top: 100%;
+            width: 270px;
+            height: 20%;
+            background-color: #1EAAD5;
+            border: none;
+            color: white;
+        }
+
+        h1 {
+            color: white;
+            font-size: 25px;
+            margin-top: 70px;
+            margin-left: 90px;
+        }
+
+        p {
+            color: white;
+            font-size: 25px;
+            margin-top: 70px;
+            margin-left: 90px;
+        }
+
+        #row1 {
+            display: flex;
+            height: 300px;
+border: 5px solid white;
+        }
+
+        #col1 {
+
+            width: 25%;
+            background-color: #d2d2d2;
+
+        }
+
+        #col2 {
+
+            width: 25%;
+            border: 5px solid white;
+        }
+
+        #row2 {
+            display: flex;
+            height: 300px;
+        }
+
+        #col3 {
+
+            width: 50%;
+            height: 600px;
+
+        }
+
+        #col6 {
+
+            width: 25%;
+            background-color: #dbe1df;
+
+        }
+
+        #col5 {
+
+            width: 25%;
+
+        }
+
+        #col4 {
+
+            width: 60%;
+
+        }
+
+        #s2 {
+position: absolute;
+right: 7%;
+padding-top: 40px;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+        #row3{
+            display: flex;
+        }
+        #s1{
+            width:100%;
+            margin: 85px;
+        }
+        #ppp{
+            padding: 0;
+            margin: 0;
+            width: 50%;
+        }
+footer{
+    background-color: grey;
+    width: 25%;
+    line-height: 1;
+    padding: 10px;
+    border-top-right-radius: 80px;
+}
+footer p{
+    padding: 0;
+    margin: 0;
+
+}
+button{
+    background-color: black;
+    color: white;
+    margin-left: 700px;
+    margin-top: 100px;
+    width: 150px;
+    height: 80px;
+    font-size: 20px;
+}
+
+
+ @media (max-width: 768px) {
+      h1, p {
+        font-size: 20px;
+        margin-left: 20px;
+        margin-top: 40px;
+      }
+
+      #first, #next, #helo, #gm, #log, #acc, #signup {
+        position: static;
+        font-size: 20px;
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      #sub {
+        width: 100%;
+        height: auto;
+        position: static;
+        margin: 10px 0;
+      }
+
+      button {
+        margin: 30px auto;
+        display: block;
+        width: 60%;
+        font-size: 16px;
+      }
+
+      #ppp {
+        width: 90%;
+        margin: 0 auto;
+        font-size: 16px;
+      }
+
+      #s2 {
+        position: static;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      footer {
+        width: 100%;
+        border-radius: 0;
+        text-align: center;
+      }
+
+      #row1, #row2, #row3 {
+        flex-direction: column;
+        height: auto;
+      }
+
+      #col1, #col2, #col3, #col5, #col6 {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1, p {
+        font-size: 18px;
+      }
+
+      button {
+        font-size: 14px;
+        height: 60px;
+      }
+
+      #for {
+        font-size: 16px;
+        padding-left: 10px;
+        position: static;
+        text-align: center;
+      }
+    }
+</style>
+</head>
+
+<body>
+    <div id="row1">
+        <div id="col1">
+            <h1>Handcrafted Warmeth <br>
+                Minimalist Charm</h1>
+        </div>
+        <div id="col2"><img src="../images/11 (199)/11 (90).png">
+        </div>
+        <div id="col3"><img src="../images/11 (199)/11 (88).png">
+        </div>
+
+    </div>
+    <div id="row2">
+        <div id="col5">
+            <img src="../images/11 (199)/11 (188).png">
+        </div>
+        <div id="col6">
+            <p>Elevate your space with <br> Organic Elegance </p>
+        </div>
+    </div>
+    <div id="row3">
+        <section id="s1">
+            <img style="width: 50%;height: 35%;" src="../images/11 (199)/11 (179).png">
+            <p id="ppp" style="color: black;">Step into our stores and discover a world of beautifully crafted furniture designed to elevate every
+                comer of your home. From cozy sofas and elegant dining sets to functional storage and timeless wooden
+                pieces,</p>
+<a href="../pages/home.html">
+                <button style="margin-left: 490px;width: 20%;" type="submit">EXPLORE</button>
+            </a>
+        </section>
+
+        <section id="s2">
+            <img style="width: 400px;height: 100%;" src="../images/11 (199)/11 (181).png">
+
+           
+        </section>
+    </div>
+    
+    <footer>
+        <p>contact:91+9965802143</p>
+        <p>mail:mail@woodasthetic.com</p>
+    </footer>
+</body>
+
+</html>

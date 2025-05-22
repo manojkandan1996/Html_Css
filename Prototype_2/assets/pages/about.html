@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav-list {
+            display: flex;
+            justify-content: space-evenly;
+            list-style: none;
+            width: 50%;
+            position: absolute;
+            left: 20%;
+            top: 20px;
+            color: #d9d9d9;
+
+
+        }
+
+        a {
+            text-decoration: none;
+            color: gray;
+            font-weight: 900;
+            font-size: 20px;
+
+        }
+
+        h1 {
+
+            font-size: 45px;
+            text-align: center;
+            margin-top: 90px;
+
+        }
+
+        #fur {
+            position: absolute;
+            top: 45px;
+            font-weight: bold;
+            left: 80px;
+        }
+
+        #row1 {
+            display: flex;
+            height: 300px;
+            border: 5px solid white;
+        }
+
+        #col1 {
+
+            width: 25%;
+            background-color: #d2d2d2;
+
+        }
+
+        #col2 {
+
+            width: 25%;
+            border: 5px solid white;
+        }
+
+        #row2 {
+            display: flex;
+            height: 300px;
+        }
+
+        #col3 {
+
+            width: 50%;
+            height: 600px;
+
+        }
+
+        #col6 {
+
+            width: 25%;
+            background-color: #dbe1df;
+
+        }
+
+        #col5 {
+
+            width: 25%;
+
+        }
+
+        #col4 {
+
+            width: 60%;
+
+        }
+
+        #s2 {
+            float: right;
+            height: 100%;
+            width: 100%;
+
+        }
+
+        #img11 {
+            height: 100%;
+            width: 100%;
+        }
+
+        #row3 {
+            display: flex;
+        }
+
+        #s1 {
+            width: 100%;
+            margin: 85px;
+        }
+
+        #ppp {
+            padding: 0;
+            margin: 0;
+        }
+
+        #roww1 {
+            display: flex;
+            height: 100%;
+            width: 100%;
+        }
+
+        #coll1 {
+            height: 30%;
+            width: 30%;
+        }
+
+        #coll2 {
+            height: 30%;
+            width: 30%;
+        }
+
+        #coll3 {
+            height: 30%;
+            width: 30%;
+        }
+
+        #row22 {
+            display: flex;
+            height: 550px;
+            gap: 50px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #col33 {
+
+            width: 20%;
+            height: 550px;
+
+        }
+
+        #col44 {
+
+            width: 20%;
+            height: 550px;
+
+        }
+
+        #col55 {
+
+            width: 20%;
+            height: 550px;
+
+        }
+
+        #i333 {
+            height: 100%;
+            width: 100%;
+        }
+        #btm{
+            font-size: 30px;
+            gap: 5px;
+        }
+       
+    #blk {
+        margin-top: 80px;
+        background-color: black;
+        height: 550px;
+        color: rgb(177, 30, 30);
+    }
+
+    #ded {
+        font-size: 45px;
+        position: absolute;
+        top: 338%;
+        right: 60%;
+        color: white;
+
+    }
+
+    #pride {
+        position: absolute;
+        top: 374%;
+        padding-left: 70px;
+        font-size: 25px;
+        width: 50%;
+        color: white;
+    }
+
+    #st1 {
+        position: absolute;
+        top: 410%;
+        padding-left: 70px;
+        font-size: 20px;
+        color: white;
+    }
+
+    #qual {
+        position: absolute;
+        top: 417%;
+        padding-left: 70px;
+        font-size: 20px;
+        color: rgb(238, 45, 110);
+    }
+
+    #rat1 {
+        position: absolute;
+        top: 422%;
+        padding-left: 70px;
+        font-size: 20px;
+        color: white;
+    }
+
+
+    #st2 {
+        position: absolute;
+        top: 410%;
+        padding-left: 300px;
+        font-size: 20px;
+        color: white;
+    }
+
+    #qua2 {
+        position: absolute;
+        top: 417%;
+        padding-left: 300px;
+        font-size: 20px;
+        color: rgb(238, 45, 110);
+    }
+
+    #rat2 {
+        position: absolute;
+        top: 422%;
+        padding-left: 300px;
+        font-size: 20px;
+        color: white;
+    }
+
+    #craf {
+        position: absolute;
+        top: 350%;
+        padding-left: 880px;
+        font-size: 30px;
+        color: rgb(250, 248, 248);
+    }
+
+    #meti {
+        position: absolute;
+        top: 362%;
+        padding-left: 880px;
+        font-size: 20px;
+        color: rgb(248, 245, 245);
+    }
+
+    #ext {
+        position: absolute;
+        top: 382%;
+        padding-left: 880px;
+        font-size: 30px;
+        color: rgb(245, 243, 243);
+    }
+
+    #dis {
+        position: absolute;
+        top: 390%;
+        padding-left: 880px;
+        font-size: 20px;
+        color: rgb(246, 248, 248);
+    }
+
+    #dedi {
+        position: absolute;
+        top: 405%;
+        padding-left: 880px;
+        font-size: 30px;
+        color: rgb(250, 248, 248);
+    }
+
+    #quick {
+        position: absolute;
+        top: 414%;
+        padding-left: 880px;
+        font-size: 20px;
+        color: white;
+    }
+    #test {
+        color: red;
+        position: absolute;
+        left: 40%;
+        font-size: 25px;
+        border-radius: 18px;
+        border: none;
+padding-top: 100px;
+background-color: white;
+
+    }
+    
+    #prow1 {
+        display: flex;
+        height: 300px;
+
+    }
+
+    #pcol1 {
+        background-color: grey;
+        border: 15px white solid;
+        width: 50%;
+        height: 400px;
+
+    }
+
+    #pcol2 {
+        background-color: grey;
+        width: 50%;
+        height: 400px;
+    }
+ #contl{
+        position: relative;
+        text-align: center;
+        color: white;
+        font-size: 45px;
+    }
+
+    /* Bottom left text */
+    .bottom {
+        position: absolute;
+        bottom: 400px;
+        left: 50px;
+        display: none;
+
+    }
+
+
+    #wblack {
+        width: 100%;
+        height: 250px;
+        background-color: rgb(61, 58, 58);
+        font-size: 40px;
+
+    }
+
+    #sus {
+        position: absolute;
+        top: 650%;
+        color: white;
+        left: 130px;
+
+    }
+
+    #subtext {
+        position: absolute;
+        top: 658%;
+        color: rgb(3, 3, 3);
+        left: 730px;
+        height: 50px;
+        width: 40%;
+        font-size: 20px;
+    }
+
+    #subbtn {
+        position: absolute;
+        top: 659%;
+        color: rgb(5, 5, 5);
+        right: 10%;
+        width: 90px;
+        height: 40px;
+        border: none;
+        color: aliceblue;
+        background-color: rgb(231, 27, 95);
+    }
+
+      #abcd {
+        position: absolute;
+        right: 70%;
+        color: gray;
+        line-height: 2;
+        font-size: 20px;
+    }
+    #abcd li{
+         list-style: none;
+        text-decoration: none;
+    }
+ #furbtm {
+        position: absolute;
+        top: 683%;
+        font-weight: bold;
+    }
+#ab {
+        position: absolute;
+        right: 40%;
+        color: gray;
+        line-height: 2;
+        font-size: 20px;
+    }
+    #ab li{
+           list-style: none;
+        text-decoration: none;
+    }
+
+     #social{
+        list-style: none;
+        text-decoration: none;
+           line-height: 2;
+           position: absolute;
+        right: 20%;
+        top: 692%;
+    }
+     #social li{
+        list-style: none;
+        text-decoration: none;
+     }
+     /* For tablets and medium screens */
+@media (max-width: 1024px) {
+  .nav-list {
+    width: 80%;
+    left: 10%;
+    top: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #fur {
+    position: static;
+    text-align: center;
+    margin-top: 20px;
+    left: auto;
+  }
+
+  #row1, #row2, #row22, #prow1 {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  #col1, #col2, #col3, #col5, #col6, #col33, #col44, #col55, #pcol1, #pcol2 {
+    width: 100%;
+    height: auto;
+    border: none;
+  }
+
+  #btm {
+    font-size: 20px;
+    padding: 0 15px;
+  }
+
+  #ded, #st1, #qual, #rat1, #st2, #qua2, #rat2,
+  #craf, #meti, #ext, #dis, #dedi, #quick {
+    position: static;
+    padding-left: 0;
+    text-align: center;
+    color: white;
+  }
+#pride{
+    display: none;
+}
+  #blk {
+    height: auto;
+    padding: 30px 15px;
+  }
+
+  #test {
+    position: static;
+    margin: 40px auto;
+    display: block;
+    padding-top: 20px;
+  }
+
+  #contl img {
+    padding-top: 0;
+  }
+
+  #sus, #subtext, #subbtn {
+    position: static;
+    text-align: center;
+    margin: 10px auto;
+    display: block;
+    width: 90%;
+  }
+
+  #subbtn {
+    width: auto;
+    margin-top: 40px;
+  }
+
+  #abcd, #ab, #social {
+    position: static;
+    text-align: center;
+    margin: 20px auto;
+    width: 90%;
+  }
+}
+
+/* For phones and small screens */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 28px;
+    margin-top: 50px;
+  }
+
+  a {
+    font-size: 16px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+    position: static;
+    margin-top: 10px;
+  }
+
+  #row1, #row2, #row22, #prow1 {
+    flex-direction: column;
+  }
+
+  #col1, #col2, #col3, #col5, #col6, #col33, #col44, #col55, #pcol1, #pcol2 {
+    width: 100%;
+    height: auto;
+  }
+
+  #btm {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  #test {
+    font-size: 20px;
+    padding-top: 10px;
+  }
+}
+
+    </style>
+
+</head>
+
+<body>
+    <hr>
+
+    <nav>
+        <img src="../images/11 (199)/11 (179).png">
+        <p id="fur">Furniture that feels like home</p>
+        <ul class="nav-list">
+
+            <li><a href="../pages/home.html">Home</a></li>
+            <li><a href="../pages/furniture.html">Furniture</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="row1">
+        <div id="col1">
+
+        </div>
+        <div id="col2"><img id="img11" src="../images/11 (199)/11 (90).png">
+        </div>
+        <div id="col3"><img id="img11" src="../images/11 (199)/11 (88).png">
+        </div>
+
+    </div>
+    <div id="row2">
+        <div id="col5">
+            <img id="img11" src="../images/11 (199)/11 (188).png">
+        </div>
+        <div id="col6">
+
+        </div>
+    </div>
+    <h1>
+        Over 1000+ People trust us
+    </h1>
+    <p style="text-align: center;font-size: 20px;">Trusted by Over 1,000 Happy Customers</p>
+    <p style="text-align: center;font-size: 20px;">Join the Growing Community who love our Premimum</p>
+    <div id="row22">
+        <div id="col33">
+            <img id="i333" src="../images/11 (199)/11 (164).png">
+        </div>
+        <div id="col44"><img id="i333" src="../images/11 (199)/11 (165).png"></div>
+        <div id="col55"><img id="i333" src="../images/11 (199)/11 (166).png"></div>
+    </div>
+
+    <h1>About Us</h1>
+    <p id="btm">Every piece we create is a celebration of natural materials and mindful design. We believe furniture should do
+        more than just fill a room-it should bring warmth, depth, and a sense of calm to your everyday life. That's why
+        we pour passion into every curve, texture, and finish, allowing the raw beauty of wood to shine through. As your
+        space grows and changes, our furniture is designed to grow with you-built to last, to be loved, and to become
+        part of your story. From our workshop to your home, we're proud to craft pieces that feel personal, purposeful,
+        and undeniably yours. Every piece we create is a celebration of natural materials and mindful design
+    </p>
+
+    <p id="btm">We believe furniture should do more than just fill a room-it should bring warmth, depth, and a sense of calm to
+        your everyday life: That's why we pour passion into every curve, texture, and finish, allowing the raw beauty of
+        wood to shine through.</p>
+    <p id="btm">
+        As your space grows and changes, our furniture is designed to grow with you built to last, to be loved, and to
+        become part of your story. From our workshop to your home, we're proud to craft pieces that feel personal,
+        purposeful, and undeniably yours.
+    </p>
+    <section id="blk">
+        <h1 id="ded">Our Dedication to Your <br>Satisfaction</h1>
+        <p id="pride">we take pride in our unwavering commitment to quality and customer satisfaction. With a track
+            record of
+            excellence, we provide you with the finest furniture and a service you can trust.</p>
+
+        <p id="st1">⭐⭐⭐⭐⭐</p>
+        <p id="rat1">4.9/5 rating</p>
+        <p id="qual">Quality</p>
+
+
+
+        <p id="st2">⭐⭐⭐⭐⭐</p>
+        <p id="rat2">4.8/5 rating</p>
+        <p id="qua2">Customer Satisfaction</p>
+
+        <h2 id="craf">Quality Craftsmanship </h2>
+
+
+        <p id="meti">Our furniture is meticulously handcrafted to stand the test of time, ensuring it can be enjoyed for
+            generations to come.</p>
+
+
+
+        <h2 id="ext">Extensive Selection</h2>
+
+
+        <p id="dis">Discover a wide variety of styles and options to suit
+            your unique preferences and needs.</p>
+
+        <h2 id="dedi">Dedicated Customer Support</h2>
+        <p id="quick">Quickly navigate you and engage with your ambience</p>
+
+    </section>
+
+    <button id="test" type="button"> Testimonial Section </button>
+    <h1 style="font-size: 40px;padding-top: 40px">What Our Customer Says</h1>
+    <p style="font-size: 16;text-align: center;">Discover the stories and experiences of our Delighted
+        <br>Customer
+    </p>
+
+ <div id="prow1">
+        <div id="pcol1">
+            <h1>❝</h1>
+            <p style="font-size: 25px;">
+                I recently purchased a beautiful dining table and it has completely transformed our dining area. The
+                craftsmanship and attention to detail are truly remarkable. The table is not only a.functional piece
+                of furniture but also a work of art that our family and guests admire. The process from selection to
+                delivery was smooth, and the customer support team was incredibly helpful throughout.</p>
+        </div>
+        <div id="pcol2">
+            <h1>❝</h1>
+            <p style="font-size: 25px;">
+                My experience has been consistently outstanding. I've furnished my entire home with their products,
+                and every piece has exceeded my expectations. From the bedroom to the home office, offers a wide
+                range of stylish and well-crafted furniture. What truly sets them apart is their dedicated customer
+                support.
+            </p>
+        </div>
+
+    </div>
+<section id="contl">
+    <img src="../images/11 (199)/11 (67).png" style="width: 100%;height: 100%;padding-top: 20%;">
+     <div class="bottom">Your Furniture <br>Review</div>
+</section>
+<section id="wblack">
+
+        <p id="sus">Subscribe to get attractive <br>offers on our products</p>
+        <input id="subtext" type="text" placeholder="E.g.your mail @.com">
+        <button id="subbtn" type="submit">Subscribe</button>
+    </section>
+
+<img src="../images/11 (199)/11 (179).png">
+    <p id="furbtm">Furniture that feels like home</p>
+
+    <section id="abcd">
+        <ol>
+            <li style="font-weight: bold; color: black;">
+                Category
+            </li>
+            <li>
+                Living Room
+            </li>
+            <li>
+                Bedroom
+            </li>
+            <li>
+                Kitchen
+            </li>
+            <li>
+                Bathroom
+            </li>
+        </ol>
+    </section>
+
+
+     <section id="ab">
+        <ol id="seclist">
+         <li style="font-weight: bold; color: black;">
+                Popular products
+            </li>
+            <li>
+                Single sofa
+            </li>
+            <li>
+                Luxury white bed
+            </li>
+            <li>
+                Bean bag
+            </li>
+            <li>
+                Wooden chair
+            </li>
+        </ol>
+    </section>
+     <section id="social">
+        <ol id="seclist">
+         <li style="font-weight: bold; color: black;">
+                Follow Us 
+            </li>
+            <br>
+            <li>
+              <img src="../images/fb.png" style="width:25px;height: 25px;">
+            </li>
+            <li>
+               <img src="../images/insta.jfif" style="width: 30px;height: 30px;">
+            </li>
+            <li>
+                <img src="../images/twt.png" style="width: 30px;height: 30px;">
+            </li>
+            <li>
+                <img src="../images/you.png" style="width: 30px;height: 30px;">
+            </li>
+        </ol>
+    </section>
+</body>
+
+</html>

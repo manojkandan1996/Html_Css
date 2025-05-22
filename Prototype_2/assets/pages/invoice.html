@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav-list {
+            display: flex;
+            justify-content: space-evenly;
+            list-style: none;
+            width: 50%;
+            position: absolute;
+            left: 20%;
+            top: 20px;
+            color: #d9d9d9;
+
+
+        }
+
+        a {
+            text-decoration: none;
+            color: gray;
+            font-weight: 900;
+            font-size: 20px;
+
+        }
+
+
+
+        #of {
+            position: absolute;
+            top: 1150px;
+        }
+
+        #tick {
+            line-height: 2;
+        }
+
+        #abcd {
+            position: absolute;
+            top: 202%;
+            right: 70%;
+            color: gray;
+            line-height: 2;
+            font-size: 20px;
+        }
+
+        #abcd li {
+            list-style: none;
+            text-decoration: none;
+        }
+
+        #ab {
+            position: absolute;
+            top: 202%;
+            right: 40%;
+            color: gray;
+            line-height: 2;
+            font-size: 20px;
+        }
+
+        #ab li {
+            list-style: none;
+            text-decoration: none;
+        }
+
+        #social {
+            list-style: none;
+            text-decoration: none;
+            line-height: 2;
+            position: absolute;
+            right: 20%;
+            top: 202%;
+        }
+
+        #social li {
+            list-style: none;
+            text-decoration: none;
+        }
+
+        #nxt {
+            width: 200px;
+            height: 70px;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            position: absolute;
+            left: 1140px;
+            top: 950px;
+        }
+
+        #bk {
+            width: 200px;
+            height: 70px;
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+            position: absolute;
+            left: 900px;
+            top: 950px;
+        }
+
+        #row1 {
+            background-color: rgb(58, 148, 184);
+            border: 1px solid black;
+            width: 100%;
+            height: 200px;
+            text-align: center;
+            color: blue;
+        }
+
+        #row2 {
+            background-color: rgb(73, 25, 185);
+            border: 1px solid black;
+            width: 100%;
+            height: 100px;
+
+        }
+
+        #row3 {
+            border: 2px solid black;
+            width: 98.5%;
+            height: 800px;
+            padding-left: 20px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+        
+     #pay{
+        position: absolute;
+        top: 1119px;
+        left: 67%;
+        width: 30%;
+        height: 7%;
+        background-color: rgb(8, 8, 8);
+        color:white;
+        border: 1px solid black;
+        font-size: 30px;
+        font-weight: bold;
+     }
+     #exp{
+position: absolute;
+        top: 1219px;
+        left: 37%;
+        width: 30%;
+        height: 7%;
+        background-color: rgb(8, 8, 8);
+        color:white;
+        border: 1px solid black;
+        font-size: 30px;
+        font-weight: bold;
+     }
+     #fur
+     {
+        position: absolute;
+        top: 1219px;
+        left: 69%;
+        width: 30%;
+        height: 7%;
+        background-color: rgb(8, 8, 8);
+        color:white;
+        border: 1px solid black;
+        font-size: 30px;
+        font-weight: bold;
+     }
+     #rr{
+        position: absolute;
+        left: 50%;
+        top: 470px;
+     }
+
+/* Existing styles unchanged... */
+
+/* ===== MEDIA QUERIES ===== */
+
+/* For tablets and smaller desktops */
+@media (max-width: 1024px) {
+    .nav-list {
+        width: 80%;
+        left: 10%;
+        top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: relative;
+    }
+
+    #nxt, #bk, #pay, #exp, #fur {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin: 10px 5px;
+        width: 45%;
+        height: 60px;
+        font-size: 18px;
+    }
+
+    #row3 {
+        height: auto;
+        padding-left: 10px;
+    }
+
+    #of, #abcd, #ab, #social, #rr {
+        position: relative;
+        top: auto;
+        right: auto;
+        left: auto;
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    #abcd, #ab, #social {
+        display: inline-block;
+        vertical-align: top;
+        width: 30%;
+        text-align: center;
+    }
+
+    #abcd ol, #ab ol, #social ol {
+        padding-left: 0;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 600px) {
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        left: 0;
+        top: 0;
+        position: relative;
+        background: #222;
+        padding: 10px 0;
+    }
+
+    .nav-list li {
+        margin: 8px 0;
+    }
+
+    a {
+        font-size: 16px;
+        color: white;
+    }
+
+    #nxt, #bk, #pay, #exp, #fur {
+        width: 100%;
+        height: 50px;
+        font-size: 16px;
+        margin: 10px 0;
+        position: relative;
+        left: auto;
+        top: auto;
+    }
+
+    #row3 {
+        padding-left: 5px;
+        height: auto;
+    }
+
+    #of, #abcd, #ab, #social, #rr {
+        width: 100%;
+        margin: 15px 0;
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+    }
+
+    #abcd, #ab, #social {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    #abcd ol, #ab ol, #social ol {
+        padding-left: 15px;
+    }
+
+    p, h1 {
+        font-size: 16px;
+    }
+    #nn,#nnn{
+        display: none;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <hr>
+
+    <nav>
+        <img src="../images/11 (199)/11 (179).png">
+
+        <ul class="nav-list">
+
+            <li><a href="../pages/home.html">Home</a></li>
+            <li><a href="../pages/furniture.html">Furniture</a></li>
+            <li><a href="../pages/">About</a></li>
+            <li><a href="../pages/furniture.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="row1">
+        <h1 style="font-size: 50px;color: blue;border: none;"> INVOICE </h1>
+    </section>
+    <section id="row2">
+        <p>
+            .
+        </p>
+    </section>
+    <section id="row3">
+
+        <h1 style="font-size: 35px;">
+            From Address :
+        </h1>
+        <p>
+            Wood Aesthetics
+        </p>
+        <p>
+            Street Address
+        </p>
+        <p>
+            City,State
+        </p>
+        <p>
+            ZIP Code
+        </p>
+        <p>
+            Country
+        </p>
+        <p>
+            Phone
+        </p>
+        <p>
+            Email
+        </p>
+
+        <br>
+        <br>
+
+
+        <h1 style="font-size: 35px;">
+            To Address :
+        </h1>
+        <p>
+            Billing Address : Address 1
+        </p>
+        <p>
+            Name : Mukesh
+        </p>
+        <p>
+            Street Address : Address 1
+        </p>
+         <p>
+         City,State : Banglore
+        </p>
+        <p>
+            ZIP CODE : 1221
+        </p>
+        <p>
+            Phone : 1234567898
+        </p>
+
+
+    </section>
+<section id="rr">
+
+    <p>
+        Credit date : 20/07/2025
+    </p>
+
+    <p>
+        Credit Number : #678768
+    </p>
+    <p>
+        Customer name : Mukesh
+    </p>
+
+    <p>
+        Invoice Number : 0148768
+    </p>
+    <p>
+        Order Number : 7648768
+    </p>
+</section>
+  <button id="pay" type="submit">Save to Downloads</button></a>
+  <a href="../pages/home.html">
+   <button id="exp" type="submit">Explore Home Page</button></a>
+   <a href="../pages/furniture.html">
+    <button id="fur" type="submit">Furniture</button></a>
+
+    <img id="nn" style="position: absolute;top: 102%;left: 1%;top: 202%;" src="../images/11 (199)/11 (179).png">
+
+
+
+    <p id="nnn" style="font-weight: bold;position: absolute;top: 205%;">Furniture that feels like home</p>
+
+    <section id="abcd">
+
+        <ol>
+
+            <li style="font-weight: bold; color: black;">
+                Category
+            </li>
+            <li>
+                Living Room
+            </li>
+            <li>
+                Bedroom
+            </li>
+            <li>
+                Kitchen
+            </li>
+            <li>
+                Bathroom
+            </li>
+        </ol>
+    </section>
+
+    <section id="ab">
+        <ol>
+            <li style="font-weight: bold; color: black;">
+                Popular products
+            </li>
+            <li>
+                Single sofa
+            </li>
+            <li>
+                Luxury white bed
+            </li>
+            <li>
+                Bean bag
+            </li>
+            <li>
+                Wooden chair
+            </li>
+        </ol>
+    </section>
+    <section id="social">
+        <ol id="seclist">
+            <li style="font-weight: bold; color: black;">
+                Follow Us
+            </li>
+            <br>
+            <li>
+                <img src="../images/fb.png" style="width:25px;height: 25px;">
+            </li>
+            <li>
+                <img src="../images/insta.jfif" style="width: 30px;height: 30px;">
+            </li>
+            <li>
+                <img src="../images/twt.png" style="width: 30px;height: 30px;">
+            </li>
+            <li>
+                <img src="../images/you.png" style="width: 30px;height: 30px;">
+            </li>
+        </ol>
+    </section>
+
+
+
+
+    </nav>
+
+
+</body>
+
+</html>

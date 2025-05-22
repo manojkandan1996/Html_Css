@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav-list {
+            display: flex;
+            justify-content: space-evenly;
+            list-style: none;
+            width: 50%;
+            position: absolute;
+            left: 20%;
+            top: 20px;
+            color: #d9d9d9;
+
+
+        }
+
+        a {
+            text-decoration: none;
+            color: gray;
+            font-weight: 900;
+            font-size: 20px;
+
+        }
+
+        #row1 {
+            display: flex;
+            height: 500px;
+            
+
+        }
+
+        #col1 {
+
+            width: 40%;
+            height: 500px;
+padding-left: 140px;
+        }
+
+        #col2 {
+
+            width: 60%;
+position: absolute;
+            top: 750px;
+        }
+
+        #rs {
+            padding-left: 150px;
+            padding-top: 40px;
+            font-size: 30px;
+            color: black;
+            font-weight: bolder;
+        }
+
+        #clr {
+            padding-left: 150px;
+            padding-top: 10px;
+            font-size: 30px;
+        }
+
+        #dis {
+            padding-left: 150px;
+            color: gray;
+            width: 490px;
+        }
+
+
+        
+        #i1 {
+            height: 100%;
+            width: 100%;
+        }
+
+        #of {
+            position: absolute;
+            top: 1150px;
+        }
+        #tick {
+            line-height: 2;
+        }
+ #abcd {
+        position: absolute;
+          top: 202%;
+        right: 70%;
+        color: gray;
+        line-height: 2;
+        font-size: 20px;
+    }
+    #abcd li{
+         list-style: none;
+        text-decoration: none;
+    }
+    #ab {
+        position: absolute;
+       top: 202%;
+        right: 40%;
+        color: gray;
+        line-height: 2;
+        font-size: 20px;
+    }
+    #ab li{
+           list-style: none;
+        text-decoration: none;
+    }
+     #social{
+        list-style: none;
+        text-decoration: none;
+           line-height: 2;
+           position: absolute;
+        right: 20%;
+        top: 202%;
+    }
+     #social li{
+        list-style: none;
+        text-decoration: none;
+     }
+     #nxt{
+        width: 200px;
+        height: 70px;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        position: absolute;
+        left: 1140px;
+       top: 950px;
+     }
+     #bk{
+        width: 200px;
+        height: 70px;
+        background-color: white;
+        color: black;
+        border-radius: 10px;
+         position: absolute;
+        left: 900px;
+       top: 950px;
+     }
+     #i7
+
+     {
+        padding-left: 90px;
+     }
+     #name{
+        position: absolute;
+        top: 410px;
+        left: 57%;
+        width: 40%;
+        height: 5%;
+     }
+     #num{
+         position: absolute;
+        top: 455px;
+        left: 57%;
+        width: 40%;
+        height: 5%;
+     }
+     #exp{
+     position: absolute;
+        top: 500px;
+        left: 57%;
+        width: 20%;
+        height: 4%;
+gap: 5px;
+     }
+
+     #cvv
+     {
+         position: absolute;
+        top: 500px;
+        left: 77%;
+        width: 20%;
+        height: 4%;
+gap: 5px;
+    
+     }
+     #bk2
+     {
+ position: absolute;
+        top: 549px;
+        left: 57%;
+        width: 40%;
+        height: 7%;
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+
+     }
+     #pay{
+        position: absolute;
+        top: 619px;
+        left: 57%;
+        width: 40%;
+        height: 7%;
+        background-color: rgb(8, 8, 8);
+        color:white;
+        border: 1px solid black;
+        font-size: 30px;
+        font-weight: bold;
+     }
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 1024px) {
+  .nav-list {
+    width: 80%;
+    left: 10%;
+    flex-wrap: wrap;
+    font-size: 18px;
+  }
+  
+  #row1 {
+    flex-direction: column;
+    height: auto;
+    position: relative;
+  }
+
+  #col1 {
+    width: 100%;
+    padding-left: 20px;
+    height: auto;
+  }
+
+  #col2 {
+    position: relative;
+    width: 100%;
+    top: auto;
+    padding: 0 20px 20px;
+  }
+
+  #name, #num, #exp, #cvv, #bk2, #pay {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  #nxt, #bk {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: 10px 0;
+  }
+
+  #abcd, #ab, #social {
+    position: static;
+    width: 100%;
+    margin-top: 30px;
+    padding: 0 20px;
+    line-height: 1.5;
+  }
+}
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767px) {
+  a {
+    font-size: 16px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    left: 0;
+    top: 70px;
+  }
+
+  #i7 {
+    padding-left: 20px !important;
+    font-size: 24px;
+  }
+
+  #row1 {
+    flex-direction: column;
+    height: auto;
+  }
+
+  #col1{
+    width: 100%;
+    padding: 0 20px;
+    position: relative;
+    top: auto;
+  }
+   #col2 {
+    display: none;
+   }
+
+  #name, #num, #exp, #cvv, #bk2, #pay {
+    width: 100%;
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 10px 0;
+  }
+
+  #abcd, #ab, #social {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 15px;
+  }
+
+  #nxt, #bk {
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+    position: relative;
+    left: auto;
+    top: auto;
+  }
+  #nn,#nnn{
+    display: none;
+  }
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <hr>
+
+    <nav>
+        <img src="../images/11 (199)/11 (179).png">
+        <p style="position: absolute;top: 45px; font-weight: bold;left: 80px;">Furniture that feels like home</p>
+        <ul class="nav-list">
+
+            <li><a href="../pages/home.html">Home</a></li>
+            <li><a href="../pages/furniture.html">Furniture</a></li>
+            <li><a href="../pages/">About</a></li>
+            <li><a href="../pages/furniture.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="row1">
+        <div id="col1">
+            <img id="i1" src="../images/11 (199)/11 (188).png" style="width: 100%;height: 100%;">
+        </div>
+<div id="col11">
+    <h1 id="i7">PAYMENT</h1>
+    <p id="i7" style="text-decoration: underline;">Credit Card</p>
+    <img id="i7" src="../images/11 (199)/11 (187).png">
+    <input id="name" type="text"  placeholder="Mukesh Kannan">
+    <input id="num" type="text"  placeholder="Card Number">
+     <input id="exp" type="text"  placeholder="Exp.Date">
+    <input id="cvv" type="text"  placeholder="CVV">
+    <a href="../pages/shipment.html">
+    <button id="bk2" type="submit">BACK</button></a>
+     <button id="pay" type="submit">PAY NOW</button></a>
+</div>
+
+        <div id="col2">
+            <h1 style="padding-left: 150px;">
+                White Premium Chair
+            </h1>
+
+            <p id="rs">&#8377; 9500</p>
+
+            <p id="clr">Select color : ⚫ 🔵 🟠 🟡 </p>
+
+            <p id="dis">Upgrade your space with the timeless appeal of our Premium White Chair. Crafted with precision,
+                this
+                chair combines minimalist elegance with everyday functionality. The sleek white finish complements any
+                decor style, while the ergonomic design provides all-day comfort and support</p>
+
+          
+
+        </div>
+
+    </div>
+
+
+
+     <img id="nn" style="position: absolute;top: 102%;left: 1%;top: 202%;" src="../images/11 (199)/11 (179).png">
+            
+        
+
+            <p id="nnn" style="font-weight: bold;position: absolute;top: 205%;">Furniture that feels like home</p>
+       
+         <section id="abcd">
+             
+        <ol>
+      
+            <li style="font-weight: bold; color: black;">
+                Category
+            </li>
+            <li>
+                Living Room
+            </li>
+            <li>
+                Bedroom
+            </li>
+            <li>
+                Kitchen
+            </li>
+            <li>
+                Bathroom
+            </li>
+        </ol>
+    </section>
+
+     <section id="ab">
+        <ol>
+         <li style="font-weight: bold; color: black;">
+                Popular products
+            </li>
+            <li>
+                Single sofa
+            </li>
+            <li>
+                Luxury white bed
+            </li>
+            <li>
+                Bean bag
+            </li>
+            <li>
+                Wooden chair
+            </li>
+        </ol>
+    </section>
+       <section id="social">
+        <ol id="seclist">
+         <li style="font-weight: bold; color: black;">
+                Follow Us 
+            </li>
+            <br>
+            <li>
+              <img src="../images/fb.png" style="width:25px;height: 25px;">
+            </li>
+            <li>
+               <img src="../images/insta.jfif" style="width: 30px;height: 30px;">
+            </li>
+            <li>
+                <img src="../images/twt.png" style="width: 30px;height: 30px;">
+            </li>
+            <li>
+                <img src="../images/you.png" style="width: 30px;height: 30px;">
+            </li>
+        </ol>
+    </section>
+
+
+
+        
+    </nav>
+    
+
+</body>
+
+</html>

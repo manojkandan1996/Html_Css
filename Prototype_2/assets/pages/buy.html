@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav-list {
+            display: flex;
+            justify-content: space-evenly;
+            list-style: none;
+            width: 50%;
+            position: absolute;
+            left: 20%;
+            top: 20px;
+            color: #d9d9d9;
+
+
+        }
+
+        a {
+            text-decoration: none;
+            color: gray;
+            font-weight: 900;
+            font-size: 20px;
+
+        }
+
+        #row1 {
+            display: flex;
+            height: 500px;
+
+        }
+
+        #col1 {
+
+            width: 40%;
+            height: 500px;
+
+        }
+
+        #col2 {
+
+            width: 60%;
+
+        }
+
+        #rs {
+            padding-left: 150px;
+            padding-top: 40px;
+            font-size: 30px;
+            color: black;
+            font-weight: bolder;
+        }
+
+        #clr {
+            padding-left: 150px;
+            padding-top: 10px;
+            font-size: 30px;
+        }
+
+        #dis {
+            padding-left: 150px;
+            color: gray;
+            width: 490px;
+        }
+
+        #buyy {
+            width: 500px;
+            height: 60px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+        }
+
+        #row2 {
+            display: flex;
+            height: 300px;
+            width: 100%;
+            padding-top: 100px;
+        }
+
+        #col3 {
+
+            width: 20%;
+            height: 200px;
+
+        }
+
+        #col4 {
+
+            width: 20%;
+            height: 200px;
+
+        }
+
+        #col5 {
+
+            width: 20%;
+            height: 200px;
+
+        }
+
+        #i1 {
+            height: 100%;
+            width: 100%;
+        }
+
+        #of {
+            position: absolute;
+            top: 1150px;
+        }
+        #tick {
+            line-height: 2;
+        }
+ #abcd {
+        position: absolute;
+        right: 70%;
+        color: gray;
+        line-height: 2;
+        font-size: 20px;
+    }
+    #abcd li{
+         list-style: none;
+        text-decoration: none;
+    }
+    #ab {
+        position: absolute;
+        right: 40%;
+        color: gray;
+        line-height: 2;
+        font-size: 20px;
+    }
+    #ab li{
+           list-style: none;
+        text-decoration: none;
+    }
+     #social{
+        list-style: none;
+        text-decoration: none;
+           line-height: 2;
+           position: absolute;
+        right: 20%;
+        top: 302%;
+    }
+     #social li{
+        list-style: none;
+        text-decoration: none;
+     }
+
+
+     
+    /* Responsive styles */
+    @media (max-width: 1024px) {
+        /* For tablets and small laptops */
+        .nav-list {
+            width: 80%;
+            left: 10%;
+            font-size: 18px;
+        }
+        #row1 {
+            flex-direction: column;
+            height: auto;
+        }
+        #col1, #col2 {
+            width: 100%;
+            height: auto;
+            padding: 10px 0;
+        }
+        #rs, #clr, #dis {
+            padding-left: 20px;
+            width: 90%;
+        }
+        #buyy {
+            position: relative;
+            left: auto;
+            width: 90%;
+            margin: 20px auto;
+            height: 50px;
+            font-size: 18px;
+        }
+        #row2 {
+            flex-wrap: wrap;
+            height: auto;
+            padding-top: 50px;
+        }
+        #col3, #col4, #col5 {
+            width: 30%;
+            height: auto;
+            margin: 1%;
+        }
+        #i1 {
+            width: 100%;
+            height: auto;
+        }
+        #abcd, #ab, #social {
+            position: static;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    }
+
+    @media (max-width: 600px) {
+        /* For mobile phones */
+        .nav-list {
+            flex-direction: column;
+            width: 100%;
+            position: static;
+            margin-top: 10px;
+        }
+        
+        .nav-list li {
+            margin-bottom: 10px;
+        }
+        a {
+            font-size: 16px;
+        }
+        #row1 {
+            flex-direction: column;
+            height: auto;
+        }
+        #col1, #col2 {
+            width: 100%;
+            padding: 0 10px;
+        }
+        #rs, #clr, #dis {
+            padding-left: 10px;
+            width: 100%;
+            font-size: 16px;
+        }
+        #buyy {
+            width: 100%;
+            height: 45px;
+            font-size: 16px;
+            position: relative;
+            left: auto;
+            margin: 10px 0;
+        }
+        #row2 {
+            flex-direction: column;
+            padding-top: 20px;
+        }
+        #col3, #col4, #col5 {
+            width: 100%;
+            margin: 10px 0;
+        }
+        #i1 {
+            width: 100%;
+            height: auto;
+        }
+        #abcd, #ab, #social {
+            position: static;
+            text-align: center;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        #social {
+            top: auto;
+            right: auto;
+            line-height: normal;
+        }
+        h1 {
+            font-size: 28px !important;
+            padding-left: 10px !important;
+        }
+        p {
+            display: none;
+
+        }
+        #nn
+        {
+            display: none;
+        }
+          #nnn
+        {
+            display: none;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <hr>
+
+    <nav>
+        <img src="../images/11 (199)/11 (179).png">
+        <p style="position: absolute;top: 45px; font-weight: bold;left: 80px;">Furniture that feels like home</p>
+        <ul class="nav-list">
+
+            <li><a href="../pages/home.html">Home</a></li>
+            <li><a href="../pages/furniture.html">Furniture</a></li>
+            <li><a href="../pages/">About</a></li>
+            <li><a href="../pages/furniture.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="row1">
+        <div id="col1">
+            <img id="i1" src="../images/11 (199)/11 (188).png" style="width: 100%;height: 100%;">
+        </div>
+        <div id="col2">
+            <h1 style="padding-left: 150px;">
+                White Premium Chair
+            </h1>
+
+            <p id="rs">&#8377; 9500</p>
+
+            <p id="clr">Select color : ⚫ 🔵 🟠 🟡 </p>
+
+            <p id="dis">Upgrade your space with the timeless appeal of our Premium White Chair. Crafted with precision,
+                this
+                chair combines minimalist elegance with everyday functionality. The sleek white finish complements any
+                decor style, while the ergonomic design provides all-day comfort and support</p>
+<a href="../pages/shipment.html">
+            <button id="buyy" type="button">Buy Now</button></a>
+
+        </div>
+
+    </div>
+
+
+    <div id="row2">
+        <div id="col3">
+            <img id="i1" src="../images/11 (199)/11 (93).png">
+        </div>
+        <div id="col4"><img id="i1" src="../images/11 (199)/11 (95).png"></div>
+        <div id="col5"><img id="i1" src="../images/11 (199)/11 (96).png"></div>
+    </div>
+
+<div style="background-color: rgb(231, 224, 224);">
+    <h1 style="font-weight: bold;font-size: 25px;margin-left: 60px;">Gracey Carey</h1>
+    <p id="str" style="margin-left: 60px;">⭐⭐⭐⭐</p>
+    <p style="width: 80%;margin-left: 60px;">I couldn't be happier with this white premium chair! The design is sleek
+        and modern, and it fits perfectly in my
+        space. The cushioning is incredibly comfortable for long hours of sitting, and the build quality feels
+        top-notch. It adds a touch of elegance to my room without sacrificing functionality. Highly recommended for
+        anyone looking to upgrade their seating with something both beautiful and durable!</p>
+</div>
+<div style="background-color: rgb(231, 224, 224);">
+    <h1 style="font-weight: bold;font-size: 25px;margin-left: 60px;">Ronald Richards</h1>
+    <p id="str" style="margin-left: 60px;">⭐⭐⭐⭐⭐</p>
+    <p style="width: 80%;margin-left: 60px;">This chair is everything I was hoping for-minimalist style with maximum
+        comfort. The white finish is crisp and clean, and it instantly elevated my workspace. Super easy to assemble
+        too!</p>
+</div>
+<div style="background-color: rgb(231, 224, 224);">
+    <h1 style="font-weight: bold;font-size: 25px;margin-left: 60px;">Darcy King</h1>
+    <p id="str" style="margin-left: 60px;">⭐⭐⭐⭐</p>
+    <p style="width: 80%;margin-left: 60px;">I couldn't be happier with this white premium chair! The design is sleek
+        and modern, and it fits perfectly in my
+        space. The cushioning is incredibly comfortable for long hours of sitting, and the build quality feels
+        top-notch. It adds a touch of elegance to my room without sacrificing functionality. Highly recommended for
+        anyone looking to upgrade their seating with something both beautiful and durable!</p>
+</div>
+<h1 style=" font-size: 50px;">Elevate Your Space <br> with Uncompromising <br>Quality</h1>
+            <p style="width: 40%;">Experience the epitome of furniture quality. Our products are meticulously crafted with an unwavering
+                commitment to excellence. From the finest materials to expert craftsmanship, each piece embodies
+                durability, comfort, and timeless style. Elevate your space with the assurance of exceptional quality
+                and lasting beauty</p>
+
+            <ul style="list-style: none;" id="tick">
+                <li>
+                    ✔️ Experience un paralleled Quality
+                </li>
+                <li>
+                    ✔️ Built to last for Generations
+                </li>
+                <li>
+                    ✔️ Loved by Customers Worldwide
+                </li>
+            </ul>
+
+  <a href="../pages/contact.html">
+    <a href="../pages/contact.html">
+            <button
+                style="background-color: black; color: rgb(238, 236, 236);width: 130px;height: 40px; font-size: 20px; font-weight: bold; border-radius: 10px;"
+                type="submit">Contact Us</button></a>
+            <img id="nn" style="float: right;position: absolute;top: 223%;left: 60%;width: 40%;" id="brown" src="../images/11 (199)/11 (178).png">
+            <img id ="nnn" style="position: absolute;top: 102%;left: 1%;padding-top: 1300px;" src="../images/11 (199)/11 (179).png">
+            
+            
+<br>
+<br>
+<p style="border: 3px solid black;"> </p>
+      
+            <p style="font-weight: bold;position: absolute;top: 2000px;">Furniture that feels like home</p>
+        
+         <section id="abcd">
+        <ol>
+            <li style="font-weight: bold; color: black;">
+                Category
+            </li>
+            <li>
+                Living Room
+            </li>
+            <li>
+                Bedroom
+            </li>
+            <li>
+                Kitchen
+            </li>
+            <li>
+                Bathroom
+            </li>
+        </ol>
+    </section>
+
+     <section id="ab">
+        <ol>
+         <li style="font-weight: bold; color: black;">
+                Popular products
+            </li>
+            <li>
+                Single sofa
+            </li>
+            <li>
+                Luxury white bed
+            </li>
+            <li>
+                Bean bag
+            </li>
+            <li>
+                Wooden chair
+            </li>
+        </ol>
+    </section>
+       <section id="social">
+        <ol id="seclist">
+         <li style="font-weight: bold; color: black;">
+                Follow Us 
+            </li>
+            <br>
+            <li>
+              <img src="../images/fb.png" style="width:25px;height: 25px;">
+            </li>
+            <li>
+               <img src="../images/insta.jfif" style="width: 30px;height: 30px;">
+            </li>
+            <li>
+                <img src="../images/twt.png" style="width: 30px;height: 30px;">
+            </li>
+            <li>
+                <img src="../images/you.png" style="width: 30px;height: 30px;">
+            </li>
+        </ol>
+    </section>
+
+
+
+        
+    </nav>
+    
+
+</body>
+
+</html>

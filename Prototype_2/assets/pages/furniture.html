@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav-list {
+            display: flex;
+            justify-content: space-evenly;
+            list-style: none;
+            width: 50%;
+            position: absolute;
+            left: 20%;
+            top: 20px;
+            color: #d9d9d9;
+
+
+        }
+
+        a {
+            text-decoration: none;
+            color: gray;
+            font-weight: 900;
+            font-size: 20px;
+
+        }
+
+        #parentfur {
+            padding-bottom: 40px;
+            width: 99.3%;
+            height: 700px;
+            background-color: #d9d9d9;
+            position: absolute;
+            top: 22%;
+        }
+
+        #bb {
+            font-size: 70px;
+            line-height: 0.5;
+
+        }
+
+        #ss {
+            width: 37%;
+            font-size: 20px;
+            border-bottom: 4px solid black;
+
+        }
+
+        #list1 {
+            position: absolute;
+            top: 65%;
+            line-height: 2;
+            font-size: 30px;
+            list-style: none;
+            font-weight: bolder;
+        }
+
+        #list1 li {
+            list-style: none;
+        }
+
+        #childlist {
+            font-size: 15px;
+            line-height: 1px;
+            margin-bottom: 30%;
+        }
+
+        #rimg {
+            position: absolute;
+            right: 2%;
+            top: 22%;
+        }
+
+        #cimg {
+            position: absolute;
+            right: 16%;
+            top: 46%;
+        }
+
+        #bimg {
+            position: absolute;
+            right: 1%;
+            top: 46%;
+        }
+
+        #timg {
+            position: absolute;
+            right: 1%;
+            top: 70%;
+            width: 25%;
+            height: 28%;
+        }
+
+        #ec {
+            height: 60%;
+            width: 70%;
+            position: absolute;
+            bottom: 10%;
+            right: 30%;
+        }
+
+        #rosebutton {
+            color: white;
+            font-weight: bold;
+            background-color: #E5255C;
+            width: 60%;
+            height: 50px;
+            border-radius: 5px;
+            border: none;
+            position: absolute;
+            left: 40%;
+            font-size: 20px;
+        }
+
+        #second {
+            position: absolute;
+            top: 147%;
+            font-size: 25px;
+            left: 8%;
+
+        }
+
+        #i2 {
+            position: absolute;
+            left: 700px;
+        }
+
+        #i3 {
+            position: absolute;
+            left: 340px;
+        }
+
+        #i1,
+        #i2,
+        #i3 {
+            border: 3px solid gray;
+        }
+
+        #white {
+            position: absolute;
+            left: 34%;
+            top: 77%;
+        }
+
+        #rowgal {
+            display: flex;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        #col11 {
+            width: 1000px;
+            height: 300px;
+
+        }
+
+        #col22 {
+            width: 100%;
+            height: 300px;
+
+        }
+
+        #col33 {
+            width: 100%;
+
+            height: 300px;
+        }
+
+        #com {
+            position: absolute;
+            left: 70%;
+            top: 77%;
+        }
+
+        #b1 {
+            position: absolute;
+            top: 101%;
+        }
+
+        #b1,
+        #b2,
+        #b3 {
+            background-color: black;
+            color: white;
+        }
+
+        #sec {
+            position: absolute;
+            top: 110%;
+            width: 45%;
+        }
+
+        #sec p {
+            font-size: 19px;
+        }
+ #abcd {
+        position: absolute;
+        top: 120%;
+        right: 10%;
+        color: gray;
+        line-height: 2;
+        font-size: 20px;
+    }
+    #abcd li{
+         list-style: none;
+        text-decoration: none;
+    }
+        #sec h1 {
+            font-size: 50px;
+        }
+
+        #tick {
+            line-height: 2;
+        }
+
+        #brown {
+            position: absolute;
+            left: 110%;
+            top: 33%;
+        }
+
+        #firstsec {
+            position: absolute;
+            top: 112%;
+            right: 5%;
+            line-height: 2;
+        }
+
+        #firstsec {
+            list-style: none;
+            color: grey;
+        }
+          #ab {
+        position: absolute;
+        left: 130%;
+        color: gray;
+        line-height: 2;
+        font-size: 20px;
+        width: 300px;
+        top: 121%;
+    }
+    #ab li{
+           list-style: none;
+        text-decoration: none;
+    }
+    #social{
+        list-style: none;
+        text-decoration: none;
+           line-height: 1.5;
+           position: absolute;
+        left: 190%;
+        top: 121%;
+        width: 200px;
+    }
+     #social li{
+        list-style: none;
+        text-decoration: none;
+     }
+
+
+/* Your existing styles here ... */
+
+/* Responsive Media Queries */
+
+/* For tablets and medium screens */
+@media only screen and (max-width: 1024px) {
+    .nav-list {
+        width: 80%;
+        left: 10%;
+        flex-direction: column;
+        position: relative;
+        top: 10px;
+        color: #666;
+    }
+
+    #parentfur {
+        position: relative;
+        height: auto;
+        top: 10px;
+        padding: 20px;
+    }
+
+    #bb {
+        font-size: 40px;
+        line-height: 1.2;
+    }
+
+    #ss {
+        width: 80%;
+        font-size: 18px;
+        border-bottom: 2px solid black;
+    }
+
+    #rimg, #cimg, #bimg, #timg, #ec {
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    #list1 {
+        position: relative;
+        top: auto;
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    #rosebutton {
+        position: relative;
+        left: auto;
+        width: 100%;
+        font-size: 18px;
+    }
+
+    #second {
+        position: relative;
+        top: auto;
+        left: auto;
+        font-size: 20px;
+        margin-top: 40px;
+    }
+
+    #rowgal {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #col11, #col22, #col33 {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    #i1, #i2, #i3 {
+        position: relative;
+        left: auto;
+        border: 2px solid gray;
+        width: 100%;
+        height: auto;
+    }
+
+    #white, #com, #fab {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    #sec {
+        position: relative;
+        top: auto;
+        width: 100%;
+        padding: 10px;
+    }
+
+    #sec h1 {
+        font-size: 30px;
+    }
+
+    #abcd, #ab, #social, #firstsec {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    #brown {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+}
+
+/* For phones and small screens */
+@media only screen and (max-width: 600px) {
+    .nav-list {
+        width: 100%;
+        left: 0;
+        flex-direction: column;
+        padding: 0;
+        top: 0;
+        font-size: 16px;
+    }
+    #fab{
+        display: none;
+    }
+
+    a {
+        font-size: 16px;
+    }
+
+    #bb {
+        font-size: 30px;
+    }
+
+    #ss {
+        width: 100%;
+        font-size: 16px;
+        border-bottom: 2px solid black;
+    }
+
+    #list1 {
+        font-size: 18px;
+    }
+
+    #rosebutton {
+        font-size: 16px;
+        width: 100%;
+        height: 45px;
+        left: auto;
+        position: relative;
+    }
+
+    #second {
+        font-size: 18px;
+        margin-top: 30px;
+    }
+
+    #rowgal {
+        flex-direction: column;
+    }
+
+    #col11, #col22, #col33 {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    #i1, #i2, #i3 {
+        width: 100%;
+        border-width: 1px;
+    }
+
+    #white, #com, #fab {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    #sec {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #sec h1 {
+        font-size: 24px;
+    }
+
+    #abcd, #ab, #social, #firstsec {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    #brown {
+        width: 100%;
+        height: auto;
+        margin-top: 15px;
+    }
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <hr>
+
+    <nav>
+        <img src="../images/11 (199)/11 (179).png">
+        <p style="position: absolute;top: 45px; font-weight: bold;left: 80px;">Furniture that feels like home</p>
+        <ul class="nav-list">
+
+            <li><a href="../pages/home.html">Home</a></li>
+            <li><a href="../pages/furniture.html">Furniture</a></li>
+            <li><a href="../pages/">About</a></li>
+            <li><a href="../pages/furniture.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="parentfur">
+        <h1 id="bb">Perfections in collections:</h1>
+        <h1 id="bb">Get sync with our furniture</h1>
+        <img id="rimg" src="../images/11 (199)/11 (81).png">
+        <img id="cimg" src="../images/11 (199)/11 (78).png">
+        <img id="bimg" src="../images/11 (199)/11 (80).png">
+        <img id="timg" src="../images/11 (199)/11 (79).png">
+        <img id="ec" src="../images/11 (199)/11 (68).png">
+        <p id="ss"> Explore furniture that hormoniously combines comfort and style to elevate your home</p>
+    </section>
+
+    <section id="list1">
+        <ol type="none">
+            <li>
+                Comfort
+                <p id="childlist">👨‍🎤 Cozy seating</p>
+            </li>
+            <li>
+                Quality assurance
+                <p id="childlist">👍🏻 Cozy seating</p>
+            </li>
+            <li>
+                Free Shipping
+                <p id="childlist">📦 No cost Delivery</p>
+            </li>
+        </ol>
+
+        <button id="rosebutton" type="submit">50% OFFERS</button>
+
+    </section>
+
+    <nav id="second">
+        <h3>Crafted with excellent material</h3>
+        <h3 style="margin-left: 60px;"> grab at 50% price </h3>
+
+        <section id="rowgal">
+            <section id="col11">
+                <img id="i1" src="..//images/11 (199)/11 (189).png">
+            </section>
+            <section id="col22">
+                <img id="i2" src="../images/11 (199)/11 (190).png">
+            </section>
+            <section id="col33">
+                <img id="i3" src="../images/11 (199)/11 (190).png">
+            </section>
+        </section>
+
+        <section id="fab">
+            <p>🟢 Fabric Chair</p>
+            <p>₹ 105.00 </p>
+            <a href="../pages/buy.html">
+            <button id="b1" type="button">buy now</button></a>
+        </section>
+        <section id="white">
+            <p>🟢 White Premimum Chair</p>
+            <p>₹ 105.00 </p>
+            <a href="../pages/buy.html">
+            <button id="b2" type="button">buy now</button></a>
+        </section>
+        <section id="com">
+            <p>🟢 Comfort Chair</p>
+            <p>₹ 105.00 </p>
+            <a href="../pages/buy.html">
+            <button id="b3" type="button">buy now</button></a>
+        </section>
+
+
+        <section id="sec">
+            <h1>Category Section</h1>
+            <p>Discover the perfect piece for every room.whether your'e furnishing your living space,upgrading your
+                dining area, or adding comfort to your bedroom,we've curated collections to suit every style.Browse by
+                category to find furniture that fits your life-and your taste.
+                <hr style="width: 1100px;border: 2px solid black;">
+            </p>
+            <h1>Elevate Your Space Uncompromising Quality</h1>
+            <p>Experience the epitome of furniture quality. Our products are meticulously crafted with an unwavering
+                commitment to excellence. From the finest materials to expert craftsmanship, each piece embodies
+                durability, comfort, and timeless style. Elevate your space with the assurance of exceptional quality
+                and lasting beauty</p>
+
+            <ul style="list-style: none;" id="tick">
+                <li>
+                    ✔️ Experience un paralleled Quality
+                </li>
+                <li>
+                    ✔️ Built to last for Generations
+                </li>
+                <li>
+                    ✔️ Loved by Customers Worldwide
+                </li>
+            </ul>
+
+            <button
+                style="background-color: black; color: rgb(238, 236, 236);width: 130px;height: 40px; font-size: 20px; font-weight: bold; border-radius: 10px;"
+                type="submit">Contact Us</button>
+            <img id="brown" src="../images/11 (199)/11 (171).png">
+            <img style="position: absolute;top: 102%;left: 1%;padding-top: 30px;" src="../images/11 (199)/11 (179).png">
+            
+            
+            <p style="font-weight: bold;position: absolute;top: 110%;">Furniture that feels like home</p>
+        
+         <section id="abcd">
+        <ol>
+            <li style="font-weight: bold; color: black;">
+                Category
+            </li>
+            <li>
+                Living Room
+            </li>
+            <li>
+                Bedroom
+            </li>
+            <li>
+                Kitchen
+            </li>
+            <li>
+                Bathroom
+            </li>
+        </ol>
+    </section>
+
+     <section id="ab">
+        <ol>
+         <li style="font-weight: bold; color: black;">
+                Popular products
+            </li>
+            <li>
+                Single sofa
+            </li>
+            <li>
+                Luxury white bed
+            </li>
+            <li>
+                Bean bag
+            </li>
+            <li>
+                Wooden chair
+            </li>
+        </ol>
+    </section>
+       <section id="social">
+        <ol id="seclist">
+         <li style="font-weight: bold; color: black;">
+                Follow Us 
+            </li>
+            <br>
+            <li>
+              <img src="../images/fb.png" style="width:25px;height: 25px;">
+            </li>
+            <li>
+               <img src="../images/insta.jfif" style="width: 30px;height: 30px;">
+            </li>
+            <li>
+                <img src="../images/twt.png" style="width: 30px;height: 30px;">
+            </li>
+            <li>
+                <img src="../images/you.png" style="width: 30px;height: 30px;">
+            </li>
+        </ol>
+    </section>
+
+
+
+        <hr>
+    </nav>
+    <hr>
+
+</body>
+
+</html>

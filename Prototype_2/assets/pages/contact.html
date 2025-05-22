@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav-list {
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+        width: 50%;
+        position: absolute;
+        left: 20%;
+        top: 20px;
+        color: #d9d9d9;
+
+
+    }
+
+    a {
+        text-decoration: none;
+        color: gray;
+        font-weight: 900;
+        font-size: 20px;
+
+    }
+
+    #fur {
+        position: absolute;
+        top: 50px;
+        font-weight: bold;
+        left: 80px;
+    }
+#brown{
+    width: 100%;
+    height: 600px;
+    background-color: #b27d36;
+}
+ #bb {
+            font-size: 70px;
+            padding-left: 50px;
+            padding-top: 25px;
+            color: white;
+        }
+        #fst{
+            font-family: 'Brush Script MT', cursive;
+            font-size: 28px;
+            padding-left: 50px;
+            color: white;
+        }
+        #quality li{
+            text-decoration: none;
+            list-style: none;
+            font-size: 25px;
+            color: white;
+            font-weight: bold;
+        }
+        #quality p{
+            color: white;
+            font-weight: 700;
+        }
+
+        .form-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  padding-left: 500px;
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#btm{
+  width: 100%;
+  padding: 12px;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+ #mrow1 {
+        padding-top: 100px;
+        display: flex;
+        height: 500px;
+
+    }
+
+    #mcol1 {
+
+        width: 50%;
+
+    }
+
+    #mcol2 {
+
+        width: 50%;
+        height: 500px;
+        padding-bottom: 300px;
+    }
+
+    #prow1 {
+        display: flex;
+        height: 300px;
+
+    }
+
+    #pcol1 {
+        background-color: grey;
+        border: 15px white solid;
+        width: 50%;
+        height: 290px;
+
+    }
+
+    #pcol2 {
+        background-color: grey;
+        width: 50%;
+        height: 300px;
+    }
+    #hm
+    {
+        position: absolute;
+        left: 5%;
+        top: 2040px;
+        background-color: black;
+        color: white;
+        width: 130px;
+        height: 50px;
+        border-radius: 25px;
+    }
+    #bimg{
+        position: absolute;
+        top: 2160px;
+    }
+    #furbtm{
+        position: absolute;
+        top: 2190px;
+    }
+     #abcd {
+        position: absolute;
+        right: 70%;
+        color: gray;
+        line-height: 2;
+        font-size: 20px;
+        top: 2200px;
+    }
+    #abcd li{
+         list-style: none;
+        text-decoration: none;
+    }
+     #ab {
+        position: absolute;
+        right: 40%;
+        color: gray;
+        line-height: 2;
+        font-size: 20px;
+         top: 2200px;
+    }
+    #ab li{
+           list-style: none;
+        text-decoration: none;
+    }
+     #social{
+        list-style: none;
+        text-decoration: none;
+           line-height: 2;
+           position: absolute;
+        right: 20%;
+  top: 2200px;
+    }
+     #social li{
+        list-style: none;
+        text-decoration: none;
+     }
+
+
+/* Your existing styles ... */
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
+/* Mobile devices (max-width: 600px) */
+@media only screen and (max-width: 600px) {
+  .nav-list {
+    flex-direction: column;
+    position: static;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+  .nav-list li {
+    margin: 10px 0;
+  }
+  a {
+    font-size: 16px;
+  }
+  #fur {
+    position: static;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 18px;
+    left: 0;
+    top: 0;
+  }
+  #brown {
+    height: auto;
+    padding: 20px 10px;
+  }
+  #bb {
+    font-size: 32px;
+    padding-left: 0;
+    text-align: center;
+  }
+  #fst {
+    font-size: 18px;
+    padding-left: 0;
+    text-align: center;
+  }
+  #quality {
+    padding-left: 0;
+    width: 100%;
+    margin-left: 0;
+  }
+  #quality li, #quality p {
+    font-size: 18px;
+    text-align: center;
+  }
+  .form-container {
+    padding-left: 0;
+    max-width: 100%;
+    box-shadow: none;
+    padding: 20px;
+  }
+  #mrow1 {
+    flex-direction: column;
+    height: auto;
+    padding-top: 50px;
+  }
+  #mcol1, #mcol2 {
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+  }
+  #mcol1 h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+  #mcol1 p {
+    width: 100%;
+    text-align: center;
+  }
+  #mcol2 img {
+    width: 100%;
+    height: auto;
+  }
+  #hm {
+    position: static;
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+    top: auto;
+    left: auto;
+  }
+  #bimg {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+  #furbtm {
+    position: static;
+    text-align: center;
+    margin-top: 10px;
+  }
+  #abcd, #ab, #social {
+    position: static;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+  #abcd li, #ab li, #social li {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 16px;
+  }
+  #social li img {
+    width: 25px !important;
+    height: 25px !important;
+  }
+}
+
+/* Tablets (min-width: 601px and max-width: 1024px) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .nav-list {
+    width: 80%;
+    left: 10%;
+    top: 15px;
+  }
+  a {
+    font-size: 18px;
+  }
+  #fur {
+    left: 50px;
+    top: 40px;
+    font-size: 20px;
+  }
+  #brown {
+    height: 500px;
+  }
+  #bb {
+    font-size: 48px;
+    padding-left: 20px;
+  }
+  #fst {
+    font-size: 22px;
+    padding-left: 20px;
+  }
+  .form-container {
+    padding-left: 100px;
+    max-width: 600px;
+  }
+  #mrow1 {
+    flex-direction: row;
+    height: 450px;
+  }
+  #mcol1, #mcol2 {
+    width: 50%;
+    height: 100%;
+  }
+  #mcol1 h1 {
+    font-size: 36px;
+  }
+  #hm {
+    position: absolute;
+    top: auto;
+    left: auto;
+    width: 150px;
+  }
+  #abcd, #ab, #social {
+    position: absolute;
+    top: 2200px;
+  }
+  #abcd {
+    right: 60%;
+  }
+  #ab {
+    right: 35%;
+  }
+  #social {
+    right: 15%;
+  }
+  #social li img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+/* Desktops (min-width: 1025px) */
+/* Keep your existing styles here */
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <hr>
+    <hr>
+
+    <nav>
+        <img src="../images/11 (199)/11 (179).png">
+        <p id="fur">Furniture that feels like home</p>
+        <ul class="nav-list">
+
+            <li><a href="../pages/home.html">Home</a></li>
+            <li><a href="../pages/furniture.html">Furniture</a></li>
+            <li><a href="../pages/about.html">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="brown">
+        <h1 id="bb">Perfections in collections: <br>  Get sync with our furniture</h1>
+       <p id="fst">Explore Furniture that hormoniously combines comfort and style <br> to elevate your home</p>
+       <p style="border: 2px white solid; width: 40%;margin-left: 50px;"></p>
+
+
+
+         <ol id="quality">
+            <li>
+                Comfort
+            </li>
+            <p>👨‍🎤 Cozy Seating</p>
+            <li>
+                Quality Assurance
+            </li>
+             <p>👍🏻 Cozy Seating</p>
+            <li>
+                Free Shipping
+            </li>
+             <p>📦 No-Cost Delivery</p>
+        </ol>
+
+
+    </section>
+
+ <div class="form-container">
+    <form class="contact-form">
+<h1 style="font-size: 60px;padding-right: 50px;text-align: center;">Get in touch</h1>
+<p style="font-size: 20px;text-align: center;">Our friendly team would love to hear from you</p>
+      <div class="form-group">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" name="first-name" required />
+      </div>
+      <div class="form-group">
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" name="last-name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+      <button id="btm" type="submit">Submit</button>
+    </form>
+  </div>
+
+   <div id="mrow1">
+        <div id="mcol1">
+            <h1 style="font-size: 48px;">Elevate Your Space<br> with Uncompromising </h1>
+            <p style="color: gray;line-height: 1.5;width: 550px;">
+                Experience the epitome of furniture quality. Our products are meticulously crafted with an unwavering
+                commitment to excellence.From the finest materials to expert craftsmanship, each piece embodies
+                durability, comfort, and timeless style. Elevate your space with the assurance of exceptional quality
+                and lasting beauty
+
+            <ol style="list-style: none;">
+                <li style="line-height: 4;">
+                    ✅ Experience Unparalleled Quality
+                </li>
+                <li style="line-height: 4;">
+                    ✅ Built to Last for Generations
+                </li>
+                <li style="line-height: 4;">
+                    ✅ Loved by Customers Worldwide
+                </li>
+            </ol>
+
+
+        </div>
+        <div id="mcol2">
+            <img src="../images/11 (199)/11 (172).png" style="height: 100%;width: 100%;">
+
+            <a href="../pages/home.html">
+            <button id="hm" type="button">Home Page</button></a>
+        </div>
+   </div>
+
+   <img id="bimg" src="../images/11 (199)/11 (179).png">
+       <p id="furbtm">Furniture that feels like home</p>
+        <section id="abcd">
+        <ol>
+            <li style="font-weight: bold; color: black;">
+                Category
+            </li>
+            <li>
+                Living Room
+            </li>
+            <li>
+                Bedroom
+            </li>
+            <li>
+                Kitchen
+            </li>
+            <li>
+                Bathroom
+            </li>
+        </ol>
+    </section>
+     <section id="ab">
+        <ol id="seclist">
+         <li style="font-weight: bold; color: black;">
+                Popular products
+            </li>
+            <li>
+                Single sofa
+            </li>
+            <li>
+                Luxury white bed
+            </li>
+            <li>
+                Bean bag
+            </li>
+            <li>
+                Wooden chair
+            </li>
+        </ol>
+    </section>
+    <section id="social">
+        <ol id="seclist">
+         <li style="font-weight: bold; color: black;">
+                Follow Us 
+            </li>
+            <br>
+            <li>
+              <img src="../images/fb.png" style="width:25px;height: 25px;">
+            </li>
+            <li>
+               <img src="../images/insta.jfif" style="width: 30px;height: 30px;">
+            </li>
+            <li>
+                <img src="../images/twt.png" style="width: 30px;height: 30px;">
+            </li>
+            <li>
+                <img src="../images/you.png" style="width: 30px;height: 30px;">
+            </li>
+        </ol>
+    </section>
+
+</body>
+</html>
