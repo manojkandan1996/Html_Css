@@ -1,0 +1,355 @@
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background:skyblue;
+
+        }
+
+        .navbar {
+            padding: 20px 40px;
+            width: 94%;
+            height: 100px;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .nav-content {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4e342e;
+            font-family: 'Georgia', serif;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 60px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #4e342e;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: #843c0c;
+        }
+
+        .contact-btn {
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.05);
+            color: #4e342e;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .contact-form-container {
+            margin-top: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 50%;
+            height: 300px;
+            position: absolute;
+        bottom: 60%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .contact-form button {
+            width: 50%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 180px;
+        }
+
+        .contact-form button:hover {
+            background-color: #218838;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #888;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        h2 {
+            margin-top: 50px;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #4e342e;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas:
+                "project1 project1 project2 project3"
+                "project4 project5 project5 project3"
+                "project6 project6 project7 project8";
+            gap: 15px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .project {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            overflow: hidden;
+            min-height: 200px;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        h1 {
+            font-size: 25px;
+            color: rgb(235, 162, 26);
+            opacity: 2;
+        }
+
+        .project::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s ease;
+        }
+
+        .project:hover::after {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .project-details {
+            position: relative;
+            color: rgb(235, 162, 26);
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .project:hover .project-details {
+            opacity: 1;
+        }
+
+        .project1 {
+            grid-area: project1;
+            background-image: url('../images/project1.jpg');
+        }
+
+        .project2 {
+            grid-area: project2;
+            background-image: url('../images/project4.jpg');
+        }
+
+        .project3 {
+            grid-area: project3;
+            background-image: url('../images/project5.jpg');
+        }
+
+        .project4 {
+            grid-area: project4;
+            background-image: url('../images/project2.jpg');
+        }
+
+        .project5 {
+            grid-area: project5;
+            background-image: url('../images/project3.jpg');
+        }
+
+
+        .footer {
+            background: #faf6f2;
+            color: #070707;
+        }
+
+        .footer-container {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .footer-info {
+            text-align: center;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: row;
+            margin-left: 100px;
+        }
+
+        .footer-name {
+            font-size: 18px;
+            font-weight: bold;
+             margin-top: 25px;
+        }
+
+        .footer-rights {
+            font-size: 14px;
+            margin-top: 25px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 50px;
+        }
+
+        .social-icon {
+            color: 5a4334;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-socials a {
+            text-decoration: none;
+        }
+
+        @media (min-width:768px) and (max-width: 1020px) {
+            .grid-container {
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas:
+                    "project1 project1"
+                    "project2 project3"
+                    "project4 project3"
+                    "project5 project5";
+            }
+        }
+
+        @media (max-width: 767px) {
+             *{padding: 0;
+          margin: 0;}
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    height: auto;
+  }
+
+  .nav-content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .contact-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "project1"
+                    "project2"
+                    "project3"
+                    "project4"
+                    "project5"
+                ;
+            }
+            .contact-form {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .contact-form button {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 20px 0;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .footer-socials {
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .circle {display: none
+  
+  }
+}
+
+        
