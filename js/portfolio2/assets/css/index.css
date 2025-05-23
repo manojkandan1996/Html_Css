@@ -365,7 +365,7 @@
           body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
-            background: #d8cab2;
+            background: #0ae9cb;
 
           }
 
@@ -417,7 +417,7 @@
 
           .contact-btn {
             font-weight: 500;
-            background-color: #d8cab2;
+            background-color: #eb990d;
             color: #4e342e;
             font-size: 18px;
             border: none;
@@ -521,7 +521,7 @@
 
           .right {
             width: 100%;
-            background: #d8cab2;
+            background-color: #0056b3;
             display: flex;
             flex-direction: column;
             align-items: center;
