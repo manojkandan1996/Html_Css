@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Z-Index Layers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .background-div {
+      height: 300px;
+      background-color: #cfe2ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="position-relative z-n1 background-div d-flex align-items-center justify-content-center">
+    <h4>Background Layer</h4>
+  </div>
+
+  <div class="position-absolute top-0 start-50 translate-middle-x z-3 bg-white p-3 shadow rounded mt-3">
+    <h5 class="mb-0">Modal Header (z-3)</h5>
+  </div>
+
+</body>
+</html>
