@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Payroll Details</title>
+  <link rel="stylesheet" href="../css/payslip.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <ul>
+        <li> <a href="./overview.html" style="color:white; text-decoration:none;">🗺️Overview</a></li>
+        <li class="active"><a href="./payroll.html" style="color:white; text-decoration:none;">🧾Payroll</a></li>
+        <li><a href="./payslip.html" style="color:white; text-decoration:none;">📇Payslip</a></li>
+      </ul>
+    </div>
+    <div class="main-content">
+      <h1>Payroll Details</h1>
+      <form id="payrollForm">
+        <div class="form-grid">
+          <div class="form-group"><label>Employee Name</label><input id="empName" type="text" required /></div>
+          <div class="form-group"><label>Employee Role</label><input id="empRole" type="text" required /></div>
+          <div class="form-group"><label>Employee ID</label><input id="empId" type="text" required /></div>
+          <div class="form-group"><label>Date</label><input id="date" type="date" required /></div>
+          <div class="form-group"><label>Basic Salary</label><input id="basicSalary" type="number" required /></div>
+          <div class="form-group"><label>Total Salary</label><input id="totalSalary" type="number" required /></div>
+          <div class="form-group"><label>No of Working Days</label><input id="workingDays" type="number" required /></div>
+          <div class="form-group"><label>Total Present Days</label><input id="presentDays" type="number" required /></div>
+          <div class="form-group"><label>Total Leave Days</label><input id="leaveDays" type="number" required /></div>
+          <div class="form-group"><label>Additions</label><input id="additions" type="number"></div>
+          <div class="form-group"><label>Deductions</label><input id="deductions" type="number"></div>
+        </div>
+        <div class="form-buttons">
+          <button type="submit" class="submit-btn">Submit Payroll</button>
+          <button type="reset" class="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('payrollForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const payrollData = {
+        empName: document.getElementById("empName").value.trim(),
+        empRole: document.getElementById("empRole").value.trim(),
+        empId: document.getElementById("empId").value.trim(),
+        date: document.getElementById("date").value,
+        basicSalary: parseFloat(document.getElementById("basicSalary").value),
+        totalSalary: parseFloat(document.getElementById("totalSalary").value),
+        workingDays: parseInt(document.getElementById("workingDays").value),
+        presentDays: parseInt(document.getElementById("presentDays").value),
+        leaveDays: parseInt(document.getElementById("leaveDays").value),
+        additions: parseFloat(document.getElementById("additions").value || 0),
+        deductions: parseFloat(document.getElementById("deductions").value || 0)
+      };
+      localStorage.setItem("payrollData", JSON.stringify(payrollData));
+      window.location.href = "./payslip.html";
+    });
+  </script>
+</body>
+</html>

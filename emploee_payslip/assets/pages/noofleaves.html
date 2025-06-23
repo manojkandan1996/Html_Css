@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Leaves</title>
+<link rel="stylesheet" href="../css/nopfleaves.css">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+ <div class="sidebar">
+    <ul>
+      <li class="active">🗺️Overview</li>
+      <li><a style="text-decoration: none;color: white;" href="./payroll.html">🧾Payroll</a></li>
+      <li><a style="text-decoration: none;color: white;" href="./payslip.html">📇Payslip</a></li>
+    </ul>
+  </div>
+  <div class="table">
+<h2>Employee Leave Records</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Designation</th>
+      <th>Total Leaves Allowed</th>
+      <th>Leaves Taken</th>
+      <th>Remaining Leaves</th>
+    </tr>
+  </thead>
+  <tbody id="leaveTableBody">
+  </tbody>
+</table>
+</div>
+<script>
+  const leaveData = [
+    { name: "John Doe", designation: "Software Engineer", total: 24, taken: 10 },
+    { name: "Jane Smith", designation: "HR Manager", total: 30, taken: 14 },
+    { name: "Michael Brown", designation: "Accountant", total: 20, taken: 6 },
+    { name: "Lisa White", designation: "UI/UX Designer", total: 25, taken: 18 },
+     { name: "Michael Brown", designation: "Accountant", total: 20, taken: 6 },
+    { name: "Lisa White", designation: "UI/UX Designer", total: 25, taken: 18 },
+     { name: "Michael Brown", designation: "Accountant", total: 20, taken: 6 },
+    { name: "Lisa White", designation: "UI/UX Designer", total: 25, taken: 18 }
+  ];
+
+  const leaveTableBody = document.getElementById("leaveTableBody");
+
+  leaveData.forEach(emp => {
+    const row = document.createElement("tr");
+    const remaining = emp.total - emp.taken;
+
+    row.innerHTML = `
+      <td>${emp.name}</td>
+      <td>${emp.designation}</td>
+      <td>${emp.total}</td>
+      <td>${emp.taken}</td>
+      <td>${remaining}</td>
+    `;
+
+    leaveTableBody.appendChild(row);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+    body {
+    font-family: "Quicksand", sans-serif;
+        background: #eef1f5;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    .year-calendar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .month {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 5px;
+    }
+
+    th,
+    td {
+        width: 14.2%;
+        padding: 5px;
+        text-align: center;
+        border: 1px solid #ccc;
+        font-size: 12px;
+    }
+
+    th {
+        background-color: #17a2b8;
+        color: white;
+    }
+
+    .holiday {
+        background-color: #ffc107;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .empty {
+        background-color: #f9f9f9;
+    }
+
+    caption {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+        background-color: white;
+        margin: 15% auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0 0 10px #000;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover {
+        color: #000;
+    }
+
+    @media (max-width: 700px) {
+        .year-calendar {
+            grid-template-columns: 1fr;
+        }
+
+        .month {
+            padding: 8px;
+        }
+
+        th,
+        td {
+            font-size: 10px;
+            padding: 4px;
+        }
+
+        .modal-content {
+            width: 90%;
+            margin-top: 30%;
+        }
+    }
+
+    @media (min-width: 701px) and (max-width: 900px) {
+        .year-calendar {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .month {
+            padding: 10px;
+        }
+
+        th,
+        td {
+            font-size: 11px;
+            padding: 4.5px;
+        }
+
+        .modal-content {
+            width: 350px;
+            margin-top: 20%;
+        }
+    }

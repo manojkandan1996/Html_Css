@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2025 Holiday Calendar</title>
+<link rel="stylesheet" href="../css/holiday.css">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<h2>Holiday Calendar - 2025</h2>
+
+<div id="calendarContainer" class="year-calendar"></div>
+<div id="holidayModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDate"></p>
+  </div>
+</div>
+
+<script>
+  const holidays = {
+    "2025-01-01": "New Year's Day",
+    "2025-01-26": "Republic Day",
+    "2025-03-17": "Holi",
+    "2025-04-14": "Ambedkar Jayanti",
+    "2025-05-01": "Labour Day",
+    "2025-08-15": "Independence Day",
+    "2025-10-02": "Gandhi Jayanti",
+    "2025-10-23": "Diwali",
+    "2025-12-25": "Christmas"
+  };
+
+  function generateFullYearCalendar() {
+    const calendarContainer = document.getElementById("calendarContainer");
+    calendarContainer.innerHTML = "";
+
+    for (let month = 0; month < 12; month++) {
+      const table = document.createElement("table");
+      const year = 2025;
+      const monthName = new Date(year, month).toLocaleString('default', { month: 'long' });
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const firstDay = new Date(year, month, 1).getDay();
+
+      let html = `<caption>${monthName}</caption>
+      <thead>
+        <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th>
+        <th>Thu</th><th>Fri</th><th>Sat</th></tr>
+      </thead><tbody><tr>`;
+
+      for (let i = 0; i < firstDay; i++) {
+        html += `<td class="empty"></td>`;
+      }
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dateStr = `${year}-${(month + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+        const isHoliday = holidays[dateStr];
+        const className = isHoliday ? 'holiday' : '';
+        const onclick = isHoliday ? `onclick="showHolidayDetail('${dateStr}', '${isHoliday}')"` : '';
+
+        html += `<td class="${className}" ${onclick}>${day}</td>`;
+        if ((firstDay + day) % 7 === 0) html += "</tr><tr>";
+      }
+
+      html += "</tr></tbody>";
+      table.innerHTML = html;
+
+      const monthDiv = document.createElement("div");
+      monthDiv.className = "month";
+      monthDiv.appendChild(table);
+      calendarContainer.appendChild(monthDiv);
+    }
+  }
+
+  function showHolidayDetail(date, title) {
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalDate').innerText = `Date: ${date}`;
+    document.getElementById('holidayModal').style.display = "block";
+  }
+
+  function closeModal() {
+    document.getElementById('holidayModal').style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById('holidayModal');
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+  window.onload = generateFullYearCalendar;
+</script>
+
+</body>
+</html>

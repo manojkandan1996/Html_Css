@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Payslip Details</title>
+  <link rel="stylesheet" href="../css/payslip.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <ul>
+        <li> <a href="./overview.html" style="color:white; text-decoration:none;">🗺️Overview</a></li>
+        <li><a href="./payroll.html" style="color:white; text-decoration:none;">🧾Payroll</a></li>
+        <li class="active"><a href="./payslip.html" style="color:white; text-decoration:none;">📇Payslip</a></li>
+      </ul>
+    </div>
+    <div class="main-content">
+      <h1>Payslip Details</h1>
+      <div class="payslip-box">
+        <div class="info">
+          <div><strong>Employee Name :</strong> <span id="empName"></span></div>
+          <div><strong>Date :</strong> <span id="date"></span></div>
+          <div><strong>Employee ID :</strong> <span id="empId"></span></div>
+          <div><strong>Month :</strong> <span id="month"></span></div>
+          <div><strong>Role :</strong> <span id="empRole"></span></div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th colspan="2">Employee Details</th>
+              <th colspan="2">Earnings</th>
+              <th>Additions</th>
+              <th>Deductions</th>
+            </tr>
+            <tr>
+              <th>Employee ID</th>
+              <th>Employee Name</th>
+              <th>Basic Salary</th>
+              <th>Total Salary</th>
+              <th>+</th>
+              <th>-</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="empId2"></td>
+              <td id="empName2"></td>
+              <td id="basicSalary"></td>
+              <td id="totalSalary"></td>
+              <td id="additions"></td>
+              <td id="deductions"></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="total">
+          Total Earnings: ₹<span id="totalEarnings"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const payrollData = JSON.parse(localStorage.getItem("payrollData"));
+      if (!payrollData) {
+        alert("No payroll data found! Please fill the payroll form first.");
+        window.location.href = "./payroll.html";
+        return;
+      }
+      document.getElementById("empName").textContent = payrollData.empName;
+      document.getElementById("date").textContent = payrollData.date;
+      document.getElementById("empId").textContent = payrollData.empId;
+      document.getElementById("month").textContent = new Date(payrollData.date).toLocaleString('default', { month: 'long' });
+      document.getElementById("empRole").textContent = payrollData.empRole;
+      document.getElementById("empId2").textContent = payrollData.empId;
+      document.getElementById("empName2").textContent = payrollData.empName;
+      document.getElementById("basicSalary").textContent = payrollData.basicSalary.toFixed(2);
+      document.getElementById("totalSalary").textContent = payrollData.totalSalary.toFixed(2);
+      document.getElementById("additions").textContent = payrollData.additions.toFixed(2);
+      document.getElementById("deductions").textContent = payrollData.deductions.toFixed(2);
+      const totalEarnings = payrollData.totalSalary + payrollData.additions - payrollData.deductions;
+      document.getElementById("totalEarnings").textContent = totalEarnings.toFixed(2);
+    });
+  </script>
+</body>
+</html>

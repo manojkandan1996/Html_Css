@@ -1,0 +1,255 @@
+body {
+  font-family: "Quicksand", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7e2b8;
+  color: white;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #222;
+  width: 180px;
+  padding: 20px 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 15px 20px;
+  cursor: pointer;
+}
+
+.sidebar ul li .active a,
+.sidebar ul li .active a :hover {
+  color: #f7b733;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  background: #f7b733;
+  color: white;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+form {
+  background: #23233f;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #f7b733;
+  color: white;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #f7b733;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  padding: 8px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: #f7b733;
+  color: white;
+  font-size: 14px;
+}
+
+.form-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.submit-btn {
+  background: #f7b733;
+  border: none;
+  padding: 12px 25px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  color: black;
+}
+
+.submit-btn:hover {
+  background: #e8a600;
+}
+
+.cancel-btn {
+  background: #555;
+  border: none;
+  padding: 12px 25px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background: #777;
+}
+
+.payslip-box {
+  margin-top: 40px;
+  background: #23233f;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #f7b733;
+  color: white;
+  max-width: 99%;
+}
+
+.payslip-box .info div {
+  margin-bottom: 8px;
+  font-size: 16px;
+
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  color: white;
+}
+
+table thead tr:first-child th {
+  background: #f7b733;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #f7b733;
+}
+
+table thead tr:nth-child(2) th {
+  background: #f7b733;
+  padding: 8px;
+  border: 1px solid #444466;
+  text-align: center;
+}
+
+tbody tr td {
+  padding: 8px;
+  border: 1px solid #444466;
+  text-align: center;
+}
+
+.total {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #f7b733;
+  text-align: right;
+}
+
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .sidebar ul li {
+    display: inline-block;
+    padding: 10px 15px;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .payslip-box {
+    padding: 15px;
+    margin-top: 20px;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+
+  .sidebar ul li {
+    display: inline-block;
+    padding: 12px 18px;
+  }
+
+  .main-content {
+    padding: 25px;
+  }
+
+  .form-buttons {
+    flex-wrap: wrap;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+}

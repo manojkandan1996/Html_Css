@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Dashboard</title>
+  <link rel="stylesheet" href="../css/overview.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="sidebar">
+    <ul>
+      <li class="active">🗺️Overview</li>
+      <li><a style="text-decoration: none;color: white;" href="./payroll.html">🧾Payroll</a></li>
+      <li><a style="text-decoration: none;color: white;" href="./payslip.html">📇Payslip</a></li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <h1>Good Morning !!!</h1>
+      <div class="icons">
+        <input type="text" placeholder="Search" />
+        <span>🔔<sup style="color:red">2</sup></span>
+        <img src="../images/Profile.png" alt="Profile" style="border-radius: 50%; width: 30px; height: 30px;" />
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="cards">
+        <div class="card">
+          <div>👥</div>
+          <h3><a style="text-decoration: none;color: black;" href="./totalemployees.html">Total Employees</a></h3>
+        </div>
+        <div class="card">
+          <div>👤</div>
+          <h3><a style="text-decoration: none;color: black;" href="./noofleaves.html">Number Of leave</a></h3>
+        </div>
+        <div class="card">
+          <div>➕</div>
+          <h3><a style="text-decoration: none;color: black;" href="./newemployee.html">New Employee’s</a></h3>
+        </div>
+        <div class="card">
+          <div>✈️</div>
+          <h3><a style="text-decoration: none;color: black;" href="./holidays.html"> Holiday of this Year </a></h3>
+        </div>
+      </div>
+
+      <div class="calendar-meetings">
+        <div class="calendar-box">
+          <div class="calendar-header">
+            <strong id="monthYear">May 2025</strong>
+            <div>
+              <button onclick="prevMonth()">&#8592;</button>
+              <button onclick="nextMonth()">&#8594;</button>
+            </div>
+          </div>
+          <div class="calendar" id="calendar"></div>
+        </div>
+
+        <div class="meetings-box">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <strong>Upcoming Meetings</strong>
+            <a href="#">View All</a>
+          </div>
+          <div class="meeting-card">Client Meeting - 10.00 Am <span>Wed<br>May 17</span></div>
+          <div class="meeting-card">Team Meeting - 11.00 Am <span>Wed<br>May 17</span></div>
+          <div class="meeting-card">HR Interview - 2.00 Pm <span>Mon<br>May 17</span></div>
+          <div class="meeting-card">Client Meeting - 4.00 Pm <span>Mon<br>May 17</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const calendar = document.getElementById("calendar");
+    const monthYear = document.getElementById("monthYear");
+    let current = new Date();
+
+    const events = {
+      '2025-05-17': 'Client Meeting',
+      '2025-05-22': 'Performance Review',
+      '2025-05-25': 'Project Deadline'
+    };
+
+    function renderCalendar(date) {
+      const year = date.getFullYear();
+      const month = date.getMonth();
+
+      monthYear.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
+
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      calendar.innerHTML = dayNames.map(day => `<div><strong>${day}</strong></div>`).join("");
+
+      for (let i = 0; i < firstDay; i++) {
+        calendar.innerHTML += `<div></div>`;
+      }
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const isToday = day === date.getDate() && month === new Date().getMonth() && year === new Date().getFullYear();
+        const dateKey = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        const hasEvent = events[dateKey];
+        calendar.innerHTML += `<div class="${isToday ? 'today' : ''} ${hasEvent ? 'event' : ''}" title="${hasEvent || ''}">${day}</div>`;
+      }
+    }
+
+    function prevMonth() {
+      current.setMonth(current.getMonth() - 1);
+      renderCalendar(current);
+    }
+
+    function nextMonth() {
+      current.setMonth(current.getMonth() + 1);
+      renderCalendar(current);
+    }
+
+    renderCalendar(current);
+  </script>
+</body>
+</html>

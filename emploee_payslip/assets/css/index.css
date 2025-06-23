@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ font-family: "Quicksand", sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #fff3e0, #ffe0b2);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 900px;
+}
+
+.image-side {
+    flex: 1;
+    background: #fbe9e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-side img {
+    width: 90%;
+    max-width: 300px;
+}
+
+.form-side {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+}
+
+button {
+    padding: 12px;
+    background-color: #fdd835;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button a {
+    text-decoration: none;
+    color: black;
+}
+
+button:hover {
+    background-color: #fbc02d;
+}
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .image-side, .form-side {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .image-side {
+    order: 2; 
+    padding: 15px;
+  }
+
+  .form-side {
+    order: 1;
+    padding: 25px 20px;
+  }
+
+  h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  input, button {
+    font-size: 16px;
+  }
+
+  .forgot-password {
+    text-align: left;
+    font-size: 14px;
+  }
+}
+ @media (min-width: 701px) and (max-width: 900px)  {
+ body {
+    background: linear-gradient(to right, #fff3e0, #ffe0b2);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 900px;
+}
+
+.image-side {
+    flex: 1;
+    background: #fbe9e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-side img {
+    width: 90%;
+    max-width: 300px;
+}
+
+.form-side {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+}
+
+button {
+    padding: 12px;
+    background-color: #fdd835;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button a {
+    text-decoration: none;
+    color: black;
+}
+
+button:hover {
+    background-color: #fbc02d;
+}}

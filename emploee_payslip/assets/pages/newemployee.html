@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Total Employees</title>
+ <link rel="stylesheet" href="../css/newemployee.css">
+ <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+ <div class="sidebar">
+    <ul>
+      <li class="active">🗺️Overview</li>
+      <li><a style="text-decoration: none;color: white;" href="./payroll.html">🧾Payroll</a></li>
+      <li><a style="text-decoration: none;color: white;" href="./payslip.html">📇Payslip</a></li>
+    </ul>
+  </div>
+  <div class="table">
+<h1>Total Employees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Designation</th>
+      <th>Date of Joining</th>
+      <th>Years of Service</th>
+    </tr>
+  </thead>
+  <tbody id="employeeTableBody">
+  </tbody>
+</table>
+</div>
+<script>
+  const employees = [
+    { name: "John Doe", designation: "Software Engineer", dateOfJoining: "2018-04-15" },
+    { name: "Jane Smith", designation: "HR Manager", dateOfJoining: "2016-09-01" },
+    { name: "Michael Brown", designation: "Accountant", dateOfJoining: "2020-01-10" },
+    { name: "Lisa White", designation: "UI/UX Designer", dateOfJoining: "2019-07-23" },
+  ];
+
+  const calculateYearsOfService = (doj) => {
+    const joinDate = new Date(doj);
+    const today = new Date();
+    let years = today.getFullYear() - joinDate.getFullYear();
+    if (
+      today.getMonth() < joinDate.getMonth() ||
+      (today.getMonth() === joinDate.getMonth() && today.getDate() < joinDate.getDate())
+    ) {
+      years--;
+    }
+    return years;
+  };
+
+  const tableBody = document.getElementById("employeeTableBody");
+
+  employees.forEach(emp => {
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+      <td>${emp.name}</td>
+      <td>${emp.designation}</td>
+      <td>${emp.dateOfJoining}</td>
+      <td>${calculateYearsOfService(emp.dateOfJoining)} years</td>
+    `;
+
+    tableBody.appendChild(row);
+  });
+</script>
+
+</body>
+</html>
