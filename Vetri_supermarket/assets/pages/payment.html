@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="../css/payment.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>Vetri Market</h2>
+        <a style="color: #f88e55" href="#" href="#"><img src="../images/Home.png"> Home</a>
+        <a><img src="../images/products.png"> Products</a>
+    </div>
+
+    <div class="content">
+        <div class="overview">
+            <div class="top-info">
+                <div>
+                    <p>DATE: 12/17/2024</p>
+                    <p>TIME: 5.30 PM</p>
+                    <p>BILL NO: 78123</p>
+                </div>
+                <button class="status-btn"><img src="../images/draft.png"> Draft</button>
+            </div>
+
+            <div class="amount-section">
+                <div class="amount-box collected">
+                    Collected Amount <br><span id="collected">0</span>
+                </div>
+                <div class="amount-box balance">
+                    Balance <br><span id="balance">0.00</span>
+                </div>
+            </div>
+            <div class="payment-methods">
+                <div class="method">
+                    <label class="method-label active">
+                        <span><img src="../images/cash.png"></span> CASH
+                        <input type="radio" name="method" checked>
+                    </label>
+                    <label class="method-label">
+                        <span><img src="../images/card.png"></span> CARD
+                        <input type="radio" name="method">
+                    </label>
+                </div>
+                <div style="margin-top: 10px;">
+                    <label>Received Amount</label><br>
+                    <input type="text" id="received" value="150.0" oninput="updateBalance()">
+                </div>
+            </div>
+            <div class="summary">
+                <p><span>Sub Total</span><span id="subtotal">0</span></p>
+                <p><span>Tax</span><span id="tax">30</span></p>
+                <p><span>Round Off</span><span>00</span></p>
+                <p style="font-weight: bold;"><span>Total</span><span id="total">0</span></p>
+            </div>
+            <div class="actions">
+                <button class="btn save">Save</button>
+                <button class="btn pay"><a style="text-decoration: none;color: white;"
+                        href="./completed.html">Payment</a></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+      document.addEventListener("DOMContentLoaded", function () {
+    const total = parseFloat(localStorage.getItem("cartTotal")) || 0;
+
+    const tax = 30;
+    const subtotal = total - tax;
+
+    document.getElementById("collected").innerText = subtotal.toFixed(2);
+    document.getElementById("subtotal").innerText = subtotal.toFixed(2);
+    document.getElementById("total").innerText = total.toFixed(2);
+
+    document.getElementById("received").value = total.toFixed(2);
+
+    updateBalance();
+
+    const labels = document.querySelectorAll('.method-label');
+    labels.forEach(label => {
+        label.addEventListener('click', () => {
+            labels.forEach(l => l.classList.remove('active'));
+            label.classList.add('active');
+        });
+    });
+});
+
+    </script>
+</body>
+
+</html>

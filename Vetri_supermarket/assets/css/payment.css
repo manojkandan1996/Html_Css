@@ -1,0 +1,247 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+     font-family: "Outfit", sans-serif;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #c5e2fd;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #444;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.content {
+    flex: 1;
+    padding: 40px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contant,
+.overview {
+    width: 40%;
+    height: 90%;
+
+}
+
+.top-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+}
+
+.amount-section {
+    margin: 20px 0;
+    display: flex;
+    gap: 20px;
+}
+
+.amount-box {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.collected {
+    background-color: #ff975e;
+    color: white;
+}
+
+.balance {
+    background-color: #eb9bfb;
+    color: black;
+}
+
+.payment-methods {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.payment-method,
+.method {
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+.summary {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.summary p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    gap: 30px;
+}
+
+.save {
+    font-size: 18px;
+    background-color: #ff975e;
+    color: white;
+}
+
+.pay {
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+}
+
+input[type="text"] {
+    padding: 8px;
+    width: 100px;
+}
+
+.method-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.method-label input {
+    display: none;
+}
+
+.method-label.active {
+    border: 2px solid #007bff;
+}
+
+@media (max-width: 700px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 0;
+    }
+
+    .content {
+        padding: 20px;
+        align-items: stretch;
+    }
+
+    .contant,
+    .overview {
+        width: 100%;
+        height: auto;
+    }
+
+    .top-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .amount-section {
+        flex-direction: column;
+    }
+
+    .payment-methods {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 900px) {
+
+    .contant,
+    .overview {
+        width: 90%;
+        height: auto;
+    }
+
+    .content {
+        padding: 30px;
+    }
+
+    .amount-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .payment-methods {
+        flex-wrap: wrap;
+    }
+
+    .actions {
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+}

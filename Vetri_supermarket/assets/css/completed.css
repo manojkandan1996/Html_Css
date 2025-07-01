@@ -1,0 +1,130 @@
+    body {
+        margin: 0;
+         font-family: "Outfit", sans-serif;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .confirmation-box {
+        background: white;
+        border-radius: 16px;
+        width: 70%;
+        padding: 30px;
+        margin-top: 50px;
+        text-align: center;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .confirmation-box img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+    }
+
+    h2 {
+        color: black;
+        margin: 20px 0 10px;
+        font-size: 24px;
+    }
+
+    p {
+        color: #555;
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+    .details {
+        text-align: left;
+        margin: 20px 0;
+        background-color: #cef0d2;
+        border-radius: 10px;
+        width: 90%;
+    }
+
+    .details table {
+        width: 100%;
+    }
+
+    .details th,
+    .details td {
+        padding: 8px 10px;
+        font-size: 15px;
+    }
+
+    .details th {
+        color: #444;
+        text-align: left;
+        width: 20%;
+    }
+
+    .download-btn {
+        background-color: #f88e55;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 30px;
+    }
+
+    .download-btn:hover {
+        background-color: #f88e55;
+    }
+
+    @media (max-width: 700px) {
+        .confirmation-box {
+            width: 100%;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        .details th,
+        .details td {
+            font-size: 13px;
+        }
+
+        .download-btn {
+            display: none;
+        }
+    }
+
+    @media (min-width: 701px) and (max-width: 900px) {
+        .confirmation-box {
+            width: 85%;
+            padding: 25px;
+        }
+
+        h2 {
+            font-size: 22px;
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        .details th,
+        .details td {
+            font-size: 14px;
+        }
+
+        .download-btn {
+            font-size: 14px;
+            padding: 10px 20px;
+        }
+    }

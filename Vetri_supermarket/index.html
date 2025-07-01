@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vetri Market - Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>Vetri Market</h2>
+        <a href="#"><img src="./assets/images/Home.png"> Home</a>
+        <a style="color: #f88e55" href="#"><img src="./assets/images/products.png"> Products</a>
+    </div>
+    <div class="main">
+        <div class="customer-info">
+            <h3>Customer Details</h3>
+            <div style="display: flex;flex-direction: row;gap:150px" class="first">
+                <div>CUSTOMER NAME:<br> <b>Priya</b></div>
+                <div>CONTACT NO:</strong><br><b> 8910866713</b></div>
+            </div>
+            <div style="display: flex;flex-direction: row;gap:70px" class="second">
+                <div>ADDRESS:<br> <b>12, Cross Cut Road, Chennai.</b></div>
+                <div>DATE: <b><br>12/7/24</b></div>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search"><img src="./assets/images/search.png"></i>
+                <input type="text" placeholder="Search">
+                <i class="fas fa-barcode"><img src="./assets/images/bar code.png"></i>
+                <i class="fas fa-microphone"><img src="./assets/images/mic.png"></i>
+            </div>
+            <button class="add-button">
+                <span>+</span><a style="text-decoration: none;color: white;" href="./assets/pages/products.html"> Add
+                    Item </a>
+            </button>
+        </div>
+        <div class="item-section">
+            <div class="item-table-header">
+                <div>ITEM DETAILS</div>
+                <div>QUANTITY</div>
+                <div>RATE</div>
+                <div>TAX</div>
+                <div>AMOUNT</div>
+            </div>
+
+            <div id="itemContainer">
+                <div class="item-row">
+                    <div>Noodles</div>
+                    <div class="quantity-control">
+                        <button onclick="decrease(this)">-</button>
+                        <span>2</span>
+                        <button onclick="increase(this)">+</button>
+                    </div>
+                    <div>100</div>
+                    <div>20</div>
+                    <div>220</div>
+                </div>
+
+                <div class="item-row">
+                    <div>Carrot (1kg)</div>
+                    <div class="quantity-control">
+                        <button onclick="decrease(this)">-</button>
+                        <span>1</span>
+                        <button onclick="increase(this)">+</button>
+                    </div>
+                    <div>30</div>
+                    <div>10</div>
+                    <div>40</div>
+                </div>
+            </div>
+        </div>
+        <div class="next-btn">
+            <button onclick="updateGrandTotal(); window.location.href = './assets/pages/payment.html';">Next</button>
+
+        </div>
+        <script>
+            function increase(button) {
+                const row = button.closest('.item-row');
+                const span = row.querySelector('.quantity-control span');
+                let current = parseInt(span.innerText) || 0;
+                span.innerText = current + 1;
+                updateAmount(row);
+            }
+
+            function decrease(button) {
+                const row = button.closest('.item-row');
+                const span = row.querySelector('.quantity-control span');
+                let current = parseInt(span.innerText) || 0;
+                if (current > 1) {
+                    span.innerText = current - 1;
+                    updateAmount(row);
+                }
+            }
+
+            function updateAmount(row) {
+                const quantity = parseInt(row.querySelector('.quantity-control span').innerText) || 0;
+                const rate = parseFloat(row.children[2].innerText) || 0;
+                const tax = parseFloat(row.children[3].innerText) || 0;
+                const amount = (quantity * rate) + tax;
+                row.children[4].innerText = amount;
+            }
+
+            function addItem() {
+                const container = document.getElementById("itemContainer");
+                const row = document.createElement("div");
+                row.className = "item-row";
+                row.innerHTML = `
+        <div>New Item</div>
+        <div class="quantity-control">
+          <button onclick="decrease(this)">-</button>
+          <span>1</span>
+          <button onclick="increase(this)">+</button>
+        </div>
+        <div>50</div>
+        <div>5</div>
+        <div>55</div>
+      `;
+                container.appendChild(row);
+            }
+        </script>
+        <script>
+            window.onload = function () {
+                const itemContainer = document.getElementById('itemContainer');
+                const savedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+                itemContainer.innerHTML = '';
+
+                savedCart.forEach(item => {
+                    const quantity = isNaN(item.quantity) ? 1 : parseInt(item.quantity);
+                    const amount = (item.rate + item.tax) * quantity;
+
+                    const row = document.createElement('div');
+                    row.className = 'item-row';
+                    row.innerHTML = `
+            <div>${item.name}</div>
+            <div class="quantity-control">
+                <button onclick="decrease(this)">-</button>
+                <span>${quantity}</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+            <div>${item.rate}</div>
+            <div>${item.tax}</div>
+            <div>${amount}</div>
+        `;
+                    itemContainer.appendChild(row);
+                });
+            };
+        </script>
+        <script>
+            function updateGrandTotal() {
+                const rows = document.querySelectorAll(".item-row");
+                let total = 0;
+                rows.forEach(row => {
+                    const amount = parseFloat(row.children[4].innerText) || 0;
+                    total += amount;
+                });
+                localStorage.setItem("cartTotal", total.toFixed(2)); // Save to localStorage
+            }
+        </script>
+</body>
+
+</html>

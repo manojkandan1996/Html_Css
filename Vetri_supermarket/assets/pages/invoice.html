@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tax Invoice</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/invoice.css" />
+</head>
+<body>
+  <div class="invoice-wrapper">
+    <div class="invoice-header">
+      <h1>Tax Invoice</h1>
+      <div class="invoice-number">Invoice Number # HY678953789</div>
+    </div>
+    <div class="seller-info">
+      <p><strong>Sold By: <span class="brand">Vetri Market</span></strong></p>
+      <p><strong>Ship-From Address:</strong> Vetri market<br>
+        65, Old Market, Sivagurunathapuram, Surandai,<br>
+        Tamil Nadu 627-859</p>
+    </div>
+    <div class="divider"></div>
+    <div class="order-billing-section">
+      <div class="order-details">
+        <p><strong>Order ID:</strong> 07896311890</p>
+        <p><strong>Order Date:</strong> 20-05-25</p>
+      </div>
+      <div class="billing-address">
+        <p><strong>Billing Address</strong></p>
+        <p>Keerthi</p>
+        <p>78 A, Guru Apartment, Sholinganallur</p>
+        <p>Chennai District - 600119, Tamil Nadu</p>
+        <p>Phone - 8900278569</p>
+      </div>
+    </div>
+    <div class="divider green-line"></div>
+   <table class="invoice-table">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Total Amount</th>
+    </tr>
+  </thead>
+  <tbody id="invoice-body">
+  </tbody>
+</table>
+<div class="total-line">
+  <div>Total</div>
+  <div><span>₹</span> <span id="grand-total">0.00</span></div>
+</div>
+    <div class="download-btn-wrapper">
+      <button class="download-btn"onclick="showPopup()">Download Invoice</button>
+    </div>
+      <div class="popup-container" id="popupContainer">
+    <div class="popup">
+      <img src="../images/thank you.png" alt="Thank You Illustration" />
+      <h2>Thank You</h2>
+      <p>Thank You For Shopping!!!</p>
+      <button class="btn" onclick="hidePopup()">🗙</button>
+    </div>
+  </div>
+  </div>
+
+<script>
+  const cartItems = [
+    { description: 'Noodles', quantity: '2', price: 60 },
+    { description: 'Carrot', quantity: '1 kg', price: 40 }
+  ];
+
+  const invoiceBody = document.getElementById('invoice-body');
+  const grandTotal = document.getElementById('grand-total');
+
+  let totalAmount = 0;
+
+  cartItems.forEach(item => {
+    const amount = parseFloat(item.price) * (parseFloat(item.quantity) || 1);
+    totalAmount += amount;
+
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${item.description}</td>
+      <td>${item.quantity}</td>
+      <td>${item.price}</td>
+      <td>${amount}</td>
+    `;
+    invoiceBody.appendChild(row);
+  });
+
+  grandTotal.textContent = totalAmount.toFixed(2);
+</script>
+<script>
+    function showPopup() {
+      document.getElementById('popupContainer').style.display = 'flex';
+    }
+    function hidePopup() {
+      document.getElementById('popupContainer').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

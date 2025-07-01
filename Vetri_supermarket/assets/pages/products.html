@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vetri Market Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="../css/products.css" rel="stylesheet">
+</head>
+<body>
+     <div class="sidebar">
+        <h2>Vetri Market</h2>
+        <a href="./index.html"><img src="../images/Home.png"> Home</a>
+        <a style="color: #f88e55" href="#"><img src="../images/products.png"> Products</a>
+    </div> 
+    <div class="main">
+        <h1>Products</h1>
+        <div class="product-table">
+            <div>ITEM DETAILS</div>
+            <div>QUANTITY</div>
+            <div>RATE</div>
+            <div>TAX</div>
+            <div>AMOUNT</div>
+        </div>
+        <div id="product-list"></div>
+        <div class="next-btn">
+    <button onclick="goToCart()" style="background-color: #f88e55; border: none; color: white; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Next</button>
+</div>
+    </div>
+    <script>
+        const products = [
+            { name: 'Dairy Milk', quantity: 2, rate: 100, tax: 20 },
+            { name: 'Millet Noodles', quantity: '1kg', rate: 30, tax: 10 },
+            { name: 'Wheat Flour', quantity: 2, rate: 100, tax: 20 },
+            { name: 'Maida', quantity: '1kg', rate: 30, tax: 10 },
+            { name: 'Chili Powder', quantity: 2, rate: 100, tax: 20 },
+            { name: 'Biryani Masala', quantity: '1kg', rate: 30, tax: 10 }
+        ];
+
+        const cart = [];
+        const productList = document.getElementById('product-list');
+
+        function renderProducts() {
+            productList.innerHTML = '';
+            products.forEach((product, index) => {
+                const amount = (isNaN(product.quantity) ? 1 : product.quantity) * (product.rate + product.tax);
+
+                const row = document.createElement('div');
+                row.className = 'product-item';
+
+                row.innerHTML = `
+          <div>${product.name}</div>
+          <div class="quantity-control">
+            <button onclick="updateQuantity(${index}, -1)">-</button>
+            <span id="qty-${index}">${product.quantity}</span>
+            <button onclick="updateQuantity(${index}, 1)">+</button>
+          </div>
+          <div>${product.rate}</div>
+          <div>${product.tax}</div>
+          <div id="amt-${index}">${amount}</div>
+          <div class="remove-icon" onclick="deleteItem(${index})">🗑️</div>
+          <div class="cart-icon" onclick="addToCart(${index})">🛒</div>
+        `;
+
+                productList.appendChild(row);
+            });
+        }
+
+        function updateQuantity(index, change) {
+            let qtyEl = document.getElementById(`qty-${index}`);
+            let amtEl = document.getElementById(`amt-${index}`);
+            let product = products[index];
+
+            let qty = isNaN(product.quantity) ? 1 : parseInt(product.quantity);
+            qty = Math.max(1, qty + change);
+
+            product.quantity = qty;
+            qtyEl.innerText = qty;
+            amtEl.innerText = (product.rate + product.tax) * qty;
+        }
+
+        function deleteItem(index) {
+            products.splice(index, 1);
+            renderProducts();
+        }
+
+        function addToCart(index) {
+            cart.push(products[index]);
+            console.log("Cart:", cart);
+        }
+
+        renderProducts();
+    </script>
+    <script>
+        function addToCart(index) {
+    const product = products[index];
+
+    if (!cart.some(item => item.name === product.name)) {
+        cart.push(product);
+        alert(`${product.name} added to cart`);
+    }
+
+    localStorage.setItem('cartItems', JSON.stringify(cart));
+}
+
+function goToCart() {
+    if (cart.length === 0) {
+        alert("Please add items to the cart before proceeding.");
+        return;
+    }
+    localStorage.setItem('cartItems', JSON.stringify(cart));
+    window.location.href = "C:\vscode\projects\prototype 5\index.html"; // Adjust path based on your structure
+}
+
+    </script>
+</body>
+
+</html>
