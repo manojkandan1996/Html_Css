@@ -1,0 +1,478 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Urbanist", sans-serif;
+}
+
+body {
+    background: #fff;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    background-color: #000;
+    color: #fff;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .logo {
+    position: relative;
+    margin-bottom: 30px;
+    background-color: white;
+    height: 70px;
+    margin-top: 0;
+}
+
+.sidebar .logo img {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.sidebar h2 {
+    padding-left: 80px;
+    font-size: 16px;
+    margin-top: 10px;
+    color: black;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.sidebar li {
+    padding: 12px 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar li.active,
+.sidebar li:hover {
+    background-color: #2d2d2d;
+    font-weight: bold;
+    color: #d5f55c;
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.greeting h3 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.search-area {
+    display: flex;
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.search-area input {
+    border: none;
+    padding: 10px;
+    width: 200px;
+    outline: none;
+}
+
+.search-area button {
+    background-color: #d8f275;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notification {
+    font-size: 18px;
+    position: relative;
+}
+
+.notification sup {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 10px;
+    position: absolute;
+    top: -8px;
+    right: -10px;
+}
+
+.icons img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+
+.cards {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    padding: 20px;
+    border-radius: 12px;
+    color: #000;
+    position: relative;
+    min-width: 200px;
+}
+
+.card h2 {
+    font-size: 28px;
+    margin-top: 5px;
+}
+
+.card span {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+}
+
+.card.yellow {
+    background-color: #fef4d5;
+}
+
+.card.green {
+    background-color: #d4f1dd;
+}
+
+.card.pink {
+    background-color: #f7c7f2;
+}
+
+
+.trainers-section {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.trainers,
+.upcoming-exams {
+    background-color: #d8f275;
+    padding: 20px;
+    border-radius: 15px;
+    flex: 1;
+    min-width: 280px;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.header-row button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.trainer-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.trainer-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.trainee-badge {
+    margin-left: auto;
+    background-color: #fdf0c1;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+
+.exam-card {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 14px;
+}
+
+.upload-box {
+    margin-top: 30px;
+}
+
+.upload-box .drop-zone {
+    border: 2px dashed #4b8df8;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    background-color: #fafafa;
+    margin-top: 10px;
+}
+
+.drop-zone button {
+    margin-top: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.note {
+    margin-top: 10px;
+    font-size: 13px;
+    color: gray;
+}
+
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.popup-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.popup-content button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    height: auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    overflow-x: auto;
+  }
+
+  .sidebar .logo {
+    height: 50px;
+    margin-bottom: 0;
+  }
+
+  .sidebar .logo img {
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
+
+  .sidebar h2 {
+    font-size: 14px;
+    color: black;
+    padding-left: 50px;
+    margin-top: 0;
+  }
+
+  .sidebar ul {
+    display: flex;
+    gap: 10px;
+    margin-top: 0;
+  }
+
+  .sidebar li {
+    padding: 8px 10px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .search-area {
+    width: 100%;
+  }
+
+  .search-area input {
+    width: 100%;
+  }
+
+  .icons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .trainers-section {
+    flex-direction: column;
+  }
+
+  .trainers,
+  .upcoming-exams {
+    width: 100%;
+  }
+
+  .upload-box .drop-zone {
+    padding: 20px;
+  }
+
+  .popup-content {
+    width: 90%;
+  }
+}
+
+
+@media (min-width: 701px) and (max-width: 900px) {
+  .sidebar {
+    width: 180px;
+  }
+
+  .sidebar .logo img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .sidebar h2 {
+    font-size: 15px;
+    padding-left: 60px;
+  }
+
+  .sidebar li {
+    font-size: 14px;
+    padding: 10px 8px;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  header {
+    flex-wrap: wrap;
+  }
+
+  .search-area input {
+    width: 180px;
+  }
+
+  .cards {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex: 1 1 calc(50% - 20px);
+    min-width: 220px;
+  }
+
+  .trainers-section {
+    flex-wrap: wrap;
+  }
+
+  .trainers,
+  .upcoming-exams {
+    flex: 1 1 48%;
+  }
+
+  .upload-box .drop-zone {
+    padding: 25px;
+  }
+
+  .popup-content {
+    width: 400px;
+  }
+}
