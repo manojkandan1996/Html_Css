@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Designing - VTS Exam Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/designing.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="../images/vts.jpg" alt="VTS Logo">
+                <h2>VTS Exam<br>Portal</h2>
+            </div>
+            <ul class="nav">
+                <li><img style="background-color: black;" src="../images/Overview.png">
+                    <a style="text-decoration: none;color: white;" href="./overview.html"> Overview</a>
+                </li>
+                <li class="active"><img style="background-color: white;" src="../images/Design.png">Designing</li>
+                <li><span style="background-color: white;"><img src="../images/Exam.png"></span> Exam</li>
+                <li><span style="background-color: white;"><img src="../images/result.png"></span><a
+                        style="text-decoration: none;color: white;" href="../pages/result.html">Result</a> </li>
+            </ul>
+        </aside>
+
+        <div class="main-content">
+
+            <header class="main-header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search" />
+                    <button class="search-btn"><img src="../images/search.png"></button>
+                </div>
+                <div class="header-buttons">
+                    <button class="btn filter" onclick="toggleFilterPopup()">
+                        <span style="background-color: white;"><img src="../images/filter.png"></span> Filter</button>
+                    <button class="btn add">
+                        <span style="background-color: white;"><img src="../images/add.png"></span>
+                        <a href="../pages/traineeregform.html" style="text-decoration: none;color: white;"> Add
+                            Trainees</a></button>
+                </div>
+            </header>
+            <section class="trainers-section">
+                <h3>Active Trainers</h3>
+                <div class="trainer-card">
+                    <img src="../images/Img 1.png" alt="Priya" />
+                    <div>
+                        <strong>Priya</strong>
+                        <p>UI/UX Designer</p>
+                    </div>
+                    <span class="trainee-count">15 Trainees</span>
+                </div>
+                <div class="trainer-card">
+                    <img src="../images/Img 2.png" alt="Rithika" />
+                    <div>
+                        <strong>Rithika</strong>
+                        <p>UI/UX Designer</p>
+                    </div>
+                    <span class="trainee-count">15 Trainees</span>
+                </div>
+                <div class="trainer-card">
+                    <img src="../images/Img 3.png" alt="Reshma" />
+                    <div>
+                        <strong>Reshma</strong>
+                        <p>UI/UX Designer</p>
+                    </div>
+                    <span class="trainee-count">15 Trainees</span>
+                </div>
+            </section>
+
+            <section class="upload-box">
+                <p>Upload Question Paper</p>
+                <div class="drop-zone">
+                    <p>📤<br>Drag and drop your files here<br>or</p>
+                    <input type="file" id="fileInput" hidden>
+                    <button onclick="document.getElementById('fileInput').click()">Browse Files</button>
+                    <p class="note">Supported formats: PDF, DOC, DOCX (Max: 10MB)</p>
+                </div>
+            </section>
+
+            <div class="popup hidden" id="filterPopup">
+                <div class="popup-box">
+                    <span class="close-btn" onclick="toggleFilterPopup()">&times;</span>
+                    <h3>Filter By</h3>
+                    <input type="text" placeholder="Trainees Name" />
+                    <input type="text" placeholder="Course Name" />
+                    <input type="text" placeholder="Durations" />
+
+                    <p><strong>Class Mode</strong></p>
+                    <label><input type="radio" name="mode" checked /> Online</label><br />
+                    <label><input type="radio" name="mode" /> Offline</label>
+
+                    <button class="submit-btn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

@@ -9,19 +9,19 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
 
     const logins = [
         {
-            email: 'admin07@vts.com',
-            password: 'admin07',
-            redirect: 'assets/pages/admin_overview.html'
+            email: 'admin@vts.com',
+            password: 'admin123',
+            redirect: 'assets/pages/adminoverview.html'
         },
         {
-            email: 'trainer07@vts.com',
-            password: 'trainer07',
-            redirect: 'assets/pages/trainer_overview.html'
+            email: 'trainer@vts.com',
+            password: 'trainer123',
+            redirect: 'assets/pages/traineroverview.html'
         },
         {
-            email: 'student07@vts.com',
-            password: 'student07',
-            redirect: 'assets/pages/student_overview.html'
+            email: 'student@vts.com',
+            password: 'student123',
+            redirect: 'assets/pages/studentoverview.html'
         }
     ];
 
@@ -42,16 +42,16 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
 
     if (email.includes('admin') && email.endsWith('@vts.com')) {
       role = 'admin';
-      correctPassword = 'admin07';
-      redirectUrl = 'assets/pages/admin_overview.html';
+      correctPassword = 'admin123';
+      redirectUrl = 'assets/pages/adminoverview.html';
     } else if (email.includes('trainer') && email.endsWith('@vts.com')) {
       role = 'trainer';
-      correctPassword = 'trainer07';
-      redirectUrl = 'assets/pages/trainer_overview.html';
+      correctPassword = 'trainer123';
+      redirectUrl = 'assets/pages/traineroverview.html';
     } else if (email.includes('student') && email.endsWith('@vts.com')) {
       role = 'student';
-      correctPassword = 'student07';
-      redirectUrl = 'assets/pages/student_overview.html';
+      correctPassword = 'student123';
+      redirectUrl = 'assets/pages/studentoverview.html';
     }
 
     if (role && password === correctPassword) {
@@ -66,4 +66,35 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     }
   }
 });
+
+
+function openAddPopup() {
+    document.getElementById("popup").classList.remove("hidden");
+}
+
+function closePopup() {
+    document.getElementById("popup").classList.add("hidden");
+}
+
+function openExamPopup() {
+    document.getElementById("examPopup").classList.remove("hidden");
+}
+
+function closeExamPopup() {
+    document.getElementById("examPopup").classList.add("hidden");
+}
+
+function openFilterPopup() {
+    document.getElementById('filterPopup').classList.remove('hidden');
+}
+
+function closeFilterPopup() {
+    document.getElementById('filterPopup').classList.add('hidden');
+}
+
+function toggleFilterPopup() {
+    document.getElementById('filterPopup').classList.toggle('hidden');
+}
+
+
 

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Register Trainee</title>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/traineeregform.css" />
+</head>
+
+<body>
+  <div class="form-container">
+    <h2>Trainee Registration</h2>
+    <form id="registrationForm">
+      <label>Full Name:</label>
+      <input type="text" id="name" required />
+
+      <label>Email:</label>
+      <input type="email" id="email" required />
+
+      <label>Phone:</label>
+      <input type="tel" id="phone" required />
+
+      <label>Course Name:</label>
+      <input type="text" id="course" required />
+
+      <label>Duration (Days):</label>
+      <input type="number" id="duration" min="1" required />
+
+      <label>Class Mode:</label>
+      <select id="mode" required>
+        <option value="">Select Mode</option>
+        <option value="Online">Online</option>
+        <option value="Offline">Offline</option>
+      </select>
+
+      <label>Profile Image URL:</label>
+      <input type="url" id="image" placeholder="Optional" />
+
+      <button type="submit">Add Trainee</button>
+    </form>
+  </div>
+  <button id="clear-btn">Clear All Trainees</button>
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const trainee = {
+        id: Date.now(), // unique ID
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        course: document.getElementById('course').value.trim(),
+        duration: document.getElementById('duration').value.trim(),
+        mode: document.getElementById('mode').value,
+        image: document.getElementById('image').value.trim() || 'https://via.placeholder.com/60'
+      };
+
+      // ✅ Always get the existing list first!
+      let trainees = JSON.parse(localStorage.getItem('trainees')) || [];
+
+      // ✅ Add the new one
+      trainees.push(trainee);
+
+      // ✅ Save the updated list
+      localStorage.setItem('trainees', JSON.stringify(trainees));
+
+      console.log('Saved trainees:', trainees); // Check in console
+
+      // ✅ Redirect to trainees list
+      window.location.href = 'trainees.html'; // adjust path if needed!
+    });
+  </script>
+  <script>
+    // ✅ Add this script OR put it in trainees.js
+    document.getElementById('clear-btn').addEventListener('click', () => {
+      if (confirm('Are you sure you want to clear all trainees?')) {
+        localStorage.removeItem('trainees');
+        window.location.reload(); // Refresh page to update list
+      }
+    });
+  </script>
+
+</body>
+
+</html>

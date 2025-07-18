@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Trainee Details Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/traineedetails.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="../images/vts.jpg" alt="VTS Logo">
+            <h2>VTS Exam<br>Portal</h2>
+        </div>
+        <nav>
+            <ul>
+                <li class="active"><span><img src="../images/Overview.png"></span> Overview</li>
+                <li><img style="background-color: white;" src="../images/Design.png"><a
+                        style="text-decoration: none;color: white;" href="./designing.html">Designing</a></li>
+                <li><span style="background-color: white;"><img src="../images/development.jpg"></span> Development</li>
+                <li><span style="background-color: white;"><img src="../images/Exam.png"></span> Exam</li>
+                <li><span style="background-color: white;"><img src="../images/result.png"></span> Result</li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <div class="pro">
+            <img id="trainee-image" src="../images/Img 1.png" alt="Profile" />
+            <div>Welcome <strong id="trainee-name"></strong></div>
+            <div class="date" id="today-date"></div>
+        </div>
+        <div class="dashboard">
+            <div class="dashboard-left">
+                <div class="welcome">
+                    <div class="upcoming-exams">
+                        <h4>Upcoming Exams <button class="start-exam-btn"><a style="text-decoration: none;color: white;"
+                                    href="../pages/exam.html">Start a Exam</a></button></h4>
+                        <div id="exams-list"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-right">
+                <img id="trainee-image-right" alt="Profile" />
+                <div class="profile-name" id="trainee-name-right"></div>
+                <div class="profile-course" id="trainee-course"></div>
+
+                <div class="progress-section">
+                    <p class="progress-label">Figma</p>
+                    <div class="progress-bar">
+                        <div id="figma-progress" class="progress-fill"></div>
+                    </div>
+
+                    <p class="progress-label">Adobe Photoshop</p>
+                    <div class="progress-bar">
+                        <div id="photoshop-progress" class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="calendar">
+                    <h5>May 2025</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sun</th>
+                                <th>Mon</th>
+                                <th>Tue</th>
+                                <th>Wed</th>
+                                <th>Thu</th>
+                                <th>Fri</th>
+                                <th>Sat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>9</td>
+                                <td>10</td>
+                                <td>11</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>13</td>
+                                <td>14</td>
+                                <td class="today">15</td>
+                                <td>16</td>
+                                <td>17</td>
+                                <td>18</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>20</td>
+                                <td>21</td>
+                                <td>22</td>
+                                <td>23</td>
+                                <td>24</td>
+                                <td>25</td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>27</td>
+                                <td>28</td>
+                                <td>29</td>
+                                <td>30</td>
+                                <td>31</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const traineeId = localStorage.getItem('selectedTraineeId');
+            const trainees = JSON.parse(localStorage.getItem('trainees')) || [];
+            const trainee = trainees.find(t => t.id == traineeId);
+
+            if (trainee) {
+                document.getElementById('trainee-name').textContent = trainee.name;
+                document.getElementById('trainee-image').src = trainee.image;
+                document.getElementById('today-date').textContent = new Date().toDateString();
+
+                document.getElementById('trainee-image-right').src = trainee.image;
+                document.getElementById('trainee-name-right').textContent = trainee.name;
+                document.getElementById('trainee-course').textContent = `${trainee.course} (${trainee.mode})`;
+
+
+                document.getElementById('figma-progress').style.width = trainee.courseProgress.figma + '%';
+                document.getElementById('photoshop-progress').style.width = trainee.courseProgress.photoshop + '%';
+
+
+                const examsList = document.getElementById('exams-list');
+                trainee.exams.forEach(exam => {
+                    const div = document.createElement('div');
+                    div.className = 'exam-card';
+                    div.innerHTML = `<strong>${exam.title}</strong>
+            <div style="font-size:12px;color:#777;">Duration: ${exam.duration}</div>
+            <div style="text-align:right;font-weight:bold;">${exam.date}<br>${exam.time}</div>`;
+                    examsList.appendChild(div);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

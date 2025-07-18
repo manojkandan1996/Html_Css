@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "question": "Where can label text be aligned?",
+    "options": ["Top", "Right", "Center", "Left"]
+  },
+  {
+    "id": 2,
+    "question": "Which tool is used for prototyping in design?",
+    "options": ["Figma", "Photoshop", "MS Word", "Excel"]
+  },
+  {
+    "id": 3,
+    "question": "What does HTML stand for?",
+    "options": [
+      "Hyper Trainer Markup Language",
+      "Hyper Text Markup Language",
+      "Hyper Text Markdown Language",
+      "Hyper Transfer Markup Language"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Which tag is used for creating a hyperlink in HTML?",
+    "options": ["<h1>", "<a>", "<div>", "<img>"]
+  },
+  {
+    "id": 5,
+    "question": "What does CSS stand for?",
+    "options": [
+      "Cascading Style Sheets",
+      "Creative Style System",
+      "Computer Style Sheets",
+      "Colorful Style Sheets"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "Which company developed the Java programming language?",
+    "options": ["Microsoft", "Sun Microsystems", "Google", "IBM"]
+  },
+  {
+    "id": 7,
+    "question": "Which of the following is NOT a programming language?",
+    "options": ["Python", "Ruby", "HTML", "Java"]
+  },
+  {
+    "id": 8,
+    "question": "Which symbol is used for comments in CSS?",
+    "options": ["// comment", "# comment", "/* comment */", "<!-- comment -->"]
+  },
+  {
+    "id": 9,
+    "question": "Which HTML element is used for the largest heading?",
+    "options": ["<h6>", "<heading>", "<h1>", "<head>"]
+  },
+  {
+    "id": 10,
+    "question": "What does SQL stand for?",
+    "options": [
+      "Structured Query Language",
+      "Strong Question Language",
+      "Structured Question Language",
+      "Stylish Query Language"
+    ]
+  }
+]

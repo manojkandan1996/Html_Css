@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>MCQ Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/exam.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="../images/vts.jpg" alt="VTS Logo">
+        <h2>VTS Exam<br>Portal</h2>
+      </div>
+      <nav>
+        <ul>
+          <li class="active"><span><img src="../images/Overview.png"></span> Overview</li>
+          <li><img style="background-color: white;" src="../images/Design.png"><a
+              style="text-decoration: none;color: white;" href="./designing.html">Designing</a></li>
+          <li><span style="background-color: white;"><img src="../images/development.jpg"></span><a
+              style="text-decoration: none;color: white;" href="./development.html">Development</a></li>
+          <li><span style="background-color: white;"><img src="../images/Exam.png"></span><a
+              style="text-decoration: none;color: white;" href="../pages/upload.html">Exam</a></li>
+          <li><span style="background-color: white;"><img src="../images/result.png"></span> <a
+              style="text-decoration: none;color: white;" href="../pages/result.html">Result</a> </li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="form">
+      <h2>Figma Technical Questions</h2>
+
+      <form id="quizForm">
+        <div id="questionsContainer"></div>
+        <div class="pagination-buttons">
+          <button type="button" id="prevBtn">Previous</button>
+          <button type="button" id="nextBtn">Next</button>
+          <button type="button" id="submitBtn">Submit</button>
+        </div>
+      </form>
+    </div>
+    <script>
+      const questionsContainer = document.getElementById('questionsContainer');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const submitBtn = document.getElementById('submitBtn');
+      const questions = JSON.parse(localStorage.getItem('questions')) || [];
+
+      const questionsPerPage = 3;
+      let currentPage = 1;
+      const totalPages = Math.ceil(questions.length / questionsPerPage);
+
+      function renderQuestions() {
+        questionsContainer.innerHTML = '';
+
+        const start = (currentPage - 1) * questionsPerPage;
+        const end = start + questionsPerPage;
+        const questionsToShow = questions.slice(start, end);
+
+        questionsToShow.forEach(q => {
+          const qDiv = document.createElement('div');
+          qDiv.className = 'question';
+
+          const qTitle = document.createElement('h3');
+          qTitle.textContent = `${q.id}. ${q.question}`;
+          qDiv.appendChild(qTitle);
+
+          q.options.forEach(opt => {
+            const label = document.createElement('label');
+
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `q${q.id}`;
+            radio.value = opt;
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(` ${opt}`));
+
+            qDiv.appendChild(label);
+          });
+
+          questionsContainer.appendChild(qDiv);
+        });
+
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === totalPages;
+      }
+
+      prevBtn.addEventListener('click', () => {
+        if (currentPage > 1) {
+          currentPage--;
+          renderQuestions();
+        }
+      });
+
+      nextBtn.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderQuestions();
+        }
+      });
+      submitBtn.addEventListener('click', () => {
+
+        window.location.href = 'thankyou.html';
+      });
+      renderQuestions();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Trainee List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/traineeregform.css" />
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="../images/vts.jpg" alt="VTS Logo">
+            <h2>VTS Exam<br>Portal</h2>
+        </div>
+        <nav>
+            <ul>
+                <li class="active"><span><img src="../images/Overview.png"></span> Overview</li>
+                <li><img style="background-color: white;" src="../images/Design.png"><a
+                        style="text-decoration: none;color: white;" href="./trainees.html">Designing</a></li>
+                <li><span style="background-color: white;"><img src="../images/development.jpg"></span> Development</li>
+                <li><span style="background-color: white;"><img src="../images/Exam.png"></span> Exam</li>
+                <li><span style="background-color: white;"><img src="../images/result.png"></span> Result</li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <h2>Trainer Name &gt; Online Trainees &gt; Offline Trainees</h2>
+        <div id="trainee-list" class="grid-container"></div>
+        <button id="clear-btn">Clear All Trainees</button>
+        <div id="trainee-list"></div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const trainees = JSON.parse(localStorage.getItem('trainees')) || [];
+            console.log('Loaded trainees:', trainees);
+
+            const container = document.getElementById('trainee-list');
+
+            trainees.forEach(t => {
+                const card = document.createElement('div');
+                card.className = 'trainee-card';
+                card.innerHTML = `
+        <img src="${t.image}" alt="${t.name}" style="width:50px; height:50px; border-radius:50%;">
+        <h4>${t.name}</h4>
+        <p><strong>Course:</strong> ${t.course}</p>
+        <p><strong>Duration:</strong> ${t.duration} days</p>
+        <p><strong>Mode:</strong> ${t.mode}</p>
+        <p>📧 ${t.email}</p>
+        <p>📞 ${t.phone}</p>
+        <button class="delete-btn">Delete</button>
+         <button class="view-more-btn">View More</button>
+      `;
+                card.querySelector('.view-more-btn').addEventListener('click', () => {
+                    localStorage.setItem('selectedTraineeId', t.id); // store ID for details page
+                    window.location.href = 'traineedetails.html';
+                });
+                card.querySelector('.delete-btn').addEventListener('click', () => {
+                    if (confirm(`Delete ${t.name}?`)) {
+                        let updated = trainees.filter(tr => tr.id !== t.id);
+                        localStorage.setItem('trainees', JSON.stringify(updated));
+                        window.location.reload();
+                    }
+                });
+
+                container.appendChild(card);
+            });
+
+            document.getElementById('clear-btn').addEventListener('click', () => {
+                if (confirm('Are you sure you want to clear all trainees?')) {
+                    localStorage.removeItem('trainees');
+                    window.location.reload();
+                }
+            });
+            container.appendChild(card);
+        });
+
+        viewMoreBtn.addEventListener('click', () => {
+            localStorage.setItem('selectedTraineeId', trainee.id); // 👈 MUST set the ID!
+            window.location.href = 'trainee-details.html';         // 👈 Must match your file name!
+        });
+    </script>
+
+
+</body>
+
+</html>
